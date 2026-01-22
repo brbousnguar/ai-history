@@ -1,6 +1,13 @@
 // Timeline Events Data
 const timelineEvents = [
     {
+        date: "November 2016",
+        title: "Adobe Sensei Launched",
+        company: "Adobe",
+        description: "Adobe introduces Sensei, an AI and machine learning framework integrated across Adobe's Creative Cloud, Document Cloud, and Experience Cloud products.",
+        impact: "Adobe Sensei brought AI capabilities to creative professionals, enabling intelligent features like auto-tagging, content-aware fill, and automated workflows across Adobe's entire product suite."
+    },
+    {
         date: "June 2020",
         title: "GPT-3 Released",
         company: "OpenAI",
@@ -93,6 +100,13 @@ const timelineEvents = [
     },
     {
         date: "March 2023",
+        title: "Adobe Firefly Beta Launched",
+        company: "Adobe",
+        description: "Adobe launches Firefly in beta, a family of creative generative AI models designed to generate images, text effects, and other creative content trained on Adobe Stock and licensed content.",
+        impact: "Firefly marked Adobe's entry into the generative AI space, offering creators AI tools trained on licensed content, addressing copyright concerns that plagued other image generation models."
+    },
+    {
+        date: "March 2023",
         title: "Claude Released",
         company: "Anthropic",
         description: "Anthropic releases Claude, an AI assistant focused on safety, helpfulness, and harmlessness, built with Constitutional AI.",
@@ -114,6 +128,13 @@ const timelineEvents = [
     },
     {
         date: "September 2023",
+        title: "Adobe Firefly 1.0 Released",
+        company: "Adobe",
+        description: "Adobe releases Firefly 1.0 for general availability, integrating generative AI capabilities directly into Photoshop, Illustrator, and Express with commercial-use licensing.",
+        impact: "Firefly 1.0 brought enterprise-ready generative AI to creative professionals, with commercial licensing that addressed legal concerns and integrated seamlessly into existing Adobe workflows."
+    },
+    {
+        date: "September 2023",
         title: "ChatGPT Gets Vision",
         company: "OpenAI",
         description: "OpenAI adds vision capabilities to ChatGPT, allowing it to analyze and discuss images uploaded by users.",
@@ -125,6 +146,13 @@ const timelineEvents = [
         company: "Google",
         description: "Google releases Gemini, a multimodal AI model designed to understand and process text, images, audio, and video.",
         impact: "Gemini represented Google's most advanced AI model, designed to compete directly with GPT-4 across multiple modalities."
+    },
+    {
+        date: "February 2024",
+        title: "Adobe Acrobat AI Assistant Launched",
+        company: "Adobe",
+        description: "Adobe launches Acrobat AI Assistant in beta, bringing conversational AI to PDFs with document summarization, Q&A capabilities, and intelligent content extraction.",
+        impact: "Acrobat AI Assistant transformed how people interact with documents, making it possible to quickly understand and extract insights from lengthy PDFs through natural language conversations."
     },
     {
         date: "February 2024",
@@ -156,6 +184,13 @@ const timelineEvents = [
     },
     {
         date: "May 2024",
+        title: "Adobe Firefly 2.0 Released",
+        company: "Adobe",
+        description: "Adobe releases Firefly 2.0 with improved image quality, better prompt understanding, and new capabilities including reference image support and style matching.",
+        impact: "Firefly 2.0 significantly improved the quality and versatility of AI-generated content, making it more competitive with other leading image generation models while maintaining Adobe's focus on commercial safety."
+    },
+    {
+        date: "May 2024",
         title: "o1 Models Announced",
         company: "OpenAI",
         description: "OpenAI announces o1 and o1-preview, reasoning models that show improved performance on complex problem-solving tasks.",
@@ -167,6 +202,13 @@ const timelineEvents = [
         company: "Midjourney",
         description: "Midjourney launches its official web application, making the service accessible directly through a browser without requiring Discord.",
         impact: "The web app launch marked Midjourney's evolution from a Discord-only service to a standalone platform, making it more accessible to users who preferred web interfaces over Discord."
+    },
+    {
+        date: "August 2025",
+        title: "Adobe Acrobat Studio Released",
+        company: "Adobe",
+        description: "Adobe launches Acrobat Studio, an AI-powered workspace featuring PDF Spaces for collaboration, AI Agents for automation, and integrated Express creation tools for transforming insights into presentations.",
+        impact: "Acrobat Studio represented Adobe's vision for AI-powered productivity, combining document intelligence, collaboration, and content creation into a unified platform for enterprise users."
     },
     {
         date: "January 2025",
