@@ -345,6 +345,86 @@ const timelineEvents = [
     }
 ];
 
+// Logo mapping for companies and tools
+const logoMap = {
+    'Adobe': 'https://logo.clearbit.com/adobe.com',
+    'OpenAI': 'https://logo.clearbit.com/openai.com',
+    'Google': 'https://logo.clearbit.com/google.com',
+    'Anthropic': 'https://logo.clearbit.com/anthropic.com',
+    'Microsoft': 'https://logo.clearbit.com/microsoft.com',
+    'Meta': 'https://logo.clearbit.com/meta.com',
+    'Stability AI': 'https://logo.clearbit.com/stability.ai',
+    'Midjourney': 'https://logo.clearbit.com/midjourney.com'
+};
+
+// Product-specific logos (for tools that might need custom logos)
+const productLogos = {
+    'GPT-3 Released': 'https://logo.clearbit.com/openai.com',
+    'GPT-4 Released': 'https://logo.clearbit.com/openai.com',
+    'GPT-4.5 "Orion" Released': 'https://logo.clearbit.com/openai.com',
+    'GPT-4.1 Released': 'https://logo.clearbit.com/openai.com',
+    'GPT-4 Turbo Released': 'https://logo.clearbit.com/openai.com',
+    'GPT-5 Released': 'https://logo.clearbit.com/openai.com',
+    'GPT-5.1 Released': 'https://logo.clearbit.com/openai.com',
+    'ChatGPT Launched': 'https://logo.clearbit.com/openai.com',
+    'ChatGPT Gets Vision': 'https://logo.clearbit.com/openai.com',
+    'ChatGPT Deep Research Launched': 'https://logo.clearbit.com/openai.com',
+    'DALL-E Launched': 'https://logo.clearbit.com/openai.com',
+    'DALL-E 2 Released': 'https://logo.clearbit.com/openai.com',
+    'Sora Announced': 'https://logo.clearbit.com/openai.com',
+    'o1 Models Announced': 'https://logo.clearbit.com/openai.com',
+    'o4-mini Released': 'https://logo.clearbit.com/openai.com',
+    'Claude Released': 'https://logo.clearbit.com/anthropic.com',
+    'Claude 2 Released': 'https://logo.clearbit.com/anthropic.com',
+    'Claude 3 Released': 'https://logo.clearbit.com/anthropic.com',
+    'Claude 3.7 Sonnet & Claude Code': 'https://logo.clearbit.com/anthropic.com',
+    'Claude Gets Web Search': 'https://logo.clearbit.com/anthropic.com',
+    'Claude 4 Released': 'https://logo.clearbit.com/anthropic.com',
+    'Claude Opus 4.5 Released': 'https://logo.clearbit.com/anthropic.com',
+    'Claude Sonnet 4.5 Released': 'https://logo.clearbit.com/anthropic.com',
+    'Gemini Pro Released': 'https://logo.clearbit.com/google.com',
+    'Gemini 1.5 Pro': 'https://logo.clearbit.com/google.com',
+    'Gemini 2.0 Flash Released': 'https://logo.clearbit.com/google.com',
+    'Gemini Multi-App Capability': 'https://logo.clearbit.com/google.com',
+    'Gemini 2.0 Available to Everyone': 'https://logo.clearbit.com/google.com',
+    'Gemini 2.5 Pro Released': 'https://logo.clearbit.com/google.com',
+    'Gemini 3 Released': 'https://logo.clearbit.com/google.com',
+    'Gemini Personal Intelligence': 'https://logo.clearbit.com/google.com',
+    'Bard Announced': 'https://logo.clearbit.com/google.com',
+    'PaLM Announced': 'https://logo.clearbit.com/google.com',
+    'Imagen Released': 'https://logo.clearbit.com/google.com',
+    'Nano Banana Released': 'https://logo.clearbit.com/google.com',
+    'LLaMA Released': 'https://logo.clearbit.com/meta.com',
+    'Stable Diffusion Released': 'https://logo.clearbit.com/stability.ai',
+    'Midjourney Launched': 'https://logo.clearbit.com/midjourney.com',
+    'Midjourney v2 Released': 'https://logo.clearbit.com/midjourney.com',
+    'Midjourney Open Beta': 'https://logo.clearbit.com/midjourney.com',
+    'Midjourney v5': 'https://logo.clearbit.com/midjourney.com',
+    'Midjourney Web App Launched': 'https://logo.clearbit.com/midjourney.com',
+    'Adobe Sensei Launched': 'https://logo.clearbit.com/adobe.com',
+    'Adobe Firefly Beta Launched': 'https://logo.clearbit.com/adobe.com',
+    'Adobe Firefly 1.0 Released': 'https://logo.clearbit.com/adobe.com',
+    'Adobe Acrobat AI Assistant Launched': 'https://logo.clearbit.com/adobe.com',
+    'Adobe Firefly 2.0 Released': 'https://logo.clearbit.com/adobe.com',
+    'Adobe Acrobat Studio Released': 'https://logo.clearbit.com/adobe.com'
+};
+
+// Get logo URL for an event
+function getLogoUrl(event) {
+    // First check if the product/tool has a specific logo
+    if (productLogos[event.title]) {
+        return productLogos[event.title];
+    }
+    // Then check company logo
+    if (logoMap[event.company]) {
+        return logoMap[event.company];
+    }
+    // Fallback: try to construct from company name
+    const companyDomain = event.company.toLowerCase().replace(/\s+/g, '') + '.com';
+    return `https://logo.clearbit.com/${companyDomain}`;
+}
+
+
 // Extract year from date string
 function extractYear(dateString) {
     const match = dateString.match(/\d{4}/);
@@ -404,10 +484,18 @@ function createEventElement(event, index) {
 
     const content = document.createElement('div');
     content.className = 'timeline-event-content';
+    const logoUrl = getLogoUrl(event);
     content.innerHTML = `
-        <div class="event-date">${event.date}</div>
-        <div class="event-title">${event.title}</div>
-        <div class="event-company">${event.company}</div>
+        <div class="event-header">
+            <div class="event-header-left">
+                <img src="${logoUrl}" alt="${event.company} logo" class="event-logo" onerror="this.style.display='none';">
+                <div class="event-header-text">
+                    <div class="event-date">${event.date}</div>
+                    <div class="event-title">${event.title}</div>
+                    <div class="event-company">${event.company}</div>
+                </div>
+            </div>
+        </div>
         <div class="event-description">${event.description}</div>
     `;
 
@@ -467,11 +555,17 @@ function clearFilters() {
 function openModal(event) {
     const modal = document.getElementById('eventModal');
     const modalBody = document.getElementById('modalBody');
+    const logoUrl = getLogoUrl(event);
     
     modalBody.innerHTML = `
-        <h2>${event.title}</h2>
-        <div class="event-date">${event.date}</div>
-        <div class="event-company">${event.company}</div>
+        <div class="modal-header-content">
+            <img src="${logoUrl}" alt="${event.company} logo" class="modal-logo" onerror="this.style.display='none';">
+            <div class="modal-title-section">
+                <h2>${event.title}</h2>
+                <div class="event-date">${event.date}</div>
+                <div class="event-company">${event.company}</div>
+            </div>
+        </div>
         <div class="event-description">${event.description}</div>
         <div class="event-impact">
             <h3>Impact</h3>
