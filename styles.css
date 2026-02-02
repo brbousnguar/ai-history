@@ -63,9 +63,10 @@ header {
 }
 
 .theme-toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
+    /* Make the toggle fixed to the viewport so it stays visible when scrolling */
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
     background: var(--bg-secondary);
     border: 2px solid var(--border-color);
     border-radius: 50%;
@@ -75,8 +76,10 @@ header {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.2s;
     box-shadow: 0 2px 8px var(--shadow);
+    z-index: 9999;
+    backdrop-filter: blur(6px);
 }
 
 .theme-toggle:hover {
@@ -109,6 +112,21 @@ header {
 [data-theme="light"] .theme-icon.moon-icon {
     opacity: 1;
     transform: rotate(0deg);
+}
+
+/* Responsive adjustments for the fixed theme toggle */
+@media (max-width: 600px) {
+    .theme-toggle {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .theme-icon {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 header h1 {
