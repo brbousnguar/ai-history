@@ -459,6 +459,15 @@ header h1 {
     box-shadow: 0 2px 8px var(--shadow);
 }
 
+.event-logo.initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
 .timeline-event-content:hover .event-logo {
     border-color: var(--primary-color);
     transform: scale(1.05);
@@ -603,6 +612,15 @@ header h1 {
     border: 2px solid var(--border-color);
     flex-shrink: 0;
     box-shadow: 0 4px 12px var(--shadow);
+}
+
+.modal-logo.initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 

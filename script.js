@@ -309,6 +309,27 @@ const timelineEvents = [
         impact: "Nano Banana went viral and demonstrated Google's capabilities in AI image generation, competing with established players like DALL-E and Midjourney."
     },
     {
+        date: "August 2025",
+        title: "Ollama Launched",
+        company: "Ollama",
+        description: "Ollama launches an easy-to-use local LLM runtime and desktop app that makes running open models locally simple for developers and hobbyists (desktop app released July/August 2025).",
+        impact: "Ollama accelerated adoption of local AI workflows by simplifying model management, downloads, and a developer-friendly CLI and GUI for running models on personal machines.",
+    },
+    {
+        date: "October 2025",
+        title: "Agent Builder Launched",
+        company: "OpenAI",
+        description: "OpenAI launches Agent Builder, a visual tool for composing, debugging, and publishing multi-step agent workflows (announced at DevDay 2025).",
+        impact: "Agent Builder made it significantly easier to build agentic workflows without extensive orchestration or custom code, enabling faster prototyping and deployment of multi-step AI agents."
+    },
+    {
+        date: "October 2025",
+        title: "gpt-oss Released",
+        company: "OpenAI",
+        description: "OpenAI releases gpt-oss, including safeguard model variants (e.g., gpt-oss-safeguard-120b and gpt-oss-safeguard-20b), as part of its October 2025 updates.",
+        impact: "gpt-oss provided open-source model variants and safety-focused releases that expanded research access and encouraged community-led experimentation while emphasizing safeguards."
+    },
+    {
         date: "September 2025",
         title: "Claude Sonnet 4.5 Released",
         company: "Anthropic",
@@ -347,33 +368,34 @@ const timelineEvents = [
 
 // Logo mapping for companies and tools
 const logoMap = {
-    'Adobe': 'https://logo.clearbit.com/adobe.com',
-    'OpenAI': 'https://logo.clearbit.com/openai.com',
-    'Google': 'https://logo.clearbit.com/google.com',
+    'Adobe': '/assets/logos/adobe.png',
+    'OpenAI': '/assets/logos/openai.png',
+    'Google': '/assets/logos/google.png',
     'Anthropic': 'https://logo.clearbit.com/anthropic.com',
     'Microsoft': 'https://logo.clearbit.com/microsoft.com',
     'Meta': 'https://logo.clearbit.com/meta.com',
     'Stability AI': 'https://logo.clearbit.com/stability.ai',
-    'Midjourney': 'https://logo.clearbit.com/midjourney.com'
+    'Midjourney': 'https://logo.clearbit.com/midjourney.com',
+    'Ollama': '/assets/logos/ollama.png'
 };
 
 // Product-specific logos (for tools that might need custom logos)
 const productLogos = {
-    'GPT-3 Released': 'https://logo.clearbit.com/openai.com',
-    'GPT-4 Released': 'https://logo.clearbit.com/openai.com',
-    'GPT-4.5 "Orion" Released': 'https://logo.clearbit.com/openai.com',
-    'GPT-4.1 Released': 'https://logo.clearbit.com/openai.com',
-    'GPT-4 Turbo Released': 'https://logo.clearbit.com/openai.com',
-    'GPT-5 Released': 'https://logo.clearbit.com/openai.com',
-    'GPT-5.1 Released': 'https://logo.clearbit.com/openai.com',
-    'ChatGPT Launched': 'https://logo.clearbit.com/openai.com',
-    'ChatGPT Gets Vision': 'https://logo.clearbit.com/openai.com',
-    'ChatGPT Deep Research Launched': 'https://logo.clearbit.com/openai.com',
-    'DALL-E Launched': 'https://logo.clearbit.com/openai.com',
-    'DALL-E 2 Released': 'https://logo.clearbit.com/openai.com',
-    'Sora Announced': 'https://logo.clearbit.com/openai.com',
-    'o1 Models Announced': 'https://logo.clearbit.com/openai.com',
-    'o4-mini Released': 'https://logo.clearbit.com/openai.com',
+    'GPT-3 Released': '/assets/logos/openai.png',
+    'GPT-4 Released': '/assets/logos/openai.png',
+    'GPT-4.5 "Orion" Released': '/assets/logos/openai.png',
+    'GPT-4.1 Released': '/assets/logos/openai.png',
+    'GPT-4 Turbo Released': '/assets/logos/openai.png',
+    'GPT-5 Released': '/assets/logos/openai.png',
+    'GPT-5.1 Released': '/assets/logos/openai.png',
+    'ChatGPT Launched': '/assets/logos/openai.png',
+    'ChatGPT Gets Vision': '/assets/logos/openai.png',
+    'ChatGPT Deep Research Launched': '/assets/logos/openai.png',
+    'DALL-E Launched': '/assets/logos/openai.png',
+    'DALL-E 2 Released': '/assets/logos/openai.png',
+    'Sora Announced': '/assets/logos/openai.png',
+    'o1 Models Announced': '/assets/logos/openai.png',
+    'o4-mini Released': '/assets/logos/openai.png',
     'Claude Released': 'https://logo.clearbit.com/anthropic.com',
     'Claude 2 Released': 'https://logo.clearbit.com/anthropic.com',
     'Claude 3 Released': 'https://logo.clearbit.com/anthropic.com',
@@ -401,12 +423,12 @@ const productLogos = {
     'Midjourney Open Beta': 'https://logo.clearbit.com/midjourney.com',
     'Midjourney v5': 'https://logo.clearbit.com/midjourney.com',
     'Midjourney Web App Launched': 'https://logo.clearbit.com/midjourney.com',
-    'Adobe Sensei Launched': 'https://logo.clearbit.com/adobe.com',
-    'Adobe Firefly Beta Launched': 'https://logo.clearbit.com/adobe.com',
-    'Adobe Firefly 1.0 Released': 'https://logo.clearbit.com/adobe.com',
-    'Adobe Acrobat AI Assistant Launched': 'https://logo.clearbit.com/adobe.com',
-    'Adobe Firefly 2.0 Released': 'https://logo.clearbit.com/adobe.com',
-    'Adobe Acrobat Studio Released': 'https://logo.clearbit.com/adobe.com'
+    'Adobe Sensei Launched': '/assets/logos/adobe.png',
+    'Adobe Firefly Beta Launched': '/assets/logos/adobe.png',
+    'Adobe Firefly 1.0 Released': '/assets/logos/adobe.png',
+    'Adobe Acrobat AI Assistant Launched': '/assets/logos/adobe.png',
+    'Adobe Firefly 2.0 Released': '/assets/logos/adobe.png',
+    'Adobe Acrobat Studio Released': '/assets/logos/adobe.png'
 };
 
 // Get logo URL for an event
@@ -422,6 +444,14 @@ function getLogoUrl(event) {
     // Fallback: try to construct from company name
     const companyDomain = event.company.toLowerCase().replace(/\s+/g, '') + '.com';
     return `https://logo.clearbit.com/${companyDomain}`;
+}
+
+// Return initials for a company name (used as a fallback when logo fails to load)
+function getInitials(name) {
+    if (!name) return '';
+    const parts = name.trim().split(/\s+/);
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0][0] + parts[1][0]).toUpperCase();
 }
 
 
@@ -485,10 +515,12 @@ function createEventElement(event, index) {
     const content = document.createElement('div');
     content.className = 'timeline-event-content';
     const logoUrl = getLogoUrl(event);
+
+    // Build header structure without the image so we can handle load/error programmatically
     content.innerHTML = `
         <div class="event-header">
             <div class="event-header-left">
-                <img src="${logoUrl}" alt="${event.company} logo" class="event-logo" onerror="this.style.display='none';">
+                <div class="logo-placeholder"></div>
                 <div class="event-header-text">
                     <div class="event-date">${event.date}</div>
                     <div class="event-title">${event.title}</div>
@@ -498,6 +530,25 @@ function createEventElement(event, index) {
         </div>
         <div class="event-description">${event.description}</div>
     `;
+
+    // Attempt to load logo; on error show initials fallback
+    (function loadLogo() {
+        const placeholder = content.querySelector('.logo-placeholder');
+        const img = new Image();
+        img.className = 'event-logo';
+        img.alt = `${event.company} logo`;
+        img.src = logoUrl;
+        img.onload = () => {
+            if (placeholder && img) placeholder.replaceWith(img);
+        };
+        img.onerror = () => {
+            // create initials fallback
+            const initials = document.createElement('div');
+            initials.className = 'event-logo initials';
+            initials.textContent = getInitials(event.company);
+            if (placeholder) placeholder.replaceWith(initials);
+        };
+    })();
 
     content.addEventListener('click', () => openModal(event));
 
@@ -559,7 +610,7 @@ function openModal(event) {
     
     modalBody.innerHTML = `
         <div class="modal-header-content">
-            <img src="${logoUrl}" alt="${event.company} logo" class="modal-logo" onerror="this.style.display='none';">
+            <div class="modal-logo-placeholder"></div>
             <div class="modal-title-section">
                 <h2>${event.title}</h2>
                 <div class="event-date">${event.date}</div>
@@ -572,6 +623,24 @@ function openModal(event) {
             <p>${event.impact}</p>
         </div>
     `;
+
+    // Load modal logo with fallback
+    (function loadModalLogo() {
+        const placeholder = modalBody.querySelector('.modal-logo-placeholder');
+        const img = new Image();
+        img.className = 'modal-logo';
+        img.alt = `${event.company} logo`;
+        img.src = logoUrl;
+        img.onload = () => {
+            if (placeholder) placeholder.replaceWith(img);
+        };
+        img.onerror = () => {
+            const initials = document.createElement('div');
+            initials.className = 'modal-logo initials';
+            initials.textContent = getInitials(event.company);
+            if (placeholder) placeholder.replaceWith(initials);
+        };
+    })();
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
