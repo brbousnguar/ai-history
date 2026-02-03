@@ -368,34 +368,34 @@ const timelineEvents = [
 
 // Logo mapping for companies and tools
 const logoMap = {
-    'Adobe': '/assets/logos/adobe.png',
-    'OpenAI': '/assets/logos/openai.png',
-    'Google': '/assets/logos/google.png',
+    'Adobe': './assets/logos/adobe.png',
+    'OpenAI': './assets/logos/openai.png',
+    'Google': './assets/logos/google.png',
     'Anthropic': 'https://logo.clearbit.com/anthropic.com',
     'Microsoft': 'https://logo.clearbit.com/microsoft.com',
     'Meta': 'https://logo.clearbit.com/meta.com',
     'Stability AI': 'https://logo.clearbit.com/stability.ai',
     'Midjourney': 'https://logo.clearbit.com/midjourney.com',
-    'Ollama': '/assets/logos/ollama.png'
+    'Ollama': './assets/logos/ollama.png'
 };
 
 // Product-specific logos (for tools that might need custom logos)
 const productLogos = {
-    'GPT-3 Released': '/assets/logos/openai.png',
-    'GPT-4 Released': '/assets/logos/openai.png',
-    'GPT-4.5 "Orion" Released': '/assets/logos/openai.png',
-    'GPT-4.1 Released': '/assets/logos/openai.png',
-    'GPT-4 Turbo Released': '/assets/logos/openai.png',
-    'GPT-5 Released': '/assets/logos/openai.png',
-    'GPT-5.1 Released': '/assets/logos/openai.png',
-    'ChatGPT Launched': '/assets/logos/openai.png',
-    'ChatGPT Gets Vision': '/assets/logos/openai.png',
-    'ChatGPT Deep Research Launched': '/assets/logos/openai.png',
-    'DALL-E Launched': '/assets/logos/openai.png',
-    'DALL-E 2 Released': '/assets/logos/openai.png',
-    'Sora Announced': '/assets/logos/openai.png',
-    'o1 Models Announced': '/assets/logos/openai.png',
-    'o4-mini Released': '/assets/logos/openai.png',
+    'GPT-3 Released': './assets/logos/openai.png',
+    'GPT-4 Released': './assets/logos/openai.png',
+    'GPT-4.5 "Orion" Released': './assets/logos/openai.png',
+    'GPT-4.1 Released': './assets/logos/openai.png',
+    'GPT-4 Turbo Released': './assets/logos/openai.png',
+    'GPT-5 Released': './assets/logos/openai.png',
+    'GPT-5.1 Released': './assets/logos/openai.png',
+    'ChatGPT Launched': './assets/logos/openai.png',
+    'ChatGPT Gets Vision': './assets/logos/openai.png',
+    'ChatGPT Deep Research Launched': './assets/logos/openai.png',
+    'DALL-E Launched': './assets/logos/openai.png',
+    'DALL-E 2 Released': './assets/logos/openai.png',
+    'Sora Announced': './assets/logos/openai.png',
+    'o1 Models Announced': './assets/logos/openai.png',
+    'o4-mini Released': './assets/logos/openai.png',
     'Claude Released': 'https://logo.clearbit.com/anthropic.com',
     'Claude 2 Released': 'https://logo.clearbit.com/anthropic.com',
     'Claude 3 Released': 'https://logo.clearbit.com/anthropic.com',
@@ -423,12 +423,12 @@ const productLogos = {
     'Midjourney Open Beta': 'https://logo.clearbit.com/midjourney.com',
     'Midjourney v5': 'https://logo.clearbit.com/midjourney.com',
     'Midjourney Web App Launched': 'https://logo.clearbit.com/midjourney.com',
-    'Adobe Sensei Launched': '/assets/logos/adobe.png',
-    'Adobe Firefly Beta Launched': '/assets/logos/adobe.png',
-    'Adobe Firefly 1.0 Released': '/assets/logos/adobe.png',
-    'Adobe Acrobat AI Assistant Launched': '/assets/logos/adobe.png',
-    'Adobe Firefly 2.0 Released': '/assets/logos/adobe.png',
-    'Adobe Acrobat Studio Released': '/assets/logos/adobe.png'
+    'Adobe Sensei Launched': './assets/logos/adobe.png',
+    'Adobe Firefly Beta Launched': './assets/logos/adobe.png',
+    'Adobe Firefly 1.0 Released': './assets/logos/adobe.png',
+    'Adobe Acrobat AI Assistant Launched': './assets/logos/adobe.png',
+    'Adobe Firefly 2.0 Released': './assets/logos/adobe.png',
+    'Adobe Acrobat Studio Released': './assets/logos/adobe.png'
 };
 
 // Get logo URL for an event
