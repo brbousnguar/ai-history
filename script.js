@@ -492,7 +492,7 @@ const timelineEvents = [
         description: "Midjourney releases version 7 with dramatic improvements in photorealism, text rendering, and prompt understanding, plus new personalization features.",
         impact: "Midjourney v7 set a new bar for AI image generation quality, with near-perfect photorealism and the ability to generate accurate text within images."
     }
-];
+].reverse(); // Reverse timeline to show most recent events first
 
 // Logo mapping for companies and tools
 const logoMap = {
