@@ -245,49 +245,56 @@ const timelineEvents = [
         title: "Gemini 2.0 Flash Released",
         company: "Google",
         description: "Google releases Gemini 2.0 Flash, a faster and more capable version with improved multimodal capabilities and agentic behaviors.",
-        impact: "Gemini 2.0 Flash marked Google's shift toward agentic AI, enabling models to take multi-step actions and use tools autonomously."
+        impact: "Gemini 2.0 Flash marked Google's shift toward agentic AI, enabling models to take multi-step actions and use tools autonomously.",
+        link: "https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024"
     },
     {
         date: "January 2025",
         title: "Gemini Multi-App Capability",
         company: "Google",
         description: "Google introduces Gemini's multi-app capability, allowing it to handle tasks across multiple apps in a single prompt, becoming the default assistant on Galaxy S25.",
-        impact: "This feature demonstrated Gemini's ability to orchestrate complex workflows across different applications, bringing AI assistants closer to true personal AI."
+        impact: "This feature demonstrated Gemini's ability to orchestrate complex workflows across different applications, bringing AI assistants closer to true personal AI.",
+        link: "https://blog.google/products/gemini"
     },
     {
         date: "February 2025",
         title: "Gemini 2.0 Available to Everyone",
         company: "Google",
         description: "Google makes Gemini 2.0 available to everyone, expanding access to its most powerful AI model with agentic capabilities.",
-        impact: "The broad availability of Gemini 2.0 democratized access to advanced agentic AI, enabling millions of users to experience next-generation AI capabilities."
+        impact: "The broad availability of Gemini 2.0 democratized access to advanced agentic AI, enabling millions of users to experience next-generation AI capabilities.",
+        link: "https://blog.google/technology/google-deepmind/google-gemini-2-0-flash-thinking-exp"
     },
     {
         date: "February 2025",
         title: "ChatGPT Deep Research Launched",
         company: "OpenAI",
         description: "OpenAI launches Deep Research, an autonomous research mode in ChatGPT that generates cited reports by browsing the web for 5-30 minutes.",
-        impact: "Deep Research transformed ChatGPT into an autonomous research assistant, capable of conducting thorough investigations and compiling comprehensive reports."
+        impact: "Deep Research transformed ChatGPT into an autonomous research assistant, capable of conducting thorough investigations and compiling comprehensive reports.",
+        link: "https://openai.com/index/introducing-chatgpt-pro"
     },
     {
         date: "February 2025",
         title: "Claude 3.7 Sonnet & Claude Code",
         company: "Anthropic",
         description: "Anthropic releases Claude 3.7 Sonnet, its first hybrid reasoning model with controllable extended thinking, and Claude Code for terminal-based coding tasks.",
-        impact: "Claude 3.7 Sonnet introduced hybrid reasoning capabilities, allowing users to choose between instant responses or detailed step-by-step reasoning."
+        impact: "Claude 3.7 Sonnet introduced hybrid reasoning capabilities, allowing users to choose between instant responses or detailed step-by-step reasoning.",
+        link: "https://www.anthropic.com/news/claude-3-5-sonnet"
     },
     {
         date: "February 2025",
         title: "GPT-4.5 \"Orion\" Released",
         company: "OpenAI",
         description: "OpenAI releases GPT-4.5 (codenamed Orion), an intermediate model between GPT-4 and GPT-5 with improved pattern recognition and creative insights.",
-        impact: "GPT-4.5 served as a bridge to GPT-5, offering significant improvements while maintaining stability and reliability."
+        impact: "GPT-4.5 served as a bridge to GPT-5, offering significant improvements while maintaining stability and reliability.",
+        link: "https://openai.com/"
     },
     {
         date: "March 2025",
         title: "Gemini 2.5 Pro Released",
         company: "Google",
         description: "Google releases Gemini 2.5 Pro, its most capable experimental model with enhanced reasoning, coding abilities, and security features.",
-        impact: "Gemini 2.5 Pro pushed the boundaries of AI capabilities, showcasing Google's continued innovation in multimodal and agentic AI."
+        impact: "Gemini 2.5 Pro pushed the boundaries of AI capabilities, showcasing Google's continued innovation in multimodal and agentic AI.",
+        link: "https://blog.google/technology/ai/google-gemini-ai"
     },
     {
         date: "March 2025",
