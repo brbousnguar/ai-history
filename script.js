@@ -519,6 +519,15 @@ const timelineEvents = [
         description: "Midjourney releases version 7 with dramatic improvements in photorealism, text rendering, and prompt understanding, plus new personalization features.",
         impact: "Midjourney v7 set a new bar for AI image generation quality, with near-perfect photorealism and the ability to generate accurate text within images.",
         link: "https://www.midjourney.com/news"
+    },
+    {
+        date: "February 3, 2026",
+        title: "GPT-5.2 Released",
+        company: "OpenAI",
+        description: "OpenAI releases GPT-5.2, a minor update with performance optimizations, reduced latency, and improved API rate limits for developers.",
+        impact: "GPT-5.2 focused on refinements and stability improvements, making the model more efficient for production deployments.",
+        link: "https://openai.com/",
+        eventType: "minor"
     }
 ].reverse(); // Reverse timeline to show most recent events first
 
@@ -544,6 +553,7 @@ const productLogos = {
     'GPT-4 Turbo Released': './assets/logos/openai.png',
     'GPT-5 Released': './assets/logos/openai.png',
     'GPT-5.1 Released': './assets/logos/openai.png',
+    'GPT-5.2 Released': './assets/logos/openai.png',
     'ChatGPT Launched': './assets/logos/openai.png',
     'ChatGPT Gets Vision': './assets/logos/openai.png',
     'ChatGPT Deep Research Launched': './assets/logos/openai.png',
@@ -671,6 +681,9 @@ function initTimeline() {
 function createEventElement(event, index) {
     const eventDiv = document.createElement('div');
     eventDiv.className = 'timeline-event';
+    if (event.eventType === 'minor') {
+        eventDiv.classList.add('minor-event');
+    }
     eventDiv.dataset.company = event.company;
     const year = extractYear(event.date);
     if (year) {
