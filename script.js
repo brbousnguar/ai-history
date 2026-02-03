@@ -295,6 +295,27 @@ const timelineEvents = [
         impact: "Claude 4 represented a significant advancement in AI capabilities, with Opus 4 handling extended autonomous tasks and demonstrating superior reasoning."
     },
     {
+        date: "June 2025",
+        title: "Microsoft Phi-4 Released",
+        company: "Microsoft",
+        description: "Microsoft releases Phi-4, a 14B parameter small language model that outperforms much larger models on reasoning and mathematics benchmarks.",
+        impact: "Phi-4 demonstrated that smaller, more efficient models could rival or exceed larger models, advancing the trend toward efficient AI."
+    },
+    {
+        date: "June 2025",
+        title: "Google AI Studio Launched",
+        company: "Google",
+        description: "Google launches AI Studio, a comprehensive platform for building, testing, and deploying AI applications with Gemini models and custom tools.",
+        impact: "AI Studio democratized AI application development, making it easier for developers to create sophisticated AI-powered products."
+    },
+    {
+        date: "July 2025",
+        title: "Meta AI Agents Platform",
+        company: "Meta",
+        description: "Meta launches AI Agents Platform, enabling developers to create custom AI agents with memory, tools, and personality for WhatsApp, Instagram, and Messenger.",
+        impact: "Meta's platform brought AI agents to billions of users across its social platforms, making AI assistance ubiquitous in daily communication."
+    },
+    {
         date: "August 2025",
         title: "GPT-5 Released",
         company: "OpenAI",
@@ -358,11 +379,81 @@ const timelineEvents = [
         impact: "Claude Opus 4.5's Infinite Chats feature removed practical limitations on conversation length, enabling truly extended AI interactions."
     },
     {
+        date: "December 2025",
+        title: "Stability AI 3.0 Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Diffusion 3.0 with major improvements in image quality, prompt adherence, and text rendering within images.",
+        impact: "Stable Diffusion 3.0 brought the open-source image generation model closer to proprietary competitors in quality and capabilities."
+    },
+    {
+        date: "December 2025",
+        title: "Microsoft Copilot Pro Max",
+        company: "Microsoft",
+        description: "Microsoft launches Copilot Pro Max tier with advanced AI capabilities, priority access to GPT-5, and extended context windows for enterprise users.",
+        impact: "Copilot Pro Max targeted power users and enterprises, offering the most advanced AI assistance integrated across Microsoft's ecosystem."
+    },
+    {
+        date: "December 2025",
+        title: "Adobe Firefly 3.0 Released",
+        company: "Adobe",
+        description: "Adobe releases Firefly 3.0 with video generation capabilities, advanced style transfer, and improved integration across Creative Cloud apps.",
+        impact: "Firefly 3.0's video generation brought Adobe into competition with Sora and other video AI tools, while maintaining commercial licensing."
+    },
+    {
         date: "January 2026",
         title: "Gemini Personal Intelligence",
         company: "Google",
         description: "Google launches Personal Intelligence for Gemini, allowing it to access Gmail, Photos, YouTube, and Search history to provide personalized assistance with privacy safeguards.",
         impact: "Personal Intelligence marked a major step toward true AI personal assistants, capable of understanding individual context and preferences."
+    },
+    {
+        date: "January 2026",
+        title: "GPT-5 Pro Released",
+        company: "OpenAI",
+        description: "OpenAI releases GPT-5 Pro with enhanced reasoning capabilities, better code generation, and improved multimodal understanding, setting new benchmarks across AI tasks.",
+        impact: "GPT-5 Pro demonstrated a significant leap in AI capabilities, particularly in complex problem-solving and scientific reasoning."
+    },
+    {
+        date: "January 2026",
+        title: "Microsoft Copilot Vision",
+        company: "Microsoft",
+        description: "Microsoft launches Copilot Vision with advanced computer vision capabilities integrated across Office, Windows, and Edge browser for real-time visual understanding.",
+        impact: "Copilot Vision brought AI visual understanding to productivity tools, enabling users to interact with content through natural language and images."
+    },
+    {
+        date: "February 2026",
+        title: "Meta Llama 4 Released",
+        company: "Meta",
+        description: "Meta releases Llama 4, an open-source model family with 405B parameters, multimodal capabilities, and state-of-the-art performance rivaling proprietary models.",
+        impact: "Llama 4 democratized access to frontier AI capabilities, enabling developers worldwide to build advanced AI applications without vendor lock-in."
+    },
+    {
+        date: "February 2026",
+        title: "Anthropic Claude Artifacts",
+        company: "Anthropic",
+        description: "Anthropic introduces Claude Artifacts, allowing Claude to create, preview, and iterate on code, documents, and designs in a dedicated workspace alongside conversations.",
+        impact: "Claude Artifacts transformed AI interactions from pure conversation to collaborative creation, enabling real-time co-creation of complex projects."
+    },
+    {
+        date: "February 2026",
+        title: "Google NotebookLM Audio Overview",
+        company: "Google",
+        description: "Google enhances NotebookLM with AI-generated audio overviews that transform documents into engaging podcast-style conversations between AI hosts.",
+        impact: "NotebookLM's Audio Overview feature revolutionized how people consume and understand complex documents through AI-generated audio narratives."
+    },
+    {
+        date: "February 2026",
+        title: "OpenAI Operator Released",
+        company: "OpenAI",
+        description: "OpenAI launches Operator, an AI agent that can browse the web and perform tasks autonomously on behalf of users, including booking, shopping, and research.",
+        impact: "Operator marked OpenAI's entry into autonomous AI agents, enabling AI to take actions in the real world rather than just generating responses."
+    },
+    {
+        date: "February 2026",
+        title: "Midjourney v7 Released",
+        company: "Midjourney",
+        description: "Midjourney releases version 7 with dramatic improvements in photorealism, text rendering, and prompt understanding, plus new personalization features.",
+        impact: "Midjourney v7 set a new bar for AI image generation quality, with near-perfect photorealism and the ability to generate accurate text within images."
     }
 ];
 
@@ -423,12 +514,25 @@ const productLogos = {
     'Midjourney Open Beta': './assets/logos/midjourney.png',
     'Midjourney v5': './assets/logos/midjourney.png',
     'Midjourney Web App Launched': './assets/logos/midjourney.png',
+    'Midjourney v7 Released': './assets/logos/midjourney.png',
     'Adobe Sensei Launched': './assets/logos/adobe.png',
     'Adobe Firefly Beta Launched': './assets/logos/adobe.png',
     'Adobe Firefly 1.0 Released': './assets/logos/adobe.png',
     'Adobe Acrobat AI Assistant Launched': './assets/logos/adobe.png',
     'Adobe Firefly 2.0 Released': './assets/logos/adobe.png',
-    'Adobe Acrobat Studio Released': './assets/logos/adobe.png'
+    'Adobe Firefly 3.0 Released': './assets/logos/adobe.png',
+    'Adobe Acrobat Studio Released': './assets/logos/adobe.png',
+    'GPT-5 Pro Released': './assets/logos/openai.png',
+    'OpenAI Operator Released': './assets/logos/openai.png',
+    'Microsoft Copilot Vision': './assets/logos/microsoft.png',
+    'Microsoft Phi-4 Released': './assets/logos/microsoft.png',
+    'Microsoft Copilot Pro Max': './assets/logos/microsoft.png',
+    'Meta Llama 4 Released': './assets/logos/meta.png',
+    'Meta AI Agents Platform': './assets/logos/meta.png',
+    'Anthropic Claude Artifacts': './assets/logos/anthropic.png',
+    'Google NotebookLM Audio Overview': './assets/logos/google.png',
+    'Google AI Studio Launched': './assets/logos/google.png',
+    'Stability AI 3.0 Released': './assets/logos/stabilityai.png'
 };
 
 // Get logo URL for an event
