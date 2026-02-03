@@ -5,210 +5,240 @@ const timelineEvents = [
         title: "Adobe Sensei Launched",
         company: "Adobe",
         description: "Adobe introduces Sensei, an AI and machine learning framework integrated across Adobe's Creative Cloud, Document Cloud, and Experience Cloud products.",
-        impact: "Adobe Sensei brought AI capabilities to creative professionals, enabling intelligent features like auto-tagging, content-aware fill, and automated workflows across Adobe's entire product suite."
+        impact: "Adobe Sensei brought AI capabilities to creative professionals, enabling intelligent features like auto-tagging, content-aware fill, and automated workflows across Adobe's entire product suite.",
+        link: "https://www.adobe.com/sensei.html"
     },
     {
         date: "June 2020",
         title: "GPT-3 Released",
         company: "OpenAI",
         description: "OpenAI releases GPT-3, a language model with 175 billion parameters, demonstrating remarkable text generation capabilities.",
-        impact: "GPT-3 showed the world the potential of large language models, sparking widespread interest in AI capabilities."
+        impact: "GPT-3 showed the world the potential of large language models, sparking widespread interest in AI capabilities.",
+        link: "https://openai.com/blog/gpt-3-apps"
     },
     {
         date: "January 2021",
         title: "DALL-E Launched",
         company: "OpenAI",
         description: "OpenAI introduces DALL-E, an AI system that can create images from text descriptions, revolutionizing creative AI.",
-        impact: "DALL-E demonstrated that AI could understand and generate visual content from natural language, opening new creative possibilities."
+        impact: "DALL-E demonstrated that AI could understand and generate visual content from natural language, opening new creative possibilities.",
+        link: "https://openai.com/blog/dall-e"
     },
     {
         date: "February 2022",
         title: "Midjourney Launched",
         company: "Midjourney",
         description: "Midjourney launches its first version (v1) through Discord, introducing AI-powered image generation to early beta users.",
-        impact: "Midjourney's Discord-based approach created a unique community-driven platform for AI art generation, setting it apart from competitors."
+        impact: "Midjourney's Discord-based approach created a unique community-driven platform for AI art generation, setting it apart from competitors.",
+        link: "https://www.midjourney.com"
     },
     {
         date: "April 2022",
         title: "DALL-E 2 Released",
         company: "OpenAI",
         description: "DALL-E 2 launches with significantly improved image quality, resolution, and understanding of complex prompts.",
-        impact: "DALL-E 2 made AI-generated art accessible to millions, sparking debates about creativity, copyright, and the future of art."
+        impact: "DALL-E 2 made AI-generated art accessible to millions, sparking debates about creativity, copyright, and the future of art.",
+        link: "https://openai.com/dall-e-2"
     },
     {
         date: "April 2022",
         title: "Midjourney v2 Released",
         company: "Midjourney",
         description: "Midjourney releases version 2 with improved image quality and more sophisticated prompt understanding.",
-        impact: "Version 2 marked significant improvements in Midjourney's artistic capabilities, attracting more users to the platform."
+        impact: "Version 2 marked significant improvements in Midjourney's artistic capabilities, attracting more users to the platform.",
+        link: "https://www.midjourney.com"
     },
     {
         date: "May 2022",
         title: "PaLM Announced",
         company: "Google",
         description: "Google unveils Pathways Language Model (PaLM) with 540 billion parameters, showcasing advanced reasoning capabilities.",
-        impact: "PaLM demonstrated Google's commitment to large-scale AI research and set new benchmarks for language understanding."
+        impact: "PaLM demonstrated Google's commitment to large-scale AI research and set new benchmarks for language understanding.",
+        link: "https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html"
     },
     {
         date: "July 2022",
         title: "Imagen Released",
         company: "Google",
         description: "Google releases Imagen, a text-to-image model competing with DALL-E 2, featuring photorealistic image generation.",
-        impact: "Imagen showcased Google's capabilities in generative AI and intensified competition in the text-to-image space."
+        impact: "Imagen showcased Google's capabilities in generative AI and intensified competition in the text-to-image space.",
+        link: "https://imagen.research.google"
     },
     {
         date: "July 2022",
         title: "Midjourney Open Beta",
         company: "Midjourney",
         description: "Midjourney opens its Discord server to the public, allowing anyone to join and use the AI image generation service.",
-        impact: "The public launch via Discord made Midjourney accessible to millions, creating a vibrant community of artists and creators using AI for artistic expression."
+        impact: "The public launch via Discord made Midjourney accessible to millions, creating a vibrant community of artists and creators using AI for artistic expression.",
+        link: "https://www.midjourney.com"
     },
     {
         date: "August 2022",
         title: "Stable Diffusion Released",
         company: "Stability AI",
         description: "Stability AI releases Stable Diffusion as open-source, making high-quality image generation accessible to everyone.",
-        impact: "Stable Diffusion democratized AI image generation, enabling millions of developers and creators to build with the technology."
+        impact: "Stable Diffusion democratized AI image generation, enabling millions of developers and creators to build with the technology.",
+        link: "https://stability.ai/stable-diffusion"
     },
     {
         date: "November 2022",
         title: "ChatGPT Launched",
         company: "OpenAI",
         description: "OpenAI releases ChatGPT to the public, a conversational AI that quickly becomes the fastest-growing consumer application in history.",
-        impact: "ChatGPT brought AI to mainstream consciousness, reaching 100 million users in just 2 months and transforming how people interact with AI."
+        impact: "ChatGPT brought AI to mainstream consciousness, reaching 100 million users in just 2 months and transforming how people interact with AI.",
+        link: "https://openai.com/blog/chatgpt"
     },
     {
         date: "February 2023",
         title: "Bard Announced",
         company: "Google",
         description: "Google announces Bard, its conversational AI assistant powered by LaMDA, entering direct competition with ChatGPT.",
-        impact: "Bard marked Google's entry into the consumer AI chatbot market, intensifying the AI race between major tech companies."
+        impact: "Bard marked Google's entry into the consumer AI chatbot market, intensifying the AI race between major tech companies.",
+        link: "https://blog.google/technology/ai/bard-google-ai-search-updates"
     },
     {
         date: "March 2023",
         title: "GPT-4 Released",
         company: "OpenAI",
         description: "OpenAI releases GPT-4, a multimodal model that can process both text and images, with significantly improved reasoning and accuracy.",
-        impact: "GPT-4 set new standards for AI capabilities, powering advanced applications and demonstrating the rapid pace of AI advancement."
+        impact: "GPT-4 set new standards for AI capabilities, powering advanced applications and demonstrating the rapid pace of AI advancement.",
+        link: "https://openai.com/gpt-4"
     },
     {
         date: "March 2023",
         title: "Midjourney v5",
         company: "Midjourney",
         description: "Midjourney releases version 5, achieving unprecedented photorealism and artistic quality in AI-generated images.",
-        impact: "Midjourney v5 became the gold standard for artistic AI image generation, widely used by artists and creators worldwide."
+        impact: "Midjourney v5 became the gold standard for artistic AI image generation, widely used by artists and creators worldwide.",
+        link: "https://www.midjourney.com"
     },
     {
         date: "March 2023",
         title: "Adobe Firefly Beta Launched",
         company: "Adobe",
         description: "Adobe launches Firefly in beta, a family of creative generative AI models designed to generate images, text effects, and other creative content trained on Adobe Stock and licensed content.",
-        impact: "Firefly marked Adobe's entry into the generative AI space, offering creators AI tools trained on licensed content, addressing copyright concerns that plagued other image generation models."
+        impact: "Firefly marked Adobe's entry into the generative AI space, offering creators AI tools trained on licensed content, addressing copyright concerns that plagued other image generation models.",
+        link: "https://www.adobe.com/products/firefly.html"
     },
     {
         date: "March 2023",
         title: "Claude Released",
         company: "Anthropic",
         description: "Anthropic releases Claude, an AI assistant focused on safety, helpfulness, and harmlessness, built with Constitutional AI.",
-        impact: "Claude introduced a new approach to AI safety and ethics, emphasizing responsible AI development and user trust."
+        impact: "Claude introduced a new approach to AI safety and ethics, emphasizing responsible AI development and user trust.",
+        link: "https://www.anthropic.com/claude"
     },
     {
         date: "May 2023",
         title: "LLaMA Released",
         company: "Meta",
         description: "Meta releases LLaMA (Large Language Model Meta AI) as open-source, enabling researchers and developers worldwide.",
-        impact: "LLaMA democratized access to large language models, enabling innovation and research beyond big tech companies."
+        impact: "LLaMA democratized access to large language models, enabling innovation and research beyond big tech companies.",
+        link: "https://ai.meta.com/blog/large-language-model-llama-meta-ai"
     },
     {
         date: "July 2023",
         title: "Claude 2 Released",
         company: "Anthropic",
         description: "Anthropic releases Claude 2 with improved capabilities, longer context windows, and enhanced safety features.",
-        impact: "Claude 2 strengthened Anthropic's position in the AI market and demonstrated continued focus on safe AI development."
+        impact: "Claude 2 strengthened Anthropic's position in the AI market and demonstrated continued focus on safe AI development.",
+        link: "https://www.anthropic.com/news/claude-2"
     },
     {
         date: "September 2023",
         title: "Adobe Firefly 1.0 Released",
         company: "Adobe",
         description: "Adobe releases Firefly 1.0 for general availability, integrating generative AI capabilities directly into Photoshop, Illustrator, and Express with commercial-use licensing.",
-        impact: "Firefly 1.0 brought enterprise-ready generative AI to creative professionals, with commercial licensing that addressed legal concerns and integrated seamlessly into existing Adobe workflows."
+        impact: "Firefly 1.0 brought enterprise-ready generative AI to creative professionals, with commercial licensing that addressed legal concerns and integrated seamlessly into existing Adobe workflows.",
+        link: "https://blog.adobe.com/en/publish/2023/09/13/adobe-firefly-generally-available"
     },
     {
         date: "September 2023",
         title: "ChatGPT Gets Vision",
         company: "OpenAI",
         description: "OpenAI adds vision capabilities to ChatGPT, allowing it to analyze and discuss images uploaded by users.",
-        impact: "This update made ChatGPT multimodal, expanding its use cases to include visual analysis and image-based conversations."
+        impact: "This update made ChatGPT multimodal, expanding its use cases to include visual analysis and image-based conversations.",
+        link: "https://openai.com/blog/chatgpt-can-now-see-hear-and-speak"
     },
     {
         date: "December 2023",
         title: "Gemini Pro Released",
         company: "Google",
         description: "Google releases Gemini, a multimodal AI model designed to understand and process text, images, audio, and video.",
-        impact: "Gemini represented Google's most advanced AI model, designed to compete directly with GPT-4 across multiple modalities."
+        impact: "Gemini represented Google's most advanced AI model, designed to compete directly with GPT-4 across multiple modalities.",
+        link: "https://blog.google/technology/ai/google-gemini-ai"
     },
     {
         date: "February 2024",
         title: "Adobe Acrobat AI Assistant Launched",
         company: "Adobe",
         description: "Adobe launches Acrobat AI Assistant in beta, bringing conversational AI to PDFs with document summarization, Q&A capabilities, and intelligent content extraction.",
-        impact: "Acrobat AI Assistant transformed how people interact with documents, making it possible to quickly understand and extract insights from lengthy PDFs through natural language conversations."
+        impact: "Acrobat AI Assistant transformed how people interact with documents, making it possible to quickly understand and extract insights from lengthy PDFs through natural language conversations.",
+        link: "https://www.adobe.com/acrobat/generative-ai-pdf.html"
     },
     {
         date: "February 2024",
         title: "Sora Announced",
         company: "OpenAI",
         description: "OpenAI announces Sora, a text-to-video model capable of generating high-quality, coherent video clips from text prompts.",
-        impact: "Sora demonstrated the next frontier of generative AI, showing that AI could create realistic video content, raising both excitement and concerns."
+        impact: "Sora demonstrated the next frontier of generative AI, showing that AI could create realistic video content, raising both excitement and concerns.",
+        link: "https://openai.com/sora"
     },
     {
         date: "March 2024",
         title: "Claude 3 Released",
         company: "Anthropic",
         description: "Anthropic releases Claude 3 with three variants (Opus, Sonnet, Haiku), achieving state-of-the-art performance across multiple benchmarks.",
-        impact: "Claude 3 Opus matched or exceeded GPT-4 in many benchmarks, establishing Anthropic as a major player in the AI race."
+        impact: "Claude 3 Opus matched or exceeded GPT-4 in many benchmarks, establishing Anthropic as a major player in the AI race.",
+        link: "https://www.anthropic.com/news/claude-3-family"
     },
     {
         date: "April 2024",
         title: "GPT-4 Turbo Released",
         company: "OpenAI",
         description: "OpenAI releases GPT-4 Turbo with improved performance, lower costs, and updated knowledge cutoff.",
-        impact: "GPT-4 Turbo made advanced AI more accessible and cost-effective, enabling broader adoption across industries."
+        impact: "GPT-4 Turbo made advanced AI more accessible and cost-effective, enabling broader adoption across industries.",
+        link: "https://openai.com/blog/new-models-and-developer-products-announced-at-devday"
     },
     {
         date: "May 2024",
         title: "Gemini 1.5 Pro",
         company: "Google",
         description: "Google releases Gemini 1.5 Pro with a massive 1 million token context window, enabling processing of entire codebases and long documents.",
-        impact: "The unprecedented context window opened new possibilities for AI applications in code analysis, research, and long-form content."
+        impact: "The unprecedented context window opened new possibilities for AI applications in code analysis, research, and long-form content.",
+        link: "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024"
     },
     {
         date: "May 2024",
         title: "Adobe Firefly 2.0 Released",
         company: "Adobe",
         description: "Adobe releases Firefly 2.0 with improved image quality, better prompt understanding, and new capabilities including reference image support and style matching.",
-        impact: "Firefly 2.0 significantly improved the quality and versatility of AI-generated content, making it more competitive with other leading image generation models while maintaining Adobe's focus on commercial safety."
+        impact: "Firefly 2.0 significantly improved the quality and versatility of AI-generated content, making it more competitive with other leading image generation models while maintaining Adobe's focus on commercial safety.",
+        link: "https://blog.adobe.com/en/publish/2024/04/16/firefly-2-0-adobe-creative-cloud"
     },
     {
         date: "May 2024",
         title: "o1 Models Announced",
         company: "OpenAI",
         description: "OpenAI announces o1 and o1-preview, reasoning models that show improved performance on complex problem-solving tasks.",
-        impact: "The o1 models represented a shift toward AI systems with better reasoning capabilities, moving beyond pattern matching to true problem-solving."
+        impact: "The o1 models represented a shift toward AI systems with better reasoning capabilities, moving beyond pattern matching to true problem-solving.",
+        link: "https://openai.com/index/learning-to-reason-with-llms"
     },
     {
         date: "August 2024",
         title: "Midjourney Web App Launched",
         company: "Midjourney",
         description: "Midjourney launches its official web application, making the service accessible directly through a browser without requiring Discord.",
-        impact: "The web app launch marked Midjourney's evolution from a Discord-only service to a standalone platform, making it more accessible to users who preferred web interfaces over Discord."
+        impact: "The web app launch marked Midjourney's evolution from a Discord-only service to a standalone platform, making it more accessible to users who preferred web interfaces over Discord.",
+        link: "https://www.midjourney.com"
     },
     {
         date: "August 2025",
         title: "Adobe Acrobat Studio Released",
         company: "Adobe",
         description: "Adobe launches Acrobat Studio, an AI-powered workspace featuring PDF Spaces for collaboration, AI Agents for automation, and integrated Express creation tools for transforming insights into presentations.",
-        impact: "Acrobat Studio represented Adobe's vision for AI-powered productivity, combining document intelligence, collaboration, and content creation into a unified platform for enterprise users."
+        impact: "Acrobat Studio represented Adobe's vision for AI-powered productivity, combining document intelligence, collaboration, and content creation into a unified platform for enterprise users.",
+        link: "https://www.adobe.com/acrobat/hub.html"
     },
     {
         date: "January 2025",
@@ -712,6 +742,19 @@ function openModal(event) {
     const modalBody = document.getElementById('modalBody');
     const logoUrl = getLogoUrl(event);
     
+    const linkHTML = event.link ? `
+        <div class="event-link-section">
+            <a href="${event.link}" target="_blank" rel="noopener noreferrer" class="event-link-button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Official Announcement
+            </a>
+        </div>
+    ` : '';
+    
     modalBody.innerHTML = `
         <div class="modal-header-content">
             <div class="modal-logo-placeholder"></div>
@@ -726,6 +769,7 @@ function openModal(event) {
             <h3>Impact</h3>
             <p>${event.impact}</p>
         </div>
+        ${linkHTML}
     `;
 
     // Load modal logo with fallback
