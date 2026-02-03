@@ -403,14 +403,14 @@ header h1 {
     flex: 1;
     max-width: 45%;
     background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     border-radius: 16px;
     padding: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -427,9 +427,9 @@ header h1 {
 }
 
 .timeline-event-content:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px) scale(1.02);
     border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 12px 32px rgba(99, 102, 241, 0.25);
 }
 
 .timeline-event-content:hover::before {
@@ -446,33 +446,90 @@ header h1 {
 
 /* Minor Event Styles */
 .timeline-event.minor-event .timeline-event-content {
-    opacity: 0.85;
-    max-width: 42%;
-    padding: 1.2rem;
-    background: var(--bg-secondary);
-    border-left: 3px solid var(--accent-color);
+    max-width: 38%;
+    padding: 1rem 1.2rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.03), rgba(168, 85, 247, 0.03));
+    border: 1px dashed var(--border-color);
+    border-left: 2px solid var(--accent-color);
+    border-radius: 12px;
+    opacity: 0.8;
+}
+
+.timeline-event.minor-event .timeline-event-content::before {
+    background: linear-gradient(90deg, var(--accent-color), rgba(168, 85, 247, 0.5));
+    height: 3px;
 }
 
 .timeline-event.minor-event .timeline-dot {
-    width: 10px;
-    height: 10px;
-    background: var(--accent-color);
-    opacity: 0.7;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
 }
 
 .timeline-event.minor-event .event-title {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    font-weight: 500;
     color: var(--text-secondary);
+    font-style: italic;
 }
 
 .timeline-event.minor-event .event-date {
     font-size: 0.75rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.timeline-event.minor-event .event-company {
+    background: rgba(168, 85, 247, 0.15);
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+}
+
+.timeline-event.minor-event .event-description {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.timeline-event.minor-event .event-logo {
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    border: 1px dashed var(--border-color);
 }
 
 .timeline-event.minor-event .timeline-event-content:hover {
     opacity: 1;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.15);
+    border-style: solid;
+}
+
+.timeline-event.minor-event .timeline-event-content:hover .event-logo {
+    opacity: 1;
+    border-style: solid;
+}
+
+.timeline-event.minor-event .timeline-event-content:hover .event-title {
+    color: var(--text-primary);
+}
+
+/* Minor Event Badge */
+.minor-badge {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid var(--accent-color);
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
 }
 
 .event-header {

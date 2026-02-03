@@ -706,6 +706,9 @@ function createEventElement(event, index) {
     const content = document.createElement('div');
     content.className = 'timeline-event-content';
     const logoUrl = getLogoUrl(event);
+    
+    // Add minor event badge if applicable
+    const minorBadge = event.eventType === 'minor' ? '<span class="minor-badge">Minor Update</span>' : '';
 
     // Build header structure without the image so we can handle load/error programmatically
     content.innerHTML = `
@@ -713,7 +716,7 @@ function createEventElement(event, index) {
             <div class="event-header-left">
                 <div class="logo-placeholder"></div>
                 <div class="event-header-text">
-                    <div class="event-date">${event.date}</div>
+                    <div class="event-date">${event.date}${minorBadge}</div>
                     <div class="event-title">${event.title}</div>
                 </div>
             </div>
