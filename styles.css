@@ -460,6 +460,7 @@ header h1 {
     border: 2px dashed var(--primary-color);
     border-radius: 16px;
     padding: 1.5rem;
+    padding-right: 6.5rem; /* Add space for the PLANNED badge */
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -479,6 +480,7 @@ header h1 {
     font-weight: 700;
     letter-spacing: 0.05em;
     box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    z-index: 1;
 }
 
 .planned-event-card:hover {
@@ -1256,5 +1258,11 @@ header h1 {
     
     .planned-event-card {
         padding: 1.25rem;
+        padding-right: 6rem; /* Maintain space for badge on mobile */
+    }
+    
+    .planned-event-card::before {
+        font-size: 0.55rem;
+        padding: 0.2rem 0.5rem;
     }
 }
