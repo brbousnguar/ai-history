@@ -301,70 +301,80 @@ const timelineEvents = [
         title: "Claude Gets Web Search",
         company: "Anthropic",
         description: "Anthropic adds web search capabilities to Claude 3.7 Sonnet, enabling responses with current information and clickable citations.",
-        impact: "Web search integration made Claude more useful for real-time information needs, competing directly with other AI assistants that had web access."
+        impact: "Web search integration made Claude more useful for real-time information needs, competing directly with other AI assistants that had web access.",
+        link: "https://www.anthropic.com/news/web-search"
     },
     {
         date: "March 2025",
         title: "OpenAI $40B Funding Round",
         company: "OpenAI",
         description: "OpenAI raises $40 billion at a $300 billion valuation, partnering with SoftBank to scale compute and model research toward AGI.",
-        impact: "This massive funding round demonstrated investor confidence in OpenAI's path to AGI and enabled unprecedented scaling of AI infrastructure."
+        impact: "This massive funding round demonstrated investor confidence in OpenAI's path to AGI and enabled unprecedented scaling of AI infrastructure.",
+        link: "https://openai.com/index/openai-announces-partnership-with-softbank-to-invest-up-to-500-billion-in-ai-infrastructure"
     },
     {
         date: "April 2025",
         title: "GPT-4.1 Released",
         company: "OpenAI",
         description: "OpenAI releases GPT-4.1 with mini and nano versions, focusing on coding capabilities and making smaller-model variants with higher-end capabilities.",
-        impact: "GPT-4.1's smaller variants made advanced AI more accessible and cost-effective for developers and businesses."
+        impact: "GPT-4.1's smaller variants made advanced AI more accessible and cost-effective for developers and businesses.",
+        link: "https://openai.com/"
     },
     {
         date: "April 2025",
         title: "o4-mini Released",
         company: "OpenAI",
         description: "OpenAI releases o4-mini, a lightweight reasoning model opened to all ChatGPT users, supporting multimodal tasks.",
-        impact: "o4-mini brought reasoning capabilities to a broader audience, making advanced AI reasoning accessible to free users."
+        impact: "o4-mini brought reasoning capabilities to a broader audience, making advanced AI reasoning accessible to free users.",
+        link: "https://openai.com/index/learning-to-reason-with-llms"
     },
     {
         date: "May 2025",
         title: "Claude 4 Released",
         company: "Anthropic",
         description: "Anthropic releases Claude 4 with Opus and Sonnet variants, featuring major leaps in reasoning, coding, long-context capability, and enhanced memory.",
-        impact: "Claude 4 represented a significant advancement in AI capabilities, with Opus 4 handling extended autonomous tasks and demonstrating superior reasoning."
+        impact: "Claude 4 represented a significant advancement in AI capabilities, with Opus 4 handling extended autonomous tasks and demonstrating superior reasoning.",
+        link: "https://www.anthropic.com/news/claude-4"
     },
     {
         date: "June 2025",
         title: "Microsoft Phi-4 Released",
         company: "Microsoft",
         description: "Microsoft releases Phi-4, a 14B parameter small language model that outperforms much larger models on reasoning and mathematics benchmarks.",
-        impact: "Phi-4 demonstrated that smaller, more efficient models could rival or exceed larger models, advancing the trend toward efficient AI."
+        impact: "Phi-4 demonstrated that smaller, more efficient models could rival or exceed larger models, advancing the trend toward efficient AI.",
+        link: "https://azure.microsoft.com/en-us/blog/introducing-phi-4-microsoft-s-newest-small-language-model-specializing-in-complex-reasoning"
     },
     {
         date: "June 2025",
         title: "Google AI Studio Launched",
         company: "Google",
         description: "Google launches AI Studio, a comprehensive platform for building, testing, and deploying AI applications with Gemini models and custom tools.",
-        impact: "AI Studio democratized AI application development, making it easier for developers to create sophisticated AI-powered products."
+        impact: "AI Studio democratized AI application development, making it easier for developers to create sophisticated AI-powered products.",
+        link: "https://ai.google.dev/aistudio"
     },
     {
         date: "July 2025",
         title: "Meta AI Agents Platform",
         company: "Meta",
         description: "Meta launches AI Agents Platform, enabling developers to create custom AI agents with memory, tools, and personality for WhatsApp, Instagram, and Messenger.",
-        impact: "Meta's platform brought AI agents to billions of users across its social platforms, making AI assistance ubiquitous in daily communication."
+        impact: "Meta's platform brought AI agents to billions of users across its social platforms, making AI assistance ubiquitous in daily communication.",
+        link: "https://ai.meta.com/"
     },
     {
         date: "August 2025",
         title: "GPT-5 Released",
         company: "OpenAI",
         description: "OpenAI releases GPT-5, described as the smartest, fastest, and most useful model yet, with multimodal capabilities, better reasoning, and large context windows.",
-        impact: "GPT-5 marked a major breakthrough in AI capabilities, setting new standards across multiple benchmarks and becoming available to millions of users."
+        impact: "GPT-5 marked a major breakthrough in AI capabilities, setting new standards across multiple benchmarks and becoming available to millions of users.",
+        link: "https://openai.com/"
     },
     {
         date: "August 2025",
         title: "Nano Banana Released",
         company: "Google",
         description: "Google releases Nano Banana (Gemini 2.5 Flash Image), a viral image generation and editing model producing photorealistic, high-quality images.",
-        impact: "Nano Banana went viral and demonstrated Google's capabilities in AI image generation, competing with established players like DALL-E and Midjourney."
+        impact: "Nano Banana went viral and demonstrated Google's capabilities in AI image generation, competing with established players like DALL-E and Midjourney.",
+        link: "https://deepmind.google/discover/blog/"
     },
     {
         date: "August 2025",
@@ -372,125 +382,143 @@ const timelineEvents = [
         company: "Ollama",
         description: "Ollama launches an easy-to-use local LLM runtime and desktop app that makes running open models locally simple for developers and hobbyists (desktop app released July/August 2025).",
         impact: "Ollama accelerated adoption of local AI workflows by simplifying model management, downloads, and a developer-friendly CLI and GUI for running models on personal machines.",
+        link: "https://ollama.com"
     },
     {
         date: "October 2025",
         title: "Agent Builder Launched",
         company: "OpenAI",
         description: "OpenAI launches Agent Builder, a visual tool for composing, debugging, and publishing multi-step agent workflows (announced at DevDay 2025).",
-        impact: "Agent Builder made it significantly easier to build agentic workflows without extensive orchestration or custom code, enabling faster prototyping and deployment of multi-step AI agents."
+        impact: "Agent Builder made it significantly easier to build agentic workflows without extensive orchestration or custom code, enabling faster prototyping and deployment of multi-step AI agents.",
+        link: "https://openai.com/devday"
     },
     {
         date: "October 2025",
         title: "gpt-oss Released",
         company: "OpenAI",
         description: "OpenAI releases gpt-oss, including safeguard model variants (e.g., gpt-oss-safeguard-120b and gpt-oss-safeguard-20b), as part of its October 2025 updates.",
-        impact: "gpt-oss provided open-source model variants and safety-focused releases that expanded research access and encouraged community-led experimentation while emphasizing safeguards."
+        impact: "gpt-oss provided open-source model variants and safety-focused releases that expanded research access and encouraged community-led experimentation while emphasizing safeguards.",
+        link: "https://openai.com/"
     },
     {
         date: "September 2025",
         title: "Claude Sonnet 4.5 Released",
         company: "Anthropic",
         description: "Anthropic releases Claude Sonnet 4.5, topping coding benchmarks with 77.2% on SWE-bench and maintaining long focus across tasks for 30+ hours.",
-        impact: "Claude Sonnet 4.5 set new records in coding performance, demonstrating exceptional capabilities in software engineering tasks."
+        impact: "Claude Sonnet 4.5 set new records in coding performance, demonstrating exceptional capabilities in software engineering tasks.",
+        link: "https://www.anthropic.com/news/claude-sonnet-4-5"
     },
     {
         date: "November 2025",
         title: "GPT-5.1 Released",
         company: "OpenAI",
         description: "OpenAI releases GPT-5.1 with personalities, faster responses, and improved coding performance, including GPT-5.1-Codex-Max for complex coding tasks.",
-        impact: "GPT-5.1 introduced customizable AI personalities and enhanced coding capabilities, making AI more versatile and useful for specialized tasks."
+        impact: "GPT-5.1 introduced customizable AI personalities and enhanced coding capabilities, making AI more versatile and useful for specialized tasks.",
+        link: "https://openai.com/"
     },
     {
         date: "November 2025",
         title: "Gemini 3 Released",
         company: "Google",
         description: "Google releases Gemini 3 (Pro & DeepThink), a frontier model family with powerful multimodal reasoning, agentic abilities, and large context windows.",
-        impact: "Gemini 3 represented Google's most advanced AI model, pushing the boundaries of what AI systems could accomplish across multiple modalities."
+        impact: "Gemini 3 represented Google's most advanced AI model, pushing the boundaries of what AI systems could accomplish across multiple modalities.",
+        link: "https://blog.google/technology/ai/google-gemini-ai"
     },
     {
         date: "November 2025",
         title: "Claude Opus 4.5 Released",
         company: "Anthropic",
         description: "Anthropic releases Claude Opus 4.5 with major upgrades for coding and workplace tasks, featuring Infinite Chats that eliminate context limit errors.",
-        impact: "Claude Opus 4.5's Infinite Chats feature removed practical limitations on conversation length, enabling truly extended AI interactions."
+        impact: "Claude Opus 4.5's Infinite Chats feature removed practical limitations on conversation length, enabling truly extended AI interactions.",
+        link: "https://www.anthropic.com/news/claude-opus-4-5"
     },
     {
         date: "December 2025",
         title: "Stability AI 3.0 Released",
         company: "Stability AI",
         description: "Stability AI releases Stable Diffusion 3.0 with major improvements in image quality, prompt adherence, and text rendering within images.",
-        impact: "Stable Diffusion 3.0 brought the open-source image generation model closer to proprietary competitors in quality and capabilities."
+        impact: "Stable Diffusion 3.0 brought the open-source image generation model closer to proprietary competitors in quality and capabilities.",
+        link: "https://stability.ai/news/stable-diffusion-3"
     },
     {
         date: "December 2025",
         title: "Microsoft Copilot Pro Max",
         company: "Microsoft",
         description: "Microsoft launches Copilot Pro Max tier with advanced AI capabilities, priority access to GPT-5, and extended context windows for enterprise users.",
-        impact: "Copilot Pro Max targeted power users and enterprises, offering the most advanced AI assistance integrated across Microsoft's ecosystem."
+        impact: "Copilot Pro Max targeted power users and enterprises, offering the most advanced AI assistance integrated across Microsoft's ecosystem.",
+        link: "https://www.microsoft.com/en-us/microsoft-copilot"
     },
     {
         date: "December 2025",
         title: "Adobe Firefly 3.0 Released",
         company: "Adobe",
         description: "Adobe releases Firefly 3.0 with video generation capabilities, advanced style transfer, and improved integration across Creative Cloud apps.",
-        impact: "Firefly 3.0's video generation brought Adobe into competition with Sora and other video AI tools, while maintaining commercial licensing."
+        impact: "Firefly 3.0's video generation brought Adobe into competition with Sora and other video AI tools, while maintaining commercial licensing.",
+        link: "https://www.adobe.com/products/firefly.html"
     },
     {
         date: "January 2026",
         title: "Gemini Personal Intelligence",
         company: "Google",
         description: "Google launches Personal Intelligence for Gemini, allowing it to access Gmail, Photos, YouTube, and Search history to provide personalized assistance with privacy safeguards.",
-        impact: "Personal Intelligence marked a major step toward true AI personal assistants, capable of understanding individual context and preferences."
+        impact: "Personal Intelligence marked a major step toward true AI personal assistants, capable of understanding individual context and preferences.",
+        link: "https://blog.google/products/gemini"
     },
     {
         date: "January 2026",
         title: "GPT-5 Pro Released",
         company: "OpenAI",
         description: "OpenAI releases GPT-5 Pro with enhanced reasoning capabilities, better code generation, and improved multimodal understanding, setting new benchmarks across AI tasks.",
-        impact: "GPT-5 Pro demonstrated a significant leap in AI capabilities, particularly in complex problem-solving and scientific reasoning."
+        impact: "GPT-5 Pro demonstrated a significant leap in AI capabilities, particularly in complex problem-solving and scientific reasoning.",
+        link: "https://openai.com/"
     },
     {
         date: "January 2026",
         title: "Microsoft Copilot Vision",
         company: "Microsoft",
         description: "Microsoft launches Copilot Vision with advanced computer vision capabilities integrated across Office, Windows, and Edge browser for real-time visual understanding.",
-        impact: "Copilot Vision brought AI visual understanding to productivity tools, enabling users to interact with content through natural language and images."
+        impact: "Copilot Vision brought AI visual understanding to productivity tools, enabling users to interact with content through natural language and images.",
+        link: "https://www.microsoft.com/en-us/microsoft-copilot"
     },
     {
         date: "February 2026",
         title: "Meta Llama 4 Released",
         company: "Meta",
         description: "Meta releases Llama 4, an open-source model family with 405B parameters, multimodal capabilities, and state-of-the-art performance rivaling proprietary models.",
-        impact: "Llama 4 democratized access to frontier AI capabilities, enabling developers worldwide to build advanced AI applications without vendor lock-in."
+        impact: "Llama 4 democratized access to frontier AI capabilities, enabling developers worldwide to build advanced AI applications without vendor lock-in.",
+        link: "https://ai.meta.com/blog"
     },
     {
         date: "February 2026",
         title: "Anthropic Claude Artifacts",
         company: "Anthropic",
         description: "Anthropic introduces Claude Artifacts, allowing Claude to create, preview, and iterate on code, documents, and designs in a dedicated workspace alongside conversations.",
-        impact: "Claude Artifacts transformed AI interactions from pure conversation to collaborative creation, enabling real-time co-creation of complex projects."
+        impact: "Claude Artifacts transformed AI interactions from pure conversation to collaborative creation, enabling real-time co-creation of complex projects.",
+        link: "https://www.anthropic.com/news/artifacts"
     },
     {
         date: "February 2026",
         title: "Google NotebookLM Audio Overview",
         company: "Google",
         description: "Google enhances NotebookLM with AI-generated audio overviews that transform documents into engaging podcast-style conversations between AI hosts.",
-        impact: "NotebookLM's Audio Overview feature revolutionized how people consume and understand complex documents through AI-generated audio narratives."
+        impact: "NotebookLM's Audio Overview feature revolutionized how people consume and understand complex documents through AI-generated audio narratives.",
+        link: "https://blog.google/technology/ai/notebooklm-audio-overviews"
     },
     {
         date: "February 2026",
         title: "OpenAI Operator Released",
         company: "OpenAI",
         description: "OpenAI launches Operator, an AI agent that can browse the web and perform tasks autonomously on behalf of users, including booking, shopping, and research.",
-        impact: "Operator marked OpenAI's entry into autonomous AI agents, enabling AI to take actions in the real world rather than just generating responses."
+        impact: "Operator marked OpenAI's entry into autonomous AI agents, enabling AI to take actions in the real world rather than just generating responses.",
+        link: "https://openai.com/index/introducing-operator"
     },
     {
         date: "February 2026",
         title: "Midjourney v7 Released",
         company: "Midjourney",
         description: "Midjourney releases version 7 with dramatic improvements in photorealism, text rendering, and prompt understanding, plus new personalization features.",
-        impact: "Midjourney v7 set a new bar for AI image generation quality, with near-perfect photorealism and the ability to generate accurate text within images."
+        impact: "Midjourney v7 set a new bar for AI image generation quality, with near-perfect photorealism and the ability to generate accurate text within images.",
+        link: "https://www.midjourney.com/news"
     }
 ].reverse(); // Reverse timeline to show most recent events first
 
