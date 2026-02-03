@@ -1,6 +1,96 @@
 // Timeline Events Data
 const timelineEvents = [
     {
+        date: "Q2 2027 (Planned)",
+        title: "GPT-6 Expected",
+        company: "OpenAI",
+        description: "OpenAI is expected to release GPT-6, potentially featuring human-level AGI capabilities, multi-step reasoning, and advanced agentic behavior across multiple domains.",
+        impact: "GPT-6 could mark a significant milestone toward artificial general intelligence, with capabilities approaching or matching human expertise across diverse tasks.",
+        link: "https://openai.com/",
+        eventType: "planned"
+    },
+    {
+        date: "Late 2027 (Planned)",
+        title: "Gemini 4.0 Announced",
+        company: "Google",
+        description: "Google is expected to announce Gemini 4.0 with advanced multimodal capabilities, real-time learning, and enhanced integration across all Google services and hardware.",
+        impact: "Gemini 4.0 could revolutionize how AI integrates with everyday devices, enabling truly ambient and context-aware computing experiences.",
+        link: "https://blog.google/",
+        eventType: "planned"
+    },
+    {
+        date: "Mid 2027 (Planned)",
+        title: "Meta Llama 5 Release",
+        company: "Meta",
+        description: "Meta plans to release Llama 5, an open-source model expected to exceed 1 trillion parameters with advanced reasoning, coding, and multimodal capabilities.",
+        impact: "Llama 5 could democratize access to frontier AI capabilities, enabling developers worldwide to build sophisticated AI applications without relying on proprietary models.",
+        link: "https://ai.meta.com/",
+        eventType: "planned"
+    },
+    {
+        date: "Q3 2026 (Planned)",
+        title: "Claude Opus 5 Expected",
+        company: "Anthropic",
+        description: "Anthropic is expected to release Claude Opus 5, featuring enhanced constitutional AI principles, longer context windows (up to 1M tokens), and improved safety mechanisms.",
+        impact: "Claude Opus 5 could set new standards for AI safety and alignment while maintaining state-of-the-art performance across reasoning and creative tasks.",
+        link: "https://www.anthropic.com/",
+        eventType: "planned"
+    },
+    {
+        date: "Q2 2026 (Planned)",
+        title: "Sora Full Public Release",
+        company: "OpenAI",
+        description: "OpenAI plans to release Sora to the general public with extended video generation capabilities (up to 60 seconds), better motion consistency, and creative controls.",
+        impact: "Sora's public release could transform video content creation, enabling creators to produce high-quality video content from text descriptions at scale.",
+        link: "https://openai.com/sora",
+        eventType: "planned"
+    },
+    {
+        date: "Mid 2026 (Planned)",
+        title: "Apple Intelligence 2.0",
+        company: "Apple",
+        description: "Apple is expected to unveil Intelligence 2.0 with on-device AI capabilities, Siri enhancements, and deep integration across iOS, iPadOS, and macOS ecosystems.",
+        impact: "Apple's AI push could bring advanced AI capabilities to billions of devices with a focus on privacy and on-device processing.",
+        link: "https://www.apple.com/",
+        eventType: "planned"
+    },
+    {
+        date: "Q4 2026 (Planned)",
+        title: "Microsoft Copilot 3.0",
+        company: "Microsoft",
+        description: "Microsoft plans to launch Copilot 3.0 with autonomous agent capabilities, advanced workflow automation, and deeper integration across Microsoft 365 and Azure services.",
+        impact: "Copilot 3.0 could transform enterprise productivity by enabling AI agents to handle complex multi-step tasks autonomously.",
+        link: "https://www.microsoft.com/copilot",
+        eventType: "planned"
+    },
+    {
+        date: "Late 2026 (Planned)",
+        title: "Midjourney v8 with Real-Time Generation",
+        company: "Midjourney",
+        description: "Midjourney is expected to release v8 with real-time image generation, 3D model creation, and advanced style consistency features for professional workflows.",
+        impact: "Midjourney v8 could bridge the gap between AI-generated and professional-grade content, enabling real-time creative collaboration.",
+        link: "https://www.midjourney.com/",
+        eventType: "planned"
+    },
+    {
+        date: "Q3 2026 (Planned)",
+        title: "Stability AI 4.0 with Video",
+        company: "Stability AI",
+        description: "Stability AI plans to release Stable Diffusion 4.0 with integrated video generation, 3D asset creation, and improved photorealism for both images and animations.",
+        impact: "Stable Diffusion 4.0 could maintain open-source leadership in generative AI while expanding into video and 3D content creation.",
+        link: "https://stability.ai/",
+        eventType: "planned"
+    },
+    {
+        date: "March 2026 (Planned)",
+        title: "Google I/O 2026 AI Announcements",
+        company: "Google",
+        description: "Google I/O 2026 is expected to showcase major AI updates including Gemini enhancements, new AI hardware, and expanded AI integration across Android and Search.",
+        impact: "Google I/O 2026 could reveal Google's next major push in AI hardware and software integration for consumer and enterprise markets.",
+        link: "https://io.google/2026",
+        eventType: "planned"
+    },
+    {
         date: "June 2018",
         title: "GPT-1 Released",
         company: "OpenAI",
@@ -549,7 +639,8 @@ const logoMap = {
     'Meta': './assets/logos/meta.png',
     'Stability AI': './assets/logos/stabilityai.png',
     'Midjourney': './assets/logos/midjourney.png',
-    'Ollama': './assets/logos/ollama.png'
+    'Ollama': './assets/logos/ollama.png',
+    'Apple': 'https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png'
 };
 
 // Product-specific logos (for tools that might need custom logos)
@@ -675,9 +766,27 @@ function initYearFilters() {
 // Initialize the timeline
 function initTimeline() {
     const timelineContainer = document.getElementById('timelineEvents');
+    const plannedEventsGrid = document.getElementById('plannedEventsGrid');
+    const plannedCount = document.getElementById('plannedCount');
+    
     timelineContainer.innerHTML = '';
-
-    timelineEvents.forEach((event, index) => {
+    plannedEventsGrid.innerHTML = '';
+    
+    // Separate planned and historical events
+    const plannedEvents = timelineEvents.filter(event => event.eventType === 'planned');
+    const historicalEvents = timelineEvents.filter(event => event.eventType !== 'planned');
+    
+    // Update planned count
+    plannedCount.textContent = plannedEvents.length;
+    
+    // Render planned events in the grid
+    plannedEvents.forEach((event, index) => {
+        const plannedCard = createPlannedEventCard(event, index);
+        plannedEventsGrid.appendChild(plannedCard);
+    });
+    
+    // Render historical events in timeline
+    historicalEvents.forEach((event, index) => {
         const eventElement = createEventElement(event, index);
         timelineContainer.appendChild(eventElement);
     });
@@ -686,12 +795,57 @@ function initTimeline() {
     observeEvents();
 }
 
+// Create planned event card
+function createPlannedEventCard(event, index) {
+    const card = document.createElement('div');
+    card.className = 'planned-event-card';
+    card.style.animationDelay = `${index * 0.1}s`;
+    
+    const logoUrl = getLogoUrl(event);
+    
+    card.innerHTML = `
+        <div class="planned-event-header">
+            <div class="logo-placeholder"></div>
+            <div class="planned-event-info">
+                <h3>${event.title}</h3>
+                <div class="planned-event-date">${event.date}</div>
+            </div>
+        </div>
+        <div class="planned-event-company">${event.company}</div>
+        <div class="planned-event-description">${event.description}</div>
+    `;
+    
+    // Load logo with fallback
+    const placeholder = card.querySelector('.logo-placeholder');
+    const img = new Image();
+    img.className = 'planned-event-logo';
+    img.alt = `${event.company} logo`;
+    img.src = logoUrl;
+    img.onload = () => {
+        if (placeholder) placeholder.replaceWith(img);
+    };
+    img.onerror = () => {
+        const initials = document.createElement('div');
+        initials.className = 'planned-event-logo initials';
+        initials.textContent = getInitials(event.company);
+        if (placeholder) placeholder.replaceWith(initials);
+    };
+    
+    // Click to open modal
+    card.addEventListener('click', () => openModal(event));
+    
+    return card;
+}
+
 // Create event element
 function createEventElement(event, index) {
     const eventDiv = document.createElement('div');
     eventDiv.className = 'timeline-event';
     if (event.eventType === 'minor') {
         eventDiv.classList.add('minor-event');
+    }
+    if (event.eventType === 'planned') {
+        eventDiv.dataset.eventType = 'planned';
     }
     eventDiv.dataset.company = event.company;
     const year = extractYear(event.date);
@@ -922,6 +1076,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Clear filters button
     document.getElementById('clearFilters').addEventListener('click', clearFilters);
+
+    // Planned events toggle
+    const plannedToggle = document.getElementById('plannedEventsToggle');
+    const plannedSection = document.getElementById('plannedEventsSection');
+    
+    plannedToggle.addEventListener('click', () => {
+        plannedSection.classList.toggle('collapsed');
+    });
 
     // Modal close
     document.querySelector('.close-modal').addEventListener('click', closeModal);
