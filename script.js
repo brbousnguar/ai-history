@@ -1,6 +1,14 @@
 // Timeline Events Data
 const timelineEvents = [
     {
+        date: "June 2018",
+        title: "GPT-1 Released",
+        company: "OpenAI",
+        description: "OpenAI releases GPT (Generative Pre-trained Transformer), the first model in the GPT series with 117 million parameters, introducing the transformer-based language modeling approach.",
+        impact: "GPT-1 laid the foundation for modern large language models, demonstrating that unsupervised pre-training on large text corpora could produce powerful language understanding.",
+        link: "https://openai.com/research/language-unsupervised"
+    },
+    {
         date: "November 2016",
         title: "Adobe Sensei Launched",
         company: "Adobe",
@@ -546,6 +554,7 @@ const logoMap = {
 
 // Product-specific logos (for tools that might need custom logos)
 const productLogos = {
+    'GPT-1 Released': './assets/logos/openai.png',
     'GPT-3 Released': './assets/logos/openai.png',
     'GPT-4 Released': './assets/logos/openai.png',
     'GPT-4.5 "Orion" Released': './assets/logos/openai.png',
@@ -706,10 +715,10 @@ function createEventElement(event, index) {
                 <div class="event-header-text">
                     <div class="event-date">${event.date}</div>
                     <div class="event-title">${event.title}</div>
-                    <div class="event-company">${event.company}</div>
                 </div>
             </div>
         </div>
+        <div class="event-company">${event.company}</div>
         <div class="event-description">${event.description}</div>
     `;
 
