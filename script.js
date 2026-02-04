@@ -625,7 +625,32 @@ const timelineEvents = [
         description: "OpenAI releases GPT-5.2, a minor update with performance optimizations, reduced latency, and improved API rate limits for developers.",
         impact: "GPT-5.2 focused on refinements and stability improvements, making the model more efficient for production deployments.",
         link: "https://openai.com/",
+    },
+    {
+        date: "June 2025",
+        title: "Midjourney v6 Released",
+        company: "Midjourney",
+        description: "Midjourney releases version 6 with substantial improvements in prompt understanding, faster sampling, and new style controls for professional creators.",
+        impact: "v6 broadened Midjourney's adoption in professional pipelines by improving fidelity, reducing artifacts, and offering advanced style parameters.",
+        link: "https://www.midjourney.com/news/v6",
+        eventType: "major"
+    },
+    {
+        date: "April 2025",
+        title: "Midjourney v6 Alpha Released",
+        company: "Midjourney",
+        description: "Midjourney announces a v6 alpha release for early testers featuring experimental photorealism and a new tokenizer for better prompt-to-image alignment.",
+        impact: "The v6 alpha allowed artists and power users to test bleeding-edge features and provide feedback ahead of the general release.",
+        link: "https://www.midjourney.com/news/v6-alpha",
         eventType: "minor"
+    },
+    {
+        date: "February 2026",
+        title: "Midjourney v7 Released",
+        company: "Midjourney",
+        description: "Midjourney releases version 7 with dramatic improvements in photorealism, text rendering, and prompt understanding, plus new personalization features.",
+        impact: "Midjourney v7 set a new bar for AI image generation quality, with near-perfect photorealism and the ability to generate accurate text within images.",
+        link: "https://www.midjourney.com/news"
     }
 ].reverse(); // Reverse timeline to show most recent events first
 
@@ -689,6 +714,8 @@ const productLogos = {
     'Midjourney Open Beta': './assets/logos/midjourney.png',
     'Midjourney v5': './assets/logos/midjourney.png',
     'Midjourney Web App Launched': './assets/logos/midjourney.png',
+    'Midjourney v6 Alpha Released': './assets/logos/midjourney.png',
+    'Midjourney v6 Released': './assets/logos/midjourney.png',
     'Midjourney v7 Released': './assets/logos/midjourney.png',
     'Adobe Sensei Launched': './assets/logos/adobe.png',
     'Adobe Firefly Beta Launched': './assets/logos/adobe.png',
