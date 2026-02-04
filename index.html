@@ -116,6 +116,20 @@
             <div class="timeline-events" id="timelineEvents">
                 <!-- Events will be dynamically inserted here -->
             </div>
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <h3>No events found</h3>
+                <p>Try adjusting your filters or search terms</p>
+                <button class="clear-filters-btn" onclick="clearFilters()">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Clear Filters
+                </button>
+            </div>
         </div>
 
         <div class="event-modal" id="eventModal">

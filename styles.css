@@ -150,88 +150,6 @@ header h1 {
     animation: fadeIn 0.8s ease-out;
 }
 
-.search-section {
-    margin-bottom: 1.5rem;
-}
-
-.search-wrapper {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.search-icon {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-secondary);
-    pointer-events: none;
-    transition: color 0.3s ease;
-}
-
-.search-input {
-    width: 100%;
-    padding: 0.875rem 3rem 0.875rem 3rem;
-    background: var(--bg-secondary);
-    border: 2px solid var(--border-color);
-    border-radius: 12px;
-    color: var(--text-primary);
-    font-size: 1rem;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    outline: none;
-}
-
-.search-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-}
-
-.search-wrapper:has(.search-input:not(:placeholder-shown)) .search-clear,
-.search-wrapper:has(.search-input:focus) .search-clear {
-    display: block;
-}
-
-.search-input::placeholder {
-    color: var(--text-secondary);
-}
-
-.search-clear {
-    position: absolute;
-    right: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    padding: 0.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.search-clear:hover {
-    background: var(--bg-color);
-    color: var(--text-primary);
-}
-
-.results-info {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    min-height: 1.5rem;
-}
-
-.results-info.has-results {
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
 .filter-bar {
     display: flex;
     align-items: flex-end;
@@ -430,6 +348,39 @@ header h1 {
 .timeline-container {
     position: relative;
     padding: 2rem 0;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.empty-state svg {
+    color: var(--text-secondary);
+    opacity: 0.5;
+    margin-bottom: 1.5rem;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.empty-state p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.empty-state .clear-filters-btn {
+    margin-top: 0.5rem;
 }
 
 /* Planned Events Section */

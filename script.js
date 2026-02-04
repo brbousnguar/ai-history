@@ -643,14 +643,6 @@ const timelineEvents = [
         impact: "The v6 alpha allowed artists and power users to test bleeding-edge features and provide feedback ahead of the general release.",
         link: "https://www.midjourney.com/news/v6-alpha",
         eventType: "minor"
-    },
-    {
-        date: "February 2026",
-        title: "Midjourney v7 Released",
-        company: "Midjourney",
-        description: "Midjourney releases version 7 with dramatic improvements in photorealism, text rendering, and prompt understanding, plus new personalization features.",
-        impact: "Midjourney v7 set a new bar for AI image generation quality, with near-perfect photorealism and the ability to generate accurate text within images.",
-        link: "https://www.midjourney.com/news"
     }
 ].reverse(); // Reverse timeline to show most recent events first
 
@@ -946,6 +938,7 @@ let currentFilters = {
 // Apply filters
 function applyFilters() {
     const events = document.querySelectorAll('.timeline-event');
+    const emptyState = document.getElementById('emptyState');
     let visibleCount = 0;
     const searchTerm = currentFilters.search.toLowerCase().trim();
     
@@ -973,6 +966,15 @@ function applyFilters() {
             event.classList.add('hidden');
         }
     });
+    
+    // Show/hide empty state
+    if (emptyState) {
+        if (visibleCount === 0 && events.length > 0) {
+            emptyState.style.display = 'flex';
+        } else {
+            emptyState.style.display = 'none';
+        }
+    }
 }
 
 // Filter events by company or year
