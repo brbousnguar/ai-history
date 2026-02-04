@@ -875,6 +875,9 @@ function createEventElement(event, index) {
         eventDiv.dataset.eventType = 'planned';
     }
     eventDiv.dataset.company = event.company;
+    eventDiv.dataset.title = event.title;
+    eventDiv.dataset.description = event.description;
+    eventDiv.dataset.date = event.date;
     const year = extractYear(event.date);
     if (year) {
         eventDiv.dataset.year = year;
@@ -936,22 +939,34 @@ function createEventElement(event, index) {
 // Current filter state
 let currentFilters = {
     company: 'all',
-    year: 'all'
+    year: 'all',
+    search: ''
 };
 
 // Apply filters
 function applyFilters() {
     const events = document.querySelectorAll('.timeline-event');
     let visibleCount = 0;
+    const searchTerm = currentFilters.search.toLowerCase().trim();
     
     events.forEach(event => {
         const eventCompany = event.dataset.company;
         const eventYear = event.dataset.year;
+        const eventTitle = event.dataset.title?.toLowerCase() || '';
+        const eventDescription = event.dataset.description?.toLowerCase() || '';
+        const eventDate = event.dataset.date?.toLowerCase() || '';
         
         const companyMatch = currentFilters.company === 'all' || eventCompany === currentFilters.company;
         const yearMatch = currentFilters.year === 'all' || eventYear === currentFilters.year;
         
-        if (companyMatch && yearMatch) {
+        // Search matches title, description, company, or date
+        const searchMatch = searchTerm.length === 0 || 
+            eventTitle.includes(searchTerm) || 
+            eventDescription.includes(searchTerm) ||
+            eventCompany.toLowerCase().includes(searchTerm) ||
+            eventDate.includes(searchTerm);
+        
+        if (companyMatch && yearMatch && searchMatch) {
             event.classList.remove('hidden');
             visibleCount++;
         } else {
@@ -970,9 +985,12 @@ function setFilter(filterType, value) {
 function clearFilters() {
     currentFilters.company = 'all';
     currentFilters.year = 'all';
+    currentFilters.search = '';
     
     document.getElementById('companyFilter').value = 'all';
     document.getElementById('yearFilter').value = 'all';
+    document.getElementById('searchFilter').value = '';
+    document.getElementById('clearSearch').style.display = 'none';
     
     applyFilters();
 }
@@ -1103,6 +1121,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Clear filters button
     document.getElementById('clearFilters').addEventListener('click', clearFilters);
+
+    // Search filter input
+    const searchFilter = document.getElementById('searchFilter');
+    const clearSearchBtn = document.getElementById('clearSearch');
+    
+    searchFilter.addEventListener('input', (e) => {
+        const searchValue = e.target.value;
+        currentFilters.search = searchValue;
+        
+        // Show/hide clear button
+        if (searchValue.length > 0) {
+            clearSearchBtn.style.display = 'flex';
+        } else {
+            clearSearchBtn.style.display = 'none';
+        }
+        
+        // Apply filter after 2 characters
+        if (searchValue.length >= 2 || searchValue.length === 0) {
+            applyFilters();
+        }
+    });
+    
+    // Clear search button
+    clearSearchBtn.addEventListener('click', () => {
+        searchFilter.value = '';
+        currentFilters.search = '';
+        clearSearchBtn.style.display = 'none';
+        applyFilters();
+    });
 
     // Planned events toggle
     const plannedToggle = document.getElementById('plannedEventsToggle');
