@@ -28,11 +28,43 @@
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             </button>
-            <h1>AI History Timeline</h1>
-            <p class="subtitle">Explore the milestones that shaped the AI revolution</p>
+            <div class="header-content">
+                <div class="header-icon-wrapper">
+                    <svg class="header-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                    <div class="icon-glow"></div>
+                </div>
+                <div class="title-wrapper">
+                    <h1>
+                        <span class="title-main">AI History</span>
+                        <span class="title-accent">Timeline</span>
+                    </h1>
+                    <div class="title-underline"></div>
+                </div>
+            </div>
+            <p class="subtitle">
+                <svg class="subtitle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                Explore the milestones that shaped the AI revolution
+            </p>
+            <div class="header-decoration"></div>
         </header>
 
         <div class="controls">
+            <!-- View Options -->
+            <div class="view-options">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="showMinorEvents" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Show Minor Events</span>
+                </label>
+            </div>
             <div class="filter-bar">
                 <div class="filter-group">
                     <label for="searchFilter" class="filter-label">Search</label>
@@ -87,6 +119,8 @@
                     Clear Filters
                 </button>
             </div>
+            <!-- Active Filter Badges -->
+            <div class="active-filters" id="activeFilters"></div>
         </div>
 
         <!-- Planned Events Section -->

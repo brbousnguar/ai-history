@@ -796,7 +796,7 @@ function initTimeline() {
     const historicalEvents = timelineEvents.filter(event => event.eventType !== 'planned');
     
     // Update planned count
-    plannedCount.textContent = plannedEvents.length;
+    if (plannedCount) plannedCount.textContent = plannedEvents.length;
     
     // Render planned events in the grid
     plannedEvents.forEach((event, index) => {
@@ -939,6 +939,7 @@ let currentFilters = {
 function applyFilters() {
     const events = document.querySelectorAll('.timeline-event');
     const emptyState = document.getElementById('emptyState');
+    const showMinorEvents = document.getElementById('showMinorEvents')?.checked ?? true;
     let visibleCount = 0;
     const searchTerm = currentFilters.search.toLowerCase().trim();
     
@@ -948,9 +949,11 @@ function applyFilters() {
         const eventTitle = event.dataset.title?.toLowerCase() || '';
         const eventDescription = event.dataset.description?.toLowerCase() || '';
         const eventDate = event.dataset.date?.toLowerCase() || '';
+        const isMinorEvent = event.classList.contains('minor-event');
         
         const companyMatch = currentFilters.company === 'all' || eventCompany === currentFilters.company;
         const yearMatch = currentFilters.year === 'all' || eventYear === currentFilters.year;
+        const minorEventMatch = showMinorEvents || !isMinorEvent;
         
         // Search matches title, description, company, or date
         const searchMatch = searchTerm.length === 0 || 
@@ -959,7 +962,7 @@ function applyFilters() {
             eventCompany.toLowerCase().includes(searchTerm) ||
             eventDate.includes(searchTerm);
         
-        if (companyMatch && yearMatch && searchMatch) {
+        if (companyMatch && yearMatch && searchMatch && minorEventMatch) {
             event.classList.remove('hidden');
             visibleCount++;
         } else {
@@ -975,12 +978,91 @@ function applyFilters() {
             emptyState.style.display = 'none';
         }
     }
+    
+    // Update active filter badges
+    updateActiveFilters();
 }
 
 // Filter events by company or year
 function setFilter(filterType, value) {
     currentFilters[filterType] = value;
     applyFilters();
+    
+    // Smooth scroll to first visible event if year filter is selected
+    if (filterType === 'year' && value !== 'all') {
+        setTimeout(() => {
+            const firstVisible = document.querySelector('.timeline-event:not(.hidden)');
+            if (firstVisible) {
+                firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 100);
+    }
+}
+
+// Update active filter badges
+function updateActiveFilters() {
+    const activeFiltersContainer = document.getElementById('activeFilters');
+    if (!activeFiltersContainer) return;
+    
+    activeFiltersContainer.innerHTML = '';
+    const badges = [];
+    
+    if (currentFilters.company !== 'all') {
+        badges.push({
+            type: 'company',
+            label: currentFilters.company,
+            value: currentFilters.company
+        });
+    }
+    
+    if (currentFilters.year !== 'all') {
+        badges.push({
+            type: 'year',
+            label: currentFilters.year,
+            value: currentFilters.year
+        });
+    }
+    
+    if (currentFilters.search.trim().length > 0) {
+        badges.push({
+            type: 'search',
+            label: `"${currentFilters.search}"`,
+            value: ''
+        });
+    }
+    
+    badges.forEach(badge => {
+        const badgeEl = document.createElement('div');
+        badgeEl.className = 'active-filter-badge';
+        badgeEl.innerHTML = `
+            <span class="badge-label">${badge.type === 'company' ? 'Company' : badge.type === 'year' ? 'Year' : 'Search'}: ${badge.label}</span>
+            <button class="badge-remove" data-type="${badge.type}" data-value="${badge.value}">
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                    <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        `;
+        activeFiltersContainer.appendChild(badgeEl);
+    });
+    
+    // Add click handlers for badge removal
+    activeFiltersContainer.querySelectorAll('.badge-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const type = btn.dataset.type;
+            if (type === 'company') {
+                document.getElementById('companyFilter').value = 'all';
+                currentFilters.company = 'all';
+            } else if (type === 'year') {
+                document.getElementById('yearFilter').value = 'all';
+                currentFilters.year = 'all';
+            } else if (type === 'search') {
+                document.getElementById('searchFilter').value = '';
+                currentFilters.search = '';
+                document.getElementById('clearSearch').style.display = 'none';
+            }
+            applyFilters();
+        });
+    });
 }
 
 // Clear all filters
@@ -1123,6 +1205,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Clear filters button
     document.getElementById('clearFilters').addEventListener('click', clearFilters);
+    
+    // Minor events toggle
+    const showMinorEventsToggle = document.getElementById('showMinorEvents');
+    if (showMinorEventsToggle) {
+        showMinorEventsToggle.addEventListener('change', () => {
+            applyFilters();
+        });
+    }
 
     // Search filter input
     const searchFilter = document.getElementById('searchFilter');
