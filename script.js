@@ -71,11 +71,53 @@ const timelineEvents = [
         impact: "Stable Diffusion democratized AI image generation, enabling millions of developers and creators to build with the technology."
     },
     {
+        date: "August 2022",
+        title: "DreamStudio Launched",
+        company: "Stability AI",
+        description: "Stability AI launches DreamStudio, a user-friendly web interface for Stable Diffusion, making AI image generation accessible without technical setup.",
+        impact: "DreamStudio provided an easy entry point for non-technical users to explore Stable Diffusion, expanding its reach beyond developers."
+    },
+    {
+        date: "October 2022",
+        title: "Stability AI Raises $101M",
+        company: "Stability AI",
+        description: "Stability AI secures $101 million in funding led by Coatue and Lightspeed Venture Partners, with participation from O'Shaughnessy Ventures.",
+        impact: "The funding validated Stability AI's open-source approach and provided resources to further develop generative AI technologies."
+    },
+    {
+        date: "October 2022",
+        title: "Stable Diffusion 1.5 Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Diffusion 1.5 with improved image quality, better prompt understanding, and enhanced inpainting capabilities.",
+        impact: "Version 1.5 became the most widely used Stable Diffusion model, forming the foundation for countless community tools and applications."
+    },
+    {
+        date: "November 2022",
+        title: "Stable Diffusion 2.0 Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Diffusion 2.0 with major improvements including higher resolution (768x768), new text encoder, and depth-to-image and inpainting models.",
+        impact: "SD 2.0 represented a significant architectural upgrade, though the community remained split between 1.5 and 2.0 due to different strengths."
+    },
+    {
         date: "November 2022",
         title: "ChatGPT Launched",
         company: "OpenAI",
         description: "OpenAI releases ChatGPT to the public, a conversational AI that quickly becomes the fastest-growing consumer application in history.",
         impact: "ChatGPT brought AI to mainstream consciousness, reaching 100 million users in just 2 months and transforming how people interact with AI."
+    },
+    {
+        date: "December 2022",
+        title: "Stable Diffusion 2.1 Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Diffusion 2.1, refining version 2.0 with improved image quality and better handling of complex prompts.",
+        impact: "SD 2.1 addressed many concerns from the 2.0 release, improving model performance and bringing it closer to community expectations."
+    },
+    {
+        date: "February 2023",
+        title: "ControlNet for Stable Diffusion",
+        company: "Stability AI",
+        description: "ControlNet integration brings precise control over Stable Diffusion generation using edge detection, depth maps, pose estimation, and other conditioning methods.",
+        impact: "ControlNet revolutionized AI image generation by giving users unprecedented control over composition and structure, becoming essential for professional workflows."
     },
     {
         date: "February 2023",
@@ -113,6 +155,20 @@ const timelineEvents = [
         impact: "Claude introduced a new approach to AI safety and ethics, emphasizing responsible AI development and user trust."
     },
     {
+        date: "April 2023",
+        title: "SDXL Beta Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Diffusion XL (SDXL) in beta, featuring a larger model with improved photorealism, better text rendering, and native 1024x1024 resolution.",
+        impact: "SDXL beta showcased the next generation of Stable Diffusion, demonstrating significant improvements in image quality and detail."
+    },
+    {
+        date: "April 2023",
+        title: "Stable Assistant Announced",
+        company: "Stability AI",
+        description: "Stability AI announces Stable Assistant, an AI chatbot combining conversational AI with image generation capabilities.",
+        impact: "Stable Assistant showed Stability AI's ambition to expand beyond image generation into multimodal AI assistants."
+    },
+    {
         date: "May 2023",
         title: "LLaMA Released",
         company: "Meta",
@@ -127,6 +183,13 @@ const timelineEvents = [
         impact: "Claude 2 strengthened Anthropic's position in the AI market and demonstrated continued focus on safe AI development."
     },
     {
+        date: "July 2023",
+        title: "SDXL 1.0 Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Diffusion XL 1.0, the production version featuring dramatically improved image quality, composition, and face/text generation at 1024x1024 resolution.",
+        impact: "SDXL 1.0 set a new standard for open-source image generation, competing with commercial models while remaining freely available."
+    },
+    {
         date: "September 2023",
         title: "Adobe Firefly 1.0 Released",
         company: "Adobe",
@@ -139,6 +202,20 @@ const timelineEvents = [
         company: "OpenAI",
         description: "OpenAI adds vision capabilities to ChatGPT, allowing it to analyze and discuss images uploaded by users.",
         impact: "This update made ChatGPT multimodal, expanding its use cases to include visual analysis and image-based conversations."
+    },
+    {
+        date: "November 2023",
+        title: "Stable Video Diffusion Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Video Diffusion (SVD), bringing the Stable Diffusion approach to video generation with image-to-video capabilities.",
+        impact: "SVD opened the video generation space to open-source development, enabling researchers and creators to experiment with AI video generation."
+    },
+    {
+        date: "November 2023",
+        title: "Stability AI Partners with AWS",
+        company: "Stability AI",
+        description: "Stability AI announces partnership with Amazon Web Services to make Stable Diffusion models available on AWS, including enterprise support.",
+        impact: "The AWS partnership brought enterprise credibility to Stability AI and made their models more accessible to businesses."
     },
     {
         date: "December 2023",
@@ -156,6 +233,13 @@ const timelineEvents = [
     },
     {
         date: "February 2024",
+        title: "Stable Cascade Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Cascade, a new architecture based on Würstchen that offers faster inference and better training efficiency than previous Stable Diffusion models.",
+        impact: "Stable Cascade demonstrated Stability AI's continued innovation in model architecture, offering improved performance and resource efficiency."
+    },
+    {
+        date: "February 2024",
         title: "Sora Announced",
         company: "OpenAI",
         description: "OpenAI announces Sora, a text-to-video model capable of generating high-quality, coherent video clips from text prompts.",
@@ -170,10 +254,24 @@ const timelineEvents = [
     },
     {
         date: "April 2024",
+        title: "Stable Diffusion 3 Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Diffusion 3, featuring improved text generation in images, better prompt following, and a new Multimodal Diffusion Transformer architecture.",
+        impact: "SD3 represented a major architectural shift using transformer-based diffusion, bringing significant improvements in text rendering and prompt adherence."
+    },
+    {
+        date: "April 2024",
         title: "GPT-4 Turbo Released",
         company: "OpenAI",
         description: "OpenAI releases GPT-4 Turbo with improved performance, lower costs, and updated knowledge cutoff.",
         impact: "GPT-4 Turbo made advanced AI more accessible and cost-effective, enabling broader adoption across industries."
+    },
+    {
+        date: "June 2024",
+        title: "Stable Diffusion 3 Medium Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Diffusion 3 Medium, a 2 billion parameter model offering high-quality image generation with improved efficiency for consumer hardware.",
+        impact: "SD3 Medium made the latest Stable Diffusion technology accessible to users with mid-range hardware, balancing quality and accessibility."
     },
     {
         date: "May 2024",
@@ -202,6 +300,13 @@ const timelineEvents = [
         company: "Midjourney",
         description: "Midjourney launches its official web application, making the service accessible directly through a browser without requiring Discord.",
         impact: "The web app launch marked Midjourney's evolution from a Discord-only service to a standalone platform, making it more accessible to users who preferred web interfaces over Discord."
+    },
+    {
+        date: "October 2024",
+        title: "Stable Diffusion 3.5 Released",
+        company: "Stability AI",
+        description: "Stability AI releases Stable Diffusion 3.5 with three variants (Large, Large Turbo, and Medium), offering improved image quality, faster generation, and better prompt understanding.",
+        impact: "SD 3.5 refined the SD3 architecture with significant quality improvements and introduced turbo models for real-time generation, strengthening Stability AI's competitive position."
     },
     {
         date: "August 2025",
