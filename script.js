@@ -904,10 +904,10 @@ function initTimeline() {
     if (plannedCount) plannedCount.textContent = plannedEvents.length;
     
     // Render planned events in the grid
-    plannedEvents.forEach((event, index) => {
-        const plannedCard = createPlannedEventCard(event, index);
-        plannedEventsGrid.appendChild(plannedCard);
-    });
+        plannedEvents.forEach((event, index) => {
+            const plannedCard = createPlannedEventCard(event, index);
+            plannedEventsGrid.appendChild(plannedCard);
+        });
     
     // Render historical events in timeline
     historicalEvents.forEach((event, index) => {
@@ -955,6 +955,15 @@ function createPlannedEventCard(event, index) {
         if (placeholder) placeholder.replaceWith(initials);
     };
     
+    // Add dataset attributes so planned cards can be filtered
+    card.dataset.eventType = 'planned';
+    card.dataset.company = event.company;
+    card.dataset.title = event.title;
+    card.dataset.description = event.description;
+    card.dataset.date = event.date;
+    const plannedYear = extractYear(event.date);
+    if (plannedYear) card.dataset.year = plannedYear;
+
     // Click to open modal
     card.addEventListener('click', () => openModal(event));
     
@@ -1048,6 +1057,7 @@ function applyFilters() {
     let visibleCount = 0;
     const searchTerm = currentFilters.search.toLowerCase().trim();
     
+    // Filter timeline (historical) events
     events.forEach(event => {
         const eventCompany = event.dataset.company;
         const eventYear = event.dataset.year;
@@ -1074,15 +1084,49 @@ function applyFilters() {
             event.classList.add('hidden');
         }
     });
+
+    // Filter planned (future) events
+    const plannedCards = document.querySelectorAll('.planned-event-card');
+    let visiblePlanned = 0;
+    plannedCards.forEach(card => {
+        const eventCompany = card.dataset.company;
+        const eventYear = card.dataset.year;
+        const eventTitle = card.dataset.title?.toLowerCase() || '';
+        const eventDescription = card.dataset.description?.toLowerCase() || '';
+        const eventDate = card.dataset.date?.toLowerCase() || '';
+
+        const companyMatch = currentFilters.company === 'all' || eventCompany === currentFilters.company;
+        const yearMatch = currentFilters.year === 'all' || eventYear === currentFilters.year;
+
+        const searchMatch = searchTerm.length === 0 ||
+            eventTitle.includes(searchTerm) ||
+            eventDescription.includes(searchTerm) ||
+            (eventCompany && eventCompany.toLowerCase().includes(searchTerm)) ||
+            eventDate.includes(searchTerm);
+
+        if (companyMatch && yearMatch && searchMatch) {
+            card.classList.remove('hidden');
+            visiblePlanned++;
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+
+    visibleCount += visiblePlanned;
     
     // Show/hide empty state
     if (emptyState) {
-        if (visibleCount === 0 && events.length > 0) {
+        const totalRendered = events.length + plannedCards.length;
+        if (visibleCount === 0 && totalRendered > 0) {
             emptyState.style.display = 'flex';
         } else {
             emptyState.style.display = 'none';
         }
     }
+
+    // Update planned count badge to reflect visible planned items
+    const plannedCountEl = document.getElementById('plannedCount');
+    if (plannedCountEl) plannedCountEl.textContent = visiblePlanned;
     
     // Update active filter badges
     updateActiveFilters();
@@ -1092,11 +1136,11 @@ function applyFilters() {
 function setFilter(filterType, value) {
     currentFilters[filterType] = value;
     applyFilters();
-    
-    // Smooth scroll to first visible event if year filter is selected
+
+    // Smooth scroll to first visible event (timeline or planned) if year filter is selected
     if (filterType === 'year' && value !== 'all') {
         setTimeout(() => {
-            const firstVisible = document.querySelector('.timeline-event:not(.hidden)');
+            const firstVisible = document.querySelector('.timeline-event:not(.hidden), .planned-event-card:not(.hidden)');
             if (firstVisible) {
                 firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
@@ -1370,4 +1414,5 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+    
 });
