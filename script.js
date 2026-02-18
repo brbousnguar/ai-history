@@ -1,6 +1,15 @@
 // Timeline Events Data
 const timelineEvents = [
     {
+        date: "October 2025",
+        title: "ChatGPT Apps SDK Released",
+        company: "OpenAI",
+        description: "OpenAI releases the ChatGPT Apps SDK, allowing partners to integrate actions into ChatGPT. For example, Booking.com can expose search, availability checks and booking actions so users can find and reserve accommodations directly within chat (partner auth and secure action flows required).",
+        impact: "Enables direct partner actions inside ChatGPT such as search and booking workflows, improving user experience and reducing context switching.",
+        link: "https://platform.openai.com/docs",
+        eventType: "major"
+    },
+    {
         date: "Q2 2027 (Planned)",
         title: "GPT-6 Expected",
         company: "OpenAI",
@@ -864,6 +873,65 @@ function extractYear(dateString) {
     return match ? match[0] : null;
 }
 
+// Parse various date string formats into a comparable numeric key (YYYYMM)
+function parseEventDate(dateString) {
+    if (!dateString) return 0;
+    // Remove parenthetical notes like (Planned)
+    let s = dateString.replace(/\(.*\)/, '').trim();
+
+    const monthMap = {
+        january: 1, jan: 1,
+        february: 2, feb: 2,
+        march: 3, mar: 3,
+        april: 4, apr: 4,
+        may: 5,
+        june: 6, jun: 6,
+        july: 7, jul: 7,
+        august: 8, aug: 8,
+        september: 9, sep: 9, sept: 9,
+        october: 10, oct: 10,
+        november: 11, nov: 11,
+        december: 12, dec: 12
+    };
+
+    // Month + Year (e.g., "March 2026")
+    const monthYear = s.match(/(January|Jan|February|Feb|March|Mar|April|Apr|May|June|Jun|July|Jul|August|Aug|September|Sept|Sep|October|Oct|November|Nov|December|Dec)\s+(\d{4})/i);
+    if (monthYear) {
+        const month = monthMap[monthYear[1].toLowerCase()];
+        const year = parseInt(monthYear[2], 10);
+        return year * 100 + (month || 12);
+    }
+
+    // Quarter (e.g., Q2 2027)
+    const quarter = s.match(/Q([1-4])\s*(\d{4})/i);
+    if (quarter) {
+        const q = parseInt(quarter[1], 10);
+        const year = parseInt(quarter[2], 10);
+        const month = q * 3; // end of quarter
+        return year * 100 + month;
+    }
+
+    // Early/Mid/Late YEAR or phrases like "Mid 2027"
+    const part = s.match(/(Early|Mid|Late)\s*(\d{4})/i);
+    if (part) {
+        const p = part[1].toLowerCase();
+        const year = parseInt(part[2], 10);
+        let month = 6; // default to mid-year
+        if (p === 'early') month = 3;
+        if (p === 'late') month = 9;
+        return year * 100 + month;
+    }
+
+    // Fallback: just extract year and use month=12
+    const yearOnly = s.match(/(\d{4})/);
+    if (yearOnly) {
+        const year = parseInt(yearOnly[1], 10);
+        return year * 100 + 12;
+    }
+
+    return 0;
+}
+
 // Initialize year filters
 function initYearFilters() {
     const yearSelect = document.getElementById('yearFilter');
@@ -896,7 +964,10 @@ function initTimeline() {
     timelineContainer.innerHTML = '';
     plannedEventsGrid.innerHTML = '';
     
-    // Separate planned and historical events
+    // Sort events newest -> oldest using a normalized date key
+    timelineEvents.sort((a, b) => parseEventDate(b.date) - parseEventDate(a.date));
+
+    // Separate planned and historical events (maintaining sort order)
     const plannedEvents = timelineEvents.filter(event => event.eventType === 'planned');
     const historicalEvents = timelineEvents.filter(event => event.eventType !== 'planned');
     
@@ -1328,10 +1399,14 @@ function toggleTheme() {
     setTheme(newTheme);
 }
 
+// ChatGPT Apps SDK note: the timeline entry below documents the SDK and example integrations (e.g., Booking.com)
+
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme
     initTheme();
+    
+    // ChatGPT Apps SDK is included in the main `timelineEvents` dataset
     
     // Theme toggle button
     const themeToggle = document.getElementById('themeToggle');
@@ -1341,6 +1416,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     initYearFilters();
     initTimeline();
+    // No in-page apps cards — this page documents the SDK and its timeline entry above.
 
     // Company filter select
     document.getElementById('companyFilter').addEventListener('change', (e) => {
