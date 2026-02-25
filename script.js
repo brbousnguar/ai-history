@@ -509,6 +509,14 @@ const timelineEvents = [
         link: "https://blog.google/technology/ai/google-gemini-ai"
     },
     {
+        date: "April 2025",
+        title: "Google ADK Published",
+        company: "Google",
+        description: "Google publishes ADK (Agent Development Kit), a framework to build, orchestrate, and deploy AI agents with tool use, workflows, and multi-agent patterns.",
+        impact: "ADK accelerated agent development by giving teams a structured, production-oriented toolkit for designing and shipping reliable agent systems.",
+        link: "https://google.github.io/adk-docs/"
+    },
+    {
         date: "March 2025",
         title: "Claude Gets Web Search",
         company: "Anthropic",
@@ -986,6 +994,9 @@ function initTimeline() {
         timelineContainer.appendChild(eventElement);
     });
 
+    updateTimelineEventAlignment();
+    updatePlannedSectionVisibility(plannedEvents.length);
+
     // Animate events on scroll
     observeEvents();
 }
@@ -1113,6 +1124,28 @@ function createEventElement(event, index) {
     return eventDiv;
 }
 
+function updateTimelineEventAlignment() {
+    const allEvents = document.querySelectorAll('.timeline-event');
+    allEvents.forEach((event) => {
+        event.classList.remove('timeline-event-left', 'timeline-event-right');
+    });
+
+    const visibleEvents = document.querySelectorAll('.timeline-event:not(.hidden)');
+    visibleEvents.forEach((event, index) => {
+        if (index % 2 === 0) {
+            event.classList.add('timeline-event-left');
+        } else {
+            event.classList.add('timeline-event-right');
+        }
+    });
+}
+
+function updatePlannedSectionVisibility(visiblePlanned) {
+    const plannedSection = document.getElementById('plannedEventsSection');
+    if (!plannedSection) return;
+    plannedSection.classList.toggle('is-empty', visiblePlanned === 0);
+}
+
 // Current filter state
 let currentFilters = {
     company: 'all',
@@ -1124,6 +1157,7 @@ let currentFilters = {
 function applyFilters() {
     const events = document.querySelectorAll('.timeline-event');
     const emptyState = document.getElementById('emptyState');
+    const timelineList = document.getElementById('timelineEvents');
     const showMinorEvents = document.getElementById('showMinorEvents')?.checked ?? true;
     let visibleCount = 0;
     const searchTerm = currentFilters.search.toLowerCase().trim();
@@ -1198,6 +1232,22 @@ function applyFilters() {
     // Update planned count badge to reflect visible planned items
     const plannedCountEl = document.getElementById('plannedCount');
     if (plannedCountEl) plannedCountEl.textContent = visiblePlanned;
+
+    // Hide the planned section when nothing matches
+    updatePlannedSectionVisibility(visiblePlanned);
+
+    // Re-balance visible items on left/right lanes for consistent layout after filtering
+    updateTimelineEventAlignment();
+
+    // Tighten spacing in filtered mode for denser, more consistent results
+    if (timelineList) {
+        const hasActiveFilters =
+            currentFilters.company !== 'all' ||
+            currentFilters.year !== 'all' ||
+            searchTerm.length > 0 ||
+            !showMinorEvents;
+        timelineList.classList.toggle('filtered-view', hasActiveFilters);
+    }
     
     // Update active filter badges
     updateActiveFilters();
@@ -1211,9 +1261,11 @@ function setFilter(filterType, value) {
     // Smooth scroll to first visible event (timeline or planned) if year filter is selected
     if (filterType === 'year' && value !== 'all') {
         setTimeout(() => {
-            const firstVisible = document.querySelector('.timeline-event:not(.hidden), .planned-event-card:not(.hidden)');
+            const firstVisibleTimeline = document.querySelector('.timeline-event:not(.hidden)');
+            const firstVisiblePlanned = document.querySelector('.planned-event-card:not(.hidden)');
+            const firstVisible = firstVisibleTimeline || firstVisiblePlanned;
             if (firstVisible) {
-                firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }, 100);
     }

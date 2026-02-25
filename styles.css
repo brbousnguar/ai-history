@@ -715,6 +715,10 @@ header h1 {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
+.planned-events-section.is-empty {
+    display: none;
+}
+
 .planned-events-header {
     display: flex;
     align-items: center;
@@ -912,6 +916,10 @@ header h1 {
     gap: 3rem;
 }
 
+.timeline-events.filtered-view {
+    gap: 1.75rem;
+}
+
 .timeline-event {
     position: relative;
     display: flex;
@@ -923,18 +931,10 @@ header h1 {
 
 .timeline-event.hidden,
 .planned-event-card.hidden {
-    opacity: 0;
-    transform: scale(0.95);
-    filter: blur(4px);
-    pointer-events: none;
-    max-height: 0;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
+    display: none !important;
 }
 
-
-.timeline-event:nth-child(even) {
+.timeline-event.timeline-event-right {
     flex-direction: row-reverse;
 }
 
@@ -980,12 +980,17 @@ header h1 {
     transform: scaleX(1);
 }
 
-.timeline-event:nth-child(even) .timeline-event-content {
+.timeline-event.timeline-event-right .timeline-event-content {
     margin-left: auto;
 }
 
-.timeline-event:nth-child(odd) .timeline-event-content {
+.timeline-event.timeline-event-left .timeline-event-content {
     margin-right: auto;
+}
+
+.timeline-event,
+.planned-event-card {
+    scroll-margin-top: 100px;
 }
 
 /* Minor Event Styles */
