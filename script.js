@@ -646,6 +646,14 @@ const timelineEvents = [
     },
     {
         date: "November 2025",
+        title: "Google Antigravity IDE Launched",
+        company: "Google",
+        description: "Google launches Antigravity IDE in public preview, an AI-powered integrated development environment released concurrently with Gemini 3, supporting Windows, macOS, and Linux.",
+        impact: "Antigravity IDE marked a major shift in software development by providing developers with an advanced, AI-native environment tightly integrated with Gemini models.",
+        link: "https://antigravity.google"
+    },
+    {
+        date: "November 2025",
         title: "Claude Opus 4.5 Released",
         company: "Anthropic",
         description: "Anthropic releases Claude Opus 4.5 with major upgrades for coding and workplace tasks, featuring Infinite Chats that eliminate context limit errors.",
@@ -746,7 +754,42 @@ const timelineEvents = [
         company: "OpenAI",
         description: "OpenAI releases GPT-5.2, a minor update with performance optimizations, reduced latency, and improved API rate limits for developers.",
         impact: "GPT-5.2 focused on refinements and stability improvements, making the model more efficient for production deployments.",
+        link: "https://openai.com/"
+    },
+    {
+        date: "February 5, 2026",
+        title: "GPT-5.3 Codex Released",
+        company: "OpenAI",
+        description: "OpenAI releases GPT-5.3 Codex, a model that notably contributed to its own development, debugging its training and managing its deployment.",
+        impact: "Marked a significant milestone toward self-improving AI systems, with the model actively participating in its own development cycle.",
         link: "https://openai.com/",
+        eventType: "major"
+    },
+    {
+        date: "February 2026",
+        title: "Samsung Galaxy S26 Series",
+        company: "Samsung",
+        description: "Samsung unveils the Galaxy S26 series, its third-generation AI phone, expanding its agentic AI vision with personalized and connected experiences.",
+        impact: "Further embedded agentic AI into consumer hardware and everyday mobile experiences.",
+        link: "https://www.samsung.com/",
+        eventType: "major"
+    },
+    {
+        date: "January 2026",
+        title: "Google Gemini 3 Flash Expansion",
+        company: "Google",
+        description: "Google makes Gemini 3 Flash the default for Google Search to improve speed for multimodal queries, and introduces GenTabs (Disco) as an AI browser agent.",
+        impact: "Deepened the integration of fast, multimodal AI into everyday search and browsing experiences.",
+        link: "https://blog.google/",
+        eventType: "major"
+    },
+    {
+        date: "January 2026",
+        title: "NVIDIA Physical AI Breakthroughs",
+        company: "NVIDIA",
+        description: "At CES 2026, NVIDIA announces a 'ChatGPT moment for physical AI', introducing new robot-specific chips and the Alpamayo Autonomous Driving Platform.",
+        impact: "Accelerated the intersection of AI with robotics and the physical world, bringing advanced AI capabilities to hardware and manufacturing.",
+        eventType: "major"
     },
     {
         date: "June 2025",
@@ -779,7 +822,9 @@ const logoMap = {
     'Stability AI': './assets/logos/stabilityai.png',
     'Midjourney': './assets/logos/midjourney.png',
     'Ollama': './assets/logos/ollama.png',
-    'Apple': 'https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png'
+    'Apple': 'https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png',
+    'Samsung': 'https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg',
+    'NVIDIA': 'https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg'
 };
 
 // Product-specific logos (for tools that might need custom logos)
@@ -944,16 +989,16 @@ function parseEventDate(dateString) {
 function initYearFilters() {
     const yearSelect = document.getElementById('yearFilter');
     const years = new Set();
-    
+
     timelineEvents.forEach(event => {
         const year = extractYear(event.date);
         if (year) {
             years.add(year);
         }
     });
-    
+
     const sortedYears = Array.from(years).sort((a, b) => parseInt(b) - parseInt(a));
-    
+
     // Add year options
     sortedYears.forEach(year => {
         const option = document.createElement('option');
@@ -968,26 +1013,26 @@ function initTimeline() {
     const timelineContainer = document.getElementById('timelineEvents');
     const plannedEventsGrid = document.getElementById('plannedEventsGrid');
     const plannedCount = document.getElementById('plannedCount');
-    
+
     timelineContainer.innerHTML = '';
     plannedEventsGrid.innerHTML = '';
-    
+
     // Sort events newest -> oldest using a normalized date key
     timelineEvents.sort((a, b) => parseEventDate(b.date) - parseEventDate(a.date));
 
     // Separate planned and historical events (maintaining sort order)
     const plannedEvents = timelineEvents.filter(event => event.eventType === 'planned');
     const historicalEvents = timelineEvents.filter(event => event.eventType !== 'planned');
-    
+
     // Update planned count
     if (plannedCount) plannedCount.textContent = plannedEvents.length;
-    
+
     // Render planned events in the grid
-        plannedEvents.forEach((event, index) => {
-            const plannedCard = createPlannedEventCard(event, index);
-            plannedEventsGrid.appendChild(plannedCard);
-        });
-    
+    plannedEvents.forEach((event, index) => {
+        const plannedCard = createPlannedEventCard(event, index);
+        plannedEventsGrid.appendChild(plannedCard);
+    });
+
     // Render historical events in timeline
     historicalEvents.forEach((event, index) => {
         const eventElement = createEventElement(event, index);
@@ -1006,9 +1051,9 @@ function createPlannedEventCard(event, index) {
     const card = document.createElement('div');
     card.className = 'planned-event-card';
     card.style.animationDelay = `${index * 0.1}s`;
-    
+
     const logoUrl = getLogoUrl(event);
-    
+
     card.innerHTML = `
         <div class="planned-event-header">
             <div class="logo-placeholder"></div>
@@ -1020,7 +1065,7 @@ function createPlannedEventCard(event, index) {
         <div class="planned-event-company">${event.company}</div>
         <div class="planned-event-description">${event.description}</div>
     `;
-    
+
     // Load logo with fallback
     const placeholder = card.querySelector('.logo-placeholder');
     const img = new Image();
@@ -1036,7 +1081,7 @@ function createPlannedEventCard(event, index) {
         initials.textContent = getInitials(event.company);
         if (placeholder) placeholder.replaceWith(initials);
     };
-    
+
     // Add dataset attributes so planned cards can be filtered
     card.dataset.eventType = 'planned';
     card.dataset.company = event.company;
@@ -1048,7 +1093,7 @@ function createPlannedEventCard(event, index) {
 
     // Click to open modal
     card.addEventListener('click', () => openModal(event));
-    
+
     return card;
 }
 
@@ -1078,7 +1123,7 @@ function createEventElement(event, index) {
     const content = document.createElement('div');
     content.className = 'timeline-event-content';
     const logoUrl = getLogoUrl(event);
-    
+
     // Add minor event badge if applicable
     const minorBadge = event.eventType === 'minor' ? '<span class="minor-badge">Minor Update</span>' : '';
 
@@ -1161,7 +1206,7 @@ function applyFilters() {
     const showMinorEvents = document.getElementById('showMinorEvents')?.checked ?? true;
     let visibleCount = 0;
     const searchTerm = currentFilters.search.toLowerCase().trim();
-    
+
     // Filter timeline (historical) events
     events.forEach(event => {
         const eventCompany = event.dataset.company;
@@ -1170,18 +1215,18 @@ function applyFilters() {
         const eventDescription = event.dataset.description?.toLowerCase() || '';
         const eventDate = event.dataset.date?.toLowerCase() || '';
         const isMinorEvent = event.classList.contains('minor-event');
-        
+
         const companyMatch = currentFilters.company === 'all' || eventCompany === currentFilters.company;
         const yearMatch = currentFilters.year === 'all' || eventYear === currentFilters.year;
         const minorEventMatch = showMinorEvents || !isMinorEvent;
-        
+
         // Search matches title, description, company, or date
-        const searchMatch = searchTerm.length === 0 || 
-            eventTitle.includes(searchTerm) || 
+        const searchMatch = searchTerm.length === 0 ||
+            eventTitle.includes(searchTerm) ||
             eventDescription.includes(searchTerm) ||
             eventCompany.toLowerCase().includes(searchTerm) ||
             eventDate.includes(searchTerm);
-        
+
         if (companyMatch && yearMatch && searchMatch && minorEventMatch) {
             event.classList.remove('hidden');
             visibleCount++;
@@ -1218,7 +1263,7 @@ function applyFilters() {
     });
 
     visibleCount += visiblePlanned;
-    
+
     // Show/hide empty state
     if (emptyState) {
         const totalRendered = events.length + plannedCards.length;
@@ -1248,7 +1293,7 @@ function applyFilters() {
             !showMinorEvents;
         timelineList.classList.toggle('filtered-view', hasActiveFilters);
     }
-    
+
     // Update active filter badges
     updateActiveFilters();
 }
@@ -1275,10 +1320,10 @@ function setFilter(filterType, value) {
 function updateActiveFilters() {
     const activeFiltersContainer = document.getElementById('activeFilters');
     if (!activeFiltersContainer) return;
-    
+
     activeFiltersContainer.innerHTML = '';
     const badges = [];
-    
+
     if (currentFilters.company !== 'all') {
         badges.push({
             type: 'company',
@@ -1286,7 +1331,7 @@ function updateActiveFilters() {
             value: currentFilters.company
         });
     }
-    
+
     if (currentFilters.year !== 'all') {
         badges.push({
             type: 'year',
@@ -1294,7 +1339,7 @@ function updateActiveFilters() {
             value: currentFilters.year
         });
     }
-    
+
     if (currentFilters.search.trim().length > 0) {
         badges.push({
             type: 'search',
@@ -1302,7 +1347,7 @@ function updateActiveFilters() {
             value: ''
         });
     }
-    
+
     badges.forEach(badge => {
         const badgeEl = document.createElement('div');
         badgeEl.className = 'active-filter-badge';
@@ -1316,7 +1361,7 @@ function updateActiveFilters() {
         `;
         activeFiltersContainer.appendChild(badgeEl);
     });
-    
+
     // Add click handlers for badge removal
     activeFiltersContainer.querySelectorAll('.badge-remove').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -1342,12 +1387,12 @@ function clearFilters() {
     currentFilters.company = 'all';
     currentFilters.year = 'all';
     currentFilters.search = '';
-    
+
     document.getElementById('companyFilter').value = 'all';
     document.getElementById('yearFilter').value = 'all';
     document.getElementById('searchFilter').value = '';
     document.getElementById('clearSearch').style.display = 'none';
-    
+
     applyFilters();
 }
 
@@ -1356,7 +1401,7 @@ function openModal(event) {
     const modal = document.getElementById('eventModal');
     const modalBody = document.getElementById('modalBody');
     const logoUrl = getLogoUrl(event);
-    
+
     const linkHTML = event.link ? `
         <div class="event-link-section">
             <a href="${event.link}" target="_blank" rel="noopener noreferrer" class="event-link-button">
@@ -1369,7 +1414,7 @@ function openModal(event) {
             </a>
         </div>
     ` : '';
-    
+
     modalBody.innerHTML = `
         <div class="modal-header-content">
             <div class="modal-logo-placeholder"></div>
@@ -1457,15 +1502,15 @@ function toggleTheme() {
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme
     initTheme();
-    
+
     // ChatGPT Apps SDK is included in the main `timelineEvents` dataset
-    
+
     // Theme toggle button
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
     }
-    
+
     initYearFilters();
     initTimeline();
     // No in-page apps cards — this page documents the SDK and its timeline entry above.
@@ -1482,7 +1527,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Clear filters button
     document.getElementById('clearFilters').addEventListener('click', clearFilters);
-    
+
     // Minor events toggle
     const showMinorEventsToggle = document.getElementById('showMinorEvents');
     if (showMinorEventsToggle) {
@@ -1494,24 +1539,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Search filter input
     const searchFilter = document.getElementById('searchFilter');
     const clearSearchBtn = document.getElementById('clearSearch');
-    
+
     searchFilter.addEventListener('input', (e) => {
         const searchValue = e.target.value;
         currentFilters.search = searchValue;
-        
+
         // Show/hide clear button
         if (searchValue.length > 0) {
             clearSearchBtn.style.display = 'flex';
         } else {
             clearSearchBtn.style.display = 'none';
         }
-        
+
         // Apply filter after 2 characters
         if (searchValue.length >= 2 || searchValue.length === 0) {
             applyFilters();
         }
     });
-    
+
     // Clear search button
     clearSearchBtn.addEventListener('click', () => {
         searchFilter.value = '';
@@ -1523,7 +1568,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Planned events toggle
     const plannedToggle = document.getElementById('plannedEventsToggle');
     const plannedSection = document.getElementById('plannedEventsSection');
-    
+
     plannedToggle.addEventListener('click', () => {
         plannedSection.classList.toggle('collapsed');
     });
@@ -1542,5 +1587,5 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
-    
+
 });
