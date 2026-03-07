@@ -808,6 +808,78 @@ const timelineEvents = [
         impact: "The v6 alpha allowed artists and power users to test bleeding-edge features and provide feedback ahead of the general release.",
         link: "https://www.midjourney.com/news/v6-alpha",
         eventType: "minor"
+    },
+    {
+        date: "February 5, 2026",
+        title: "Claude Opus 4.6 Released",
+        company: "Anthropic",
+        description: "Anthropic releases Claude Opus 4.6, the latest iteration of its most capable model, with improvements in reasoning, code generation, and agentic capabilities. Major advertising agencies began adopting Claude enterprise tools to automate brand-related tasks.",
+        impact: "Claude Opus 4.6 reinforced Anthropic's position in the enterprise AI market, with growing adoption across creative and professional industries.",
+        link: "https://www.anthropic.com/",
+        eventType: "major"
+    },
+    {
+        date: "February 17, 2026",
+        title: "Claude Sonnet 4.6 Released",
+        company: "Anthropic",
+        description: "Anthropic ships Claude Sonnet 4.6, delivering improved instruction following, tool use, and extended context handling at a balance of performance and speed.",
+        impact: "Sonnet 4.6 became the go-to model for developers seeking high capability at lower cost, expanding Claude's reach in API-driven applications.",
+        link: "https://www.anthropic.com/",
+        eventType: "major"
+    },
+    {
+        date: "February 17, 2026",
+        title: "Grok 4.20 Released",
+        company: "xAI",
+        description: "xAI releases Grok 4.20 with a unique four-agent parallel processing architecture, a 128K token context window, native image understanding, function calling, and real-time X platform data access.",
+        impact: "Grok 4.20's multi-agent approach introduced a new architectural paradigm for frontier models, enabling more complex reasoning through parallel processing.",
+        link: "https://x.ai/",
+        eventType: "major"
+    },
+    {
+        date: "February 19, 2026",
+        title: "Gemini 3.1 Pro Released",
+        company: "Google",
+        description: "Google DeepMind releases Gemini 3.1 Pro, dominating 13 of 16 major benchmarks with a 1M-token context window and scoring 77.1% on ARC-AGI-2. Supports full multimodal reasoning across text, images, audio, video, and code at frontier performance and commodity pricing ($2 per million input tokens).",
+        impact: "Gemini 3.1 Pro reshaped the competitive landscape by delivering top-tier benchmark performance at significantly lower cost, pressuring rivals to cut prices.",
+        link: "https://blog.google/",
+        eventType: "major"
+    },
+    {
+        date: "February 2026",
+        title: "Amazon Alexa+ Launched",
+        company: "Amazon",
+        description: "Amazon launches Alexa+, a major AI-powered upgrade to its voice assistant with enhanced conversational abilities, deeper smart home integration, and large language model capabilities made available to all users.",
+        impact: "Alexa+ brought frontier AI to Amazon's massive installed base of devices, accelerating consumer AI adoption at scale.",
+        link: "https://www.amazon.com/alexa",
+        eventType: "major"
+    },
+    {
+        date: "February 2026",
+        title: "Meta Superintelligence Prototypes Revealed",
+        company: "Meta",
+        description: "At the Davos Forum, Meta's CTO reveals that its new Superintelligence research lab has built prototypes codenamed Avocado (text) and Mango (image/video), reportedly outperforming earlier Llama models and rivaling the latest models from leading AI labs.",
+        impact: "Meta's Superintelligence initiative signals a major strategic shift toward frontier model development, challenging OpenAI and Google in the race for AGI.",
+        link: "https://ai.meta.com/",
+        eventType: "major"
+    },
+    {
+        date: "March 3, 2026",
+        title: "DeepSeek V4 Launched",
+        company: "DeepSeek",
+        description: "DeepSeek launches V4, reaching 1 trillion parameters while using only 32 billion active parameters per token via mixture-of-experts architecture — fewer active parameters than V3 despite being vastly larger in total scale.",
+        impact: "DeepSeek V4 demonstrated that efficiency innovations could challenge Western AI dominance, proving that frontier-scale models don't always require proportionally more compute.",
+        link: "https://www.deepseek.com/",
+        eventType: "major"
+    },
+    {
+        date: "March 2026",
+        title: "Apple & Google AI Partnership Announced",
+        company: "Apple",
+        description: "Apple and Google announce a multiyear partnership integrating Google's Gemini models into Apple Intelligence and Siri, leveraging Google's advanced backbone while maintaining Apple's on-device privacy standards via Private Cloud Compute. A reimagined AI Siri with on-screen awareness is targeted alongside iOS 26.4.",
+        impact: "The historic collaboration between two longtime rivals marks a turning point for consumer AI, bringing Gemini-powered intelligence to billions of Apple devices while raising the bar for privacy-preserving AI assistants.",
+        link: "https://www.apple.com/",
+        eventType: "major"
     }
 ].reverse(); // Reverse timeline to show most recent events first
 
@@ -824,7 +896,10 @@ const logoMap = {
     'Ollama': './assets/logos/ollama.png',
     'Apple': 'https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png',
     'Samsung': 'https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg',
-    'NVIDIA': 'https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg'
+    'NVIDIA': 'https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg',
+    'xAI': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/X_logo_2023_%28white%29.svg/240px-X_logo_2023_%28white%29.svg.png',
+    'DeepSeek': 'https://upload.wikimedia.org/wikipedia/commons/e/ec/DeepSeek_logo.svg',
+    'Amazon': 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg'
 };
 
 // Product-specific logos (for tools that might need custom logos)
