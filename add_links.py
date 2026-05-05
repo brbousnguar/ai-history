@@ -49,6 +49,8 @@ event_links = {
     "Google NotebookLM Audio Overview": "https://blog.google/technology/ai/notebooklm-audio-overviews",
     "OpenAI Operator Released": "https://openai.com/",
     "Midjourney v7 Released": "https://www.midjourney.com",
+    "GitHub Copilot Technical Preview": "https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/",
+    "GitHub Copilot CLI Generally Available": "https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available/",
 }
 
 def add_links_to_events():

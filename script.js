@@ -132,6 +132,15 @@ const timelineEvents = [
         link: "https://openai.com/blog/dall-e"
     },
     {
+        date: "June 29, 2021",
+        title: "GitHub Copilot Technical Preview",
+        company: "GitHub",
+        description: "GitHub launches the technical preview of GitHub Copilot, an AI pair programmer developed with OpenAI that suggests code from editor context.",
+        impact: "GitHub Copilot introduced AI-assisted coding to mainstream developer workflows, accelerating the move toward context-aware coding assistants inside editors.",
+        link: "https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/",
+        eventType: "major"
+    },
+    {
         date: "February 2022",
         title: "Midjourney Launched",
         company: "Midjourney",
@@ -886,6 +895,15 @@ const timelineEvents = [
         eventType: "major"
     },
     {
+        date: "February 25, 2026",
+        title: "GitHub Copilot CLI Generally Available",
+        company: "GitHub",
+        description: "GitHub makes Copilot CLI generally available, bringing an agentic GitHub Copilot coding experience directly into the terminal for planning, editing, testing, reviewing, and automating development workflows.",
+        impact: "Copilot CLI expanded AI coding assistance beyond editors into terminal-native agent workflows, helping developers keep coding, shell commands, and repository context in one place.",
+        link: "https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available/",
+        eventType: "major"
+    },
+    {
         date: "February 2026",
         title: "Samsung Galaxy S26 Series",
         company: "Samsung",
@@ -1176,6 +1194,7 @@ const logoMap = {
     'Apple': 'https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png',
     'Samsung': 'https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg',
     'NVIDIA': 'https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg',
+    'GitHub': 'https://github.githubassets.com/favicons/favicon.svg',
     'xAI': 'https://x.ai/favicon.ico'
 };
 
@@ -1191,6 +1210,8 @@ const productLogos = {
     'GPT-5.1 Released': './assets/logos/openai.png',
     'GPT-5.2 Released': './assets/logos/openai.png',
     'Codex CLI Released': './assets/logos/openai.png',
+    'GitHub Copilot Technical Preview': 'https://github.githubassets.com/favicons/favicon.svg',
+    'GitHub Copilot CLI Generally Available': 'https://github.githubassets.com/favicons/favicon.svg',
     'ChatGPT Launched': './assets/logos/openai.png',
     'ChatGPT Gets Vision': './assets/logos/openai.png',
     'ChatGPT Deep Research Launched': './assets/logos/openai.png',
