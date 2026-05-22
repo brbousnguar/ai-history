@@ -222,6 +222,69 @@ const timelineEvents = [
         eventType: "major"
     },
     {
+        date: "June 21, 2022",
+        title: "GitHub Copilot Generally Available",
+        company: "GitHub",
+        description: "GitHub officially releases GitHub Copilot to individual developers as a paid AI pair programmer that suggests code directly in the editor, with free access for verified students and maintainers of popular open-source projects.",
+        impact: "Copilot's general availability moved AI code completion from preview into everyday developer tooling, helping establish paid AI assistants as a mainstream software development category.",
+        link: "https://github.blog/changelog/2022-06-21-github-copilot-is-now-available-to-individual-developers/",
+        eventType: "major"
+    },
+    {
+        date: "March 22, 2023",
+        title: "GitHub Copilot X Announced",
+        company: "GitHub",
+        description: "GitHub announces Copilot X, expanding the Copilot vision beyond code completion into chat, voice, pull requests, documentation, command-line help, and GPT-4-powered developer workflows.",
+        impact: "Copilot X marked GitHub's shift from AI autocomplete toward an AI-powered developer platform spanning the full software development lifecycle.",
+        link: "https://github.blog/news-insights/product-news/github-copilot-x-the-ai-powered-developer-experience/",
+        eventType: "major"
+    },
+    {
+        date: "December 29, 2023",
+        title: "GitHub Copilot Chat Generally Available",
+        company: "GitHub",
+        description: "GitHub makes Copilot Chat generally available for Visual Studio Code and Visual Studio, including it in all GitHub Copilot plans. The GPT-4-powered assistant provides natural-language coding help, explanations, debugging support, security guidance, and slash-command workflows.",
+        impact: "Copilot Chat brought conversational programming into mainstream IDEs, turning natural language into a core interface for understanding, generating, and modifying code.",
+        link: "https://github.blog/news-insights/product-news/github-copilot-chat-now-generally-available-for-organizations-and-individuals/",
+        eventType: "major"
+    },
+    {
+        date: "March 21, 2024",
+        title: "GitHub Copilot in the CLI Generally Available",
+        company: "GitHub",
+        description: "GitHub makes Copilot in the CLI generally available for Copilot Individual, Business, and Enterprise customers. The GitHub CLI extension provides command suggestions and explanations, adds command execution for suggested commands, and introduces helper aliases such as ghcs and ghce.",
+        impact: "Copilot in the CLI brought AI assistance to shell workflows, helping developers understand, generate, and run terminal commands without leaving the command line.",
+        link: "https://github.blog/changelog/2024-03-21-github-copilot-general-availability-in-the-cli/",
+        eventType: "major"
+    },
+    {
+        date: "February 6, 2025",
+        title: "GitHub Copilot Agent Mode Preview",
+        company: "GitHub",
+        description: "GitHub introduces agent mode for Copilot in VS Code, announces Copilot Edits general availability, adds Gemini 2.0 Flash to the model picker, and previews its autonomous software engineering agent, Project Padawan.",
+        impact: "Agent mode moved Copilot from suggestion and chat into multi-step coding assistance that can inspect context, edit files, and collaborate more autonomously inside the editor.",
+        link: "https://github.blog/news-insights/product-news/github-copilot-the-agent-awakens/",
+        eventType: "major"
+    },
+    {
+        date: "May 19, 2025",
+        title: "GitHub Copilot Coding Agent Launched",
+        company: "GitHub",
+        description: "GitHub launches Copilot coding agent, allowing users to assign issues to Copilot or prompt it from VS Code. The agent runs in a GitHub Actions-powered development environment, commits to a draft pull request, and asks humans for review.",
+        impact: "Copilot coding agent turned GitHub issues into delegable AI tasks, bringing asynchronous AI software engineering directly into the GitHub workflow.",
+        link: "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/",
+        eventType: "major"
+    },
+    {
+        date: "September 25, 2025",
+        title: "GitHub Copilot CLI Public Preview",
+        company: "GitHub",
+        description: "GitHub launches GitHub Copilot CLI in public preview, bringing Copilot coding agent into the terminal as a local, synchronous agent that understands code and GitHub context, works with repositories, issues, and pull requests, and can plan and execute complex tasks.",
+        impact: "Copilot CLI preview transformed GitHub's terminal AI from command suggestions into an agentic development environment for local coding, debugging, and refactoring.",
+        link: "https://github.blog/changelog/2025-09-25-github-copilot-cli-is-now-in-public-preview/",
+        eventType: "major"
+    },
+    {
         date: "February 2022",
         title: "Midjourney Launched",
         company: "Midjourney",
@@ -1294,6 +1357,13 @@ const productLogos = {
     'GPT-5.2 Released': './assets/logos/openai.png',
     'Codex CLI Released': './assets/logos/openai.png',
     'GitHub Copilot Technical Preview': 'https://github.githubassets.com/favicons/favicon.svg',
+    'GitHub Copilot Generally Available': 'https://github.githubassets.com/favicons/favicon.svg',
+    'GitHub Copilot X Announced': 'https://github.githubassets.com/favicons/favicon.svg',
+    'GitHub Copilot Chat Generally Available': 'https://github.githubassets.com/favicons/favicon.svg',
+    'GitHub Copilot in the CLI Generally Available': 'https://github.githubassets.com/favicons/favicon.svg',
+    'GitHub Copilot Agent Mode Preview': 'https://github.githubassets.com/favicons/favicon.svg',
+    'GitHub Copilot Coding Agent Launched': 'https://github.githubassets.com/favicons/favicon.svg',
+    'GitHub Copilot CLI Public Preview': 'https://github.githubassets.com/favicons/favicon.svg',
     'GitHub Copilot CLI Generally Available': 'https://github.githubassets.com/favicons/favicon.svg',
     'ChatGPT Launched': './assets/logos/openai.png',
     'ChatGPT Gets Vision': './assets/logos/openai.png',
