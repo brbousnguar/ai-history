@@ -31,4 +31,4 @@ Planned events render in the Future & Planned Events section. Non-planned events
 
 ## Current Content Update
 
-The timeline now includes verified 2026 additions for GPT-5.5, Claude Opus 4.7, Google I/O 2026, Microsoft Build 2026, WWDC26, Gemini 3.5 Pro's planned rollout, and OpenAI DevDay 2026.
+The timeline now includes verified 2026 additions for GPT-5.5, Claude Opus 4.7, Google I/O 2026, Microsoft Build 2026, WWDC26, Gemini 3.5 Pro's planned rollout, and OpenAI DevDay 2026. It also includes foundational history entries such as AlexNet, AlphaGo, OpenAI's founding, and the Transformer paper.

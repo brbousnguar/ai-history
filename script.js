@@ -161,6 +161,42 @@ const timelineEvents = [
         link: "https://www.adobe.com/sensei.html"
     },
     {
+        date: "December 2012",
+        title: "AlexNet Published",
+        company: "University of Toronto",
+        description: "Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton publish 'ImageNet Classification with Deep Convolutional Neural Networks' at NIPS 2012. The deep convolutional neural network, later known as AlexNet, used GPUs, ReLU activations, dropout, and data augmentation to dramatically improve ImageNet classification.",
+        impact: "AlexNet is widely treated as the breakthrough that launched the modern deep learning era, proving that large neural networks trained on GPUs could outperform hand-engineered computer vision systems at scale.",
+        link: "https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks",
+        eventType: "major"
+    },
+    {
+        date: "December 11, 2015",
+        title: "OpenAI Founded",
+        company: "OpenAI",
+        description: "OpenAI launches as a non-profit artificial intelligence research company with a mission to ensure that artificial general intelligence benefits humanity.",
+        impact: "OpenAI's founding created one of the defining frontier AI labs of the modern era, shaping later progress in reinforcement learning, large language models, AI safety, and consumer AI products.",
+        link: "https://openai.com/index/introducing-openai/",
+        eventType: "major"
+    },
+    {
+        date: "March 15, 2016",
+        title: "AlphaGo Defeats Lee Sedol",
+        company: "Google DeepMind",
+        description: "Google DeepMind's AlphaGo defeats legendary Go player Lee Sedol 4-1 in Seoul, South Korea. The match showcased deep neural networks combined with search and reinforcement learning in a game long considered too complex for traditional AI methods.",
+        impact: "AlphaGo became a public turning point for AI, showing that learning systems could discover powerful strategies in domains with enormous search spaces and inspiring broader interest in reinforcement learning.",
+        link: "https://deepmind.google/en/research/alphago/",
+        eventType: "major"
+    },
+    {
+        date: "June 12, 2017",
+        title: "Transformer Paper Published",
+        company: "Google",
+        description: "Google researchers publish 'Attention Is All You Need,' introducing the Transformer architecture. The paper replaces recurrence with self-attention, enabling more parallel training and stronger sequence modeling.",
+        impact: "The Transformer became the foundation for modern large language models and multimodal AI systems, including BERT, GPT, Gemini, Claude, and many open-weight model families.",
+        link: "https://research.google/pubs/attention-is-all-you-need/",
+        eventType: "major"
+    },
+    {
         date: "June 2020",
         title: "GPT-3 Released",
         company: "OpenAI",
@@ -1228,6 +1264,7 @@ const logoMap = {
     'Adobe': './assets/logos/adobe.png',
     'OpenAI': './assets/logos/openai.png',
     'Google': './assets/logos/google.png',
+    'Google DeepMind': './assets/logos/google.png',
     'Anthropic': './assets/logos/anthropic.png',
     'Microsoft': './assets/logos/microsoft.png',
     'Meta': './assets/logos/meta.png',
@@ -1246,6 +1283,7 @@ const logoMap = {
 // Product-specific logos (for tools that might need custom logos)
 const productLogos = {
     'GPT-1 Released': './assets/logos/openai.png',
+    'OpenAI Founded': './assets/logos/openai.png',
     'GPT-3 Released': './assets/logos/openai.png',
     'GPT-4 Released': './assets/logos/openai.png',
     'GPT-4.5 "Orion" Released': './assets/logos/openai.png',
@@ -1287,6 +1325,8 @@ const productLogos = {
     'Bard Announced': './assets/logos/google.png',
     'PaLM Announced': './assets/logos/google.png',
     'Imagen Released': './assets/logos/google.png',
+    'Transformer Paper Published': './assets/logos/google.png',
+    'AlphaGo Defeats Lee Sedol': './assets/logos/google.png',
     'Nano Banana Released': './assets/logos/google.png',
     'LLaMA Released': './assets/logos/meta.png',
     'Stable Diffusion Released': './assets/logos/stabilityai.png',
