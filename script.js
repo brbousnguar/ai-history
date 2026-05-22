@@ -56,11 +56,38 @@ const timelineEvents = [
     },
     {
         date: "June 8, 2026 (Planned)",
-        title: "Apple Intelligence 2.0",
+        title: "WWDC26 Opens with Apple Platform Reveals",
         company: "Apple",
-        description: "Apple is expected to unveil Intelligence 2.0 with on-device AI capabilities, Siri enhancements, and deep integration across iOS, iPadOS, and macOS ecosystems.",
-        impact: "Apple's AI push could bring advanced AI capabilities to billions of devices with a focus on privacy and on-device processing.",
-        link: "https://www.apple.com/",
+        description: "Apple's Worldwide Developers Conference runs June 8-12, 2026, with Apple promising the reveal of its latest tools, frameworks, and platform features. Apple Developer materials list Apple Intelligence and Machine Learning & AI among the WWDC26 technology tracks.",
+        impact: "WWDC26 is Apple's next major stage for platform-level AI, developer tools, and operating system capabilities across its ecosystem.",
+        link: "https://developer.apple.com/news/?id=yi8qj25k",
+        eventType: "planned"
+    },
+    {
+        date: "June 2, 2026 (Planned)",
+        title: "Microsoft Build 2026",
+        company: "Microsoft",
+        description: "Microsoft Build 2026 is scheduled for June 2-3 at Fort Mason Center in San Francisco and online, focused on hands-on sessions with the Microsoft and GitHub teams building the latest AI tools, platforms, and workflows.",
+        impact: "Build is Microsoft's main developer venue for AI platform updates, agent tooling, Azure, Copilot, and GitHub workflow announcements.",
+        link: "https://build.microsoft.com/",
+        eventType: "planned"
+    },
+    {
+        date: "June 2026 (Planned)",
+        title: "Gemini 3.5 Pro Planned Rollout",
+        company: "Google",
+        description: "At Google I/O 2026, Google said Gemini 3.5 Pro is already being used internally and that the company expects to roll it out the following month after launching Gemini 3.5 Flash.",
+        impact: "Gemini 3.5 Pro is positioned as Google's next flagship step after Gemini 3.5 Flash, extending the agentic Gemini model family to harder tasks.",
+        link: "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+        eventType: "planned"
+    },
+    {
+        date: "September 29, 2026 (Planned)",
+        title: "OpenAI DevDay 2026",
+        company: "OpenAI",
+        description: "OpenAI announced DevDay 2026 for September 29 in San Francisco, calling it the company's biggest event of the year.",
+        impact: "DevDay is likely to be OpenAI's major developer venue for model, API, agent, and platform announcements in late 2026.",
+        link: "https://openai.com/index/devday-2026/",
         eventType: "planned"
     },
     {
@@ -91,13 +118,31 @@ const timelineEvents = [
         eventType: "planned"
     },
     {
-        date: "May 12, 2026 (Planned)",
-        title: "Google I/O 2026 AI Announcements",
+        date: "May 20, 2026",
+        title: "Google I/O 2026: Gemini 3.5 Flash & Gemini Omni",
         company: "Google",
-        description: "Google I/O 2026 is expected to showcase major AI updates including Gemini enhancements, new AI hardware, and expanded AI integration across Android and Search.",
-        impact: "Google I/O 2026 could reveal Google's next major push in AI hardware and software integration for consumer and enterprise markets.",
-        link: "https://io.google/2026",
-        eventType: "planned"
+        description: "Google I/O 2026 delivers a broad AI slate, including Gemini 3.5 Flash, Gemini Omni for any-input video generation and editing, Google Antigravity updates, Google AI Studio updates, and deeper Gemini integration across Search, YouTube, Android, Workspace, shopping, and developer tools.",
+        impact: "Google framed I/O 2026 as the start of the agentic Gemini era, pushing Gemini from assistant into an action layer across Google's consumer and developer ecosystem.",
+        link: "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+        eventType: "major"
+    },
+    {
+        date: "April 23, 2026",
+        title: "GPT-5.5 Released",
+        company: "OpenAI",
+        description: "OpenAI releases GPT-5.5 for ChatGPT and Codex, describing it as its smartest model yet for real-world professional work. The model is built for agentic coding, computer use, research, data analysis, document and spreadsheet creation, and multi-tool task completion, with API availability following shortly after launch.",
+        impact: "GPT-5.5 pushed OpenAI's frontier model line further toward long-running work on a computer, combining stronger reasoning, tool use, coding, and productivity workflows.",
+        link: "https://openai.com/index/introducing-gpt-5-5/",
+        eventType: "major"
+    },
+    {
+        date: "April 16, 2026",
+        title: "Claude Opus 4.7 Released",
+        company: "Anthropic",
+        description: "Anthropic releases Claude Opus 4.7, a direct upgrade over Opus 4.6 with stronger advanced software engineering, better high-resolution vision, more reliable long-running task execution, new effort controls, task budgets in public beta, and Claude Code updates such as /ultrareview.",
+        impact: "Opus 4.7 strengthened Claude's position in agentic coding and professional work while serving as Anthropic's safer broad-release step after the more restricted Mythos Preview.",
+        link: "https://www.anthropic.com/news/claude-opus-4-7",
+        eventType: "major"
     },
     {
         date: "June 2018",
