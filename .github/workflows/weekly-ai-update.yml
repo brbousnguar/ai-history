@@ -42,6 +42,8 @@ jobs:
           fi
 
           FEATURE="feature/weekly-ai-update-${DATE}"
+          # Remove stale remote branch from a previous failed run if it exists
+          git push origin --delete "$FEATURE" 2>/dev/null || true
           git checkout -b "$FEATURE"
           echo "feature=$FEATURE" >> "$GITHUB_OUTPUT"
 
