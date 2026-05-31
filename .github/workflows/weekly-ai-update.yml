@@ -76,27 +76,29 @@ jobs:
         if: steps.commit.outputs.has_changes == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FEATURE: ${{ steps.branches.outputs.feature }}
-          DATE: ${{ steps.branches.outputs.date }}
         run: |
-          printf '## Weekly AI Timeline Update — %s\n\nAutomated research and addition of the latest AI announcements from the past 7 days.\n\n> Auto-merged by weekly CI. Revert the merge commit if any events need correction.\n\n🤖 Generated with [Claude Code](https://claude.ai/claude-code)\n' "$DATE" \
-            > /tmp/feature_pr_body.md
+          set -e
+          FEATURE="${{ steps.branches.outputs.feature }}"
+          DATE="${{ steps.branches.outputs.date }}"
 
-          gh pr create \
+          # Create PR or find existing one if it already exists
+          PR_URL=$(gh pr create \
             --base develop \
             --head "$FEATURE" \
             --title "feat: weekly AI timeline update $DATE" \
-            --body-file /tmp/feature_pr_body.md \
-            2>/dev/null || echo "PR may already exist, continuing to merge"
+            --body "Automated weekly update ($DATE): added latest AI announcements. Auto-merged by CI. Revert the merge commit to undo.") \
+          || PR_URL=$(gh pr list --head "$FEATURE" --base develop --state open --json url --jq '.[0].url')
 
-          gh pr merge "$FEATURE" --merge --delete-branch
+          echo "Merging PR: $PR_URL"
+          gh pr merge "$PR_URL" --merge --delete-branch
 
       - name: Create and merge PR — develop → main
         if: steps.commit.outputs.has_changes == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DATE: ${{ steps.branches.outputs.date }}
         run: |
+          set -e
+          DATE="${{ steps.branches.outputs.date }}"
           git fetch origin
 
           AHEAD=$(git rev-list origin/main..origin/develop --count 2>/dev/null || echo "0")
@@ -105,14 +107,13 @@ jobs:
             exit 0
           fi
 
-          printf '## Promote Weekly Update to Main — %s\n\nMerging develop → main with the AI timeline update from %s.\n\n🤖 Generated with [Claude Code](https://claude.ai/claude-code)\n' "$DATE" "$DATE" \
-            > /tmp/develop_pr_body.md
-
-          gh pr create \
+          # Create PR or find existing one
+          PR_URL=$(gh pr create \
             --base main \
             --head develop \
             --title "chore: promote weekly update $DATE to main" \
-            --body-file /tmp/develop_pr_body.md \
-            2>/dev/null || echo "PR may already exist, continuing to merge"
+            --body "Weekly AI timeline update $DATE — promoting develop to main. Auto-merged by CI.") \
+          || PR_URL=$(gh pr list --head develop --base main --state open --json url --jq '.[0].url')
 
-          gh pr merge develop --merge
+          echo "Merging PR: $PR_URL"
+          gh pr merge "$PR_URL" --merge
