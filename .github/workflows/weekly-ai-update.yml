@@ -45,55 +45,19 @@ jobs:
           git checkout -b "$FEATURE"
           echo "feature=$FEATURE" >> "$GITHUB_OUTPUT"
 
-      - name: Research and update timeline with Claude Code
-        uses: anthropic/claude-code-action@beta
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            Today is ${{ steps.branches.outputs.date }}.
+          python-version: '3.12'
 
-            Your job: research recent AI news and add verified new events to the timeline in script.js.
+      - name: Install Anthropic SDK
+        run: pip install "anthropic>=0.40.0"
 
-            ## Step 1 — Research
-            Search the web for AI announcements from the past 7 days (since approximately ${{ steps.branches.outputs.date }} minus 7 days). Look for:
-            - New model releases: GPT, Claude, Gemini, Llama, Mistral, Grok, Qwen, DeepSeek, Flux, Stable Diffusion, etc.
-            - Major AI product launches or significant feature updates (coding assistants, agents, search, image/video generation)
-            - Notable AI research results or benchmark breakthroughs
-            - Significant AI developer tooling or infrastructure announcements
-            - Major AI company news (funding rounds, acquisitions, policy)
-
-            ## Step 2 — Check for duplicates
-            Read script.js. Collect every existing event title in the timelineEvents array.
-            Do NOT add any event that is already present.
-
-            ## Step 3 — Add new events
-            For each verified new event, prepend it at the very top of the timelineEvents array in script.js,
-            before all existing entries. Use this exact format (match existing indentation exactly):
-
-                {
-                    date: "Month DD, YYYY",
-                    title: "Concise Event Title",
-                    company: "Company Name",
-                    description: "Clear description of what was announced.",
-                    impact: "Why this matters for the AI industry.",
-                    link: "https://official-announcement-url.com",
-                    addedDate: "${{ steps.branches.outputs.date }}"
-                },
-
-            Include eventType: "major" only for truly landmark events.
-            Include eventType: "planned" for announced but not yet released events, and use a future date.
-            Omit eventType entirely for standard events.
-
-            ## Rules
-            - Only edit script.js — do not touch any other file
-            - Do not run any git commands
-            - Only add events backed by a real, working source URL
-            - Maximum 8 new events per run
-            - Available company logos (lowercase PNG names in assets/logos/): openai, google, anthropic, meta, microsoft, adobe, stabilityai, midjourney, ollama
-              For any other company the app shows initials automatically — still include the correct company name
-            - Do not add a "new" tag — addedDate is used by the frontend to show a New badge automatically
-            - Do not add existing tags unless the event genuinely fits an established tag already in the file
-              (e.g. "local-model", "open-weights", "agentic-coder", "developer-tool")
+      - name: Research and update timeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          UPDATE_DATE: ${{ steps.branches.outputs.date }}
+        run: python .github/scripts/update_timeline.py
 
       - name: Commit and push changes
         id: commit
