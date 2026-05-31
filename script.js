@@ -1,6 +1,25 @@
 // Timeline Events Data
 const timelineEvents = [
     {
+        date: "May 28, 2026",
+        title: "Claude Opus 4.8 Released",
+        company: "Anthropic",
+        description: "Anthropic released Claude Opus 4.8, which it characterized as \"a modest but tangible improvement\" over Opus 4.7. The model scores 69.2% on SWE-bench Pro and tops GPT-5.5 and Gemini 3.1 Pro across most benchmarks, with a new Dynamic Workflows feature for running hundreds of parallel subagents, effort controls, and a fast mode running at roughly 2.5x speed for one-third the prior cost. Pricing remained unchanged at $5/$25 per million input/output tokens.",
+        impact: "Beyond benchmark gains, Anthropic emphasized honesty improvements — the model is roughly four times less likely than its predecessor to let flaws in its own code pass unremarked — and reported misalignment rates approaching its restricted Claude Mythos Preview, signaling a shift toward reliability and self-correction as differentiators in agentic and enterprise workloads.",
+        link: "https://www.anthropic.com/news/claude-opus-4-8",
+        addedDate: "2026-05-31"
+    },
+    {
+        date: "May 28, 2026",
+        title: "Anthropic Raises $65B Series H at $965B Valuation",
+        company: "Anthropic",
+        description: "Anthropic closed a $65 billion Series H funding round at a $965 billion post-money valuation, led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital. The round includes $15 billion of previously committed hyperscaler investments, with $5 billion from Amazon, plus participation from infrastructure partners Micron, Samsung, and SK Hynix. The company reported its run-rate revenue crossed $47 billion earlier in the month.",
+        impact: "The financing makes Anthropic the most valuable AI startup, surpassing OpenAI's $852 billion mark for the first time, and is widely expected to be its final private raise before a potential IPO. It marks a dramatic reversal from February 2026, when Anthropic was valued at $380 billion.",
+        link: "https://www.anthropic.com/news/series-h",
+        eventType: "major",
+        addedDate: "2026-05-31"
+    },
+    {
         date: "October 2025",
         title: "ChatGPT Apps SDK Released",
         company: "OpenAI",
