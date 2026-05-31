@@ -47,19 +47,33 @@ jobs:
           git checkout -b "$FEATURE"
           echo "feature=$FEATURE" >> "$GITHUB_OUTPUT"
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install Anthropic SDK
-        run: pip install "anthropic>=0.40.0"
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
 
       - name: Research and update timeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          UPDATE_DATE: ${{ steps.branches.outputs.date }}
-        run: python .github/scripts/update_timeline.py
+        run: |
+          DATE="${{ steps.branches.outputs.date }}"
+          claude --dangerously-skip-permissions -p "
+          Today is $DATE. Search the web for AI model releases, product launches,
+          and major AI announcements from the past 7 days.
+
+          1. Read script.js and note every title already in timelineEvents — do not add duplicates.
+          2. For each verified new event (max 8), prepend it at the very top of the timelineEvents
+             array in script.js using this exact format:
+             {
+                 date: \"Month DD, YYYY\",
+                 title: \"Short title\",
+                 company: \"Company Name\",
+                 description: \"What was announced.\",
+                 impact: \"Why it matters.\",
+                 link: \"https://official-url.com\",
+                 addedDate: \"$DATE\"
+             },
+          3. Only edit script.js. Only include events with real source URLs.
+             Add eventType: \"major\" only for truly landmark events.
+          "
 
       - name: Commit and push changes
         id: commit
