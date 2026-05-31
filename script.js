@@ -1476,6 +1476,11 @@ function extractYear(dateString) {
     return match ? match[0] : null;
 }
 
+function isNewEvent(event) {
+    if (!event.addedDate) return false;
+    return (Date.now() - new Date(event.addedDate).getTime()) < 7 * 24 * 60 * 60 * 1000;
+}
+
 // Parse various date string formats into a comparable numeric key (YYYYMMDD)
 function parseEventDate(dateString) {
     if (!dateString) return 0;
@@ -1655,12 +1660,14 @@ function createPlannedEventCard(event, index) {
 
     const logoUrl = getLogoUrl(event);
 
+    const newBadge = isNewEvent(event) ? '<span class="new-badge">New</span>' : '';
+
     card.innerHTML = `
         <div class="planned-event-header">
             <div class="logo-placeholder"></div>
             <div class="planned-event-info">
                 <h3>${event.title}</h3>
-                <div class="planned-event-date">${event.date}</div>
+                <div class="planned-event-date">${event.date}${newBadge}</div>
             </div>
         </div>
         <div class="planned-event-company">${event.company}</div>
@@ -1734,6 +1741,7 @@ function createEventElement(event, index) {
 
     // Add minor event badge if applicable
     const minorBadge = event.eventType === 'minor' ? '<span class="minor-badge">Minor Update</span>' : '';
+    const newBadge = isNewEvent(event) ? '<span class="new-badge">New</span>' : '';
 
     // Build header structure without the image so we can handle load/error programmatically
     content.innerHTML = `
@@ -1741,7 +1749,7 @@ function createEventElement(event, index) {
             <div class="event-header-left">
                 <div class="logo-placeholder"></div>
                 <div class="event-header-text">
-                    <div class="event-date">${event.date}${minorBadge}</div>
+                    <div class="event-date">${event.date}${minorBadge}${newBadge}</div>
                     <div class="event-title">${event.title}</div>
                 </div>
             </div>
