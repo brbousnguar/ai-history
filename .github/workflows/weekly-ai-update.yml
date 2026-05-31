@@ -1,0 +1,154 @@
+name: Weekly AI Timeline Update
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 09:00 UTC
+  workflow_dispatch:       # Manual trigger for testing
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-timeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Prepare branches
+        id: branches
+        run: |
+          git fetch origin
+          DATE=$(date -u +%Y-%m-%d)
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+          # Ensure develop exists
+          if git ls-remote --exit-code --heads origin develop > /dev/null 2>&1; then
+            git checkout develop
+            git pull origin develop
+          else
+            git checkout -b develop
+            git push -u origin develop
+          fi
+
+          FEATURE="feature/weekly-ai-update-${DATE}"
+          git checkout -b "$FEATURE"
+          echo "feature=$FEATURE" >> "$GITHUB_OUTPUT"
+
+      - name: Research and update timeline with Claude Code
+        uses: anthropic/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Today is ${{ steps.branches.outputs.date }}.
+
+            Your job: research recent AI news and add verified new events to the timeline in script.js.
+
+            ## Step 1 — Research
+            Search the web for AI announcements from the past 7 days (since approximately ${{ steps.branches.outputs.date }} minus 7 days). Look for:
+            - New model releases: GPT, Claude, Gemini, Llama, Mistral, Grok, Qwen, DeepSeek, Flux, Stable Diffusion, etc.
+            - Major AI product launches or significant feature updates (coding assistants, agents, search, image/video generation)
+            - Notable AI research results or benchmark breakthroughs
+            - Significant AI developer tooling or infrastructure announcements
+            - Major AI company news (funding rounds, acquisitions, policy)
+
+            ## Step 2 — Check for duplicates
+            Read script.js. Collect every existing event title in the timelineEvents array.
+            Do NOT add any event that is already present.
+
+            ## Step 3 — Add new events
+            For each verified new event, prepend it at the very top of the timelineEvents array in script.js,
+            before all existing entries. Use this exact format (match existing indentation exactly):
+
+                {
+                    date: "Month DD, YYYY",
+                    title: "Concise Event Title",
+                    company: "Company Name",
+                    description: "Clear description of what was announced.",
+                    impact: "Why this matters for the AI industry.",
+                    link: "https://official-announcement-url.com",
+                    addedDate: "${{ steps.branches.outputs.date }}"
+                },
+
+            Include eventType: "major" only for truly landmark events.
+            Include eventType: "planned" for announced but not yet released events, and use a future date.
+            Omit eventType entirely for standard events.
+
+            ## Rules
+            - Only edit script.js — do not touch any other file
+            - Do not run any git commands
+            - Only add events backed by a real, working source URL
+            - Maximum 8 new events per run
+            - Available company logos (lowercase PNG names in assets/logos/): openai, google, anthropic, meta, microsoft, adobe, stabilityai, midjourney, ollama
+              For any other company the app shows initials automatically — still include the correct company name
+            - Do not add a "new" tag — addedDate is used by the frontend to show a New badge automatically
+            - Do not add existing tags unless the event genuinely fits an established tag already in the file
+              (e.g. "local-model", "open-weights", "agentic-coder", "developer-tool")
+
+      - name: Commit and push changes
+        id: commit
+        run: |
+          git add script.js
+          if git diff --staged --quiet; then
+            echo "No new events found — nothing to commit"
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "$(printf 'feat: weekly AI timeline update %s\n\nAutomated update: added latest AI announcements from the past 7 days.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>' '${{ steps.branches.outputs.date }}')"
+            git push -u origin "${{ steps.branches.outputs.feature }}"
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create and merge PR — feature → develop
+        if: steps.commit.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FEATURE: ${{ steps.branches.outputs.feature }}
+          DATE: ${{ steps.branches.outputs.date }}
+        run: |
+          printf '## Weekly AI Timeline Update — %s\n\nAutomated research and addition of the latest AI announcements from the past 7 days.\n\n> Auto-merged by weekly CI. Revert the merge commit if any events need correction.\n\n🤖 Generated with [Claude Code](https://claude.ai/claude-code)\n' "$DATE" \
+            > /tmp/feature_pr_body.md
+
+          gh pr create \
+            --base develop \
+            --head "$FEATURE" \
+            --title "feat: weekly AI timeline update $DATE" \
+            --body-file /tmp/feature_pr_body.md \
+            2>/dev/null || echo "PR may already exist, continuing to merge"
+
+          gh pr merge "$FEATURE" --merge --delete-branch
+
+      - name: Create and merge PR — develop → main
+        if: steps.commit.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.branches.outputs.date }}
+        run: |
+          git fetch origin
+
+          AHEAD=$(git rev-list origin/main..origin/develop --count 2>/dev/null || echo "0")
+          if [ "$AHEAD" -eq "0" ]; then
+            echo "develop is not ahead of main — nothing to promote"
+            exit 0
+          fi
+
+          printf '## Promote Weekly Update to Main — %s\n\nMerging develop → main with the AI timeline update from %s.\n\n🤖 Generated with [Claude Code](https://claude.ai/claude-code)\n' "$DATE" "$DATE" \
+            > /tmp/develop_pr_body.md
+
+          gh pr create \
+            --base main \
+            --head develop \
+            --title "chore: promote weekly update $DATE to main" \
+            --body-file /tmp/develop_pr_body.md \
+            2>/dev/null || echo "PR may already exist, continuing to merge"
+
+          gh pr merge develop --merge
