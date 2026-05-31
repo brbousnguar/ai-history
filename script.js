@@ -1,6 +1,53 @@
 // Timeline Events Data
 const timelineEvents = [
     {
+        date: "May 29, 2026",
+        title: "OpenAI Launches Rosalind Biodefense Program",
+        company: "OpenAI",
+        description: "OpenAI launched Rosalind Biodefense, a program offering sponsored access to GPT-Rosalind, its frontier reasoning model for life sciences, to vetted developers and select U.S. government and allied partners working on pandemic preparedness and biodefense. Initial partners include Lawrence Livermore National Laboratory, Johns Hopkins Applied Physics Laboratory, and CEPI.",
+        impact: "It marks OpenAI's first formal positioning inside national biodefense infrastructure, arriving just over a week after the Trump administration postponed an executive order that would have created a federal review process for powerful AI models. With that framework shelved, OpenAI is effectively setting its own terms for early government access to advanced biological-capability models.",
+        link: "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/",
+        eventType: "major",
+        addedDate: "2026-05-31"
+    },
+    {
+        date: "May 25, 2026",
+        title: "Pope Leo XIV Releases First Encyclical on AI, 'Magnifica Humanitas'",
+        company: "Vatican",
+        description: "Pope Leo XIV released Magnifica Humanitas ('Magnificent Humanity'), his first encyclical, focused on safeguarding the human person in the age of artificial intelligence. The roughly 42,300-word text warns about AI in warfare, deepfakes in politics, automation's impact on work, and the concentration of AI power, and calls for stronger regulation. The Pope presented it personally, with Anthropic co-founder Chris Olah among the speakers.",
+        impact: "As the largest single institutional statement on AI ethics ever published—addressed to roughly 1.4 billion Catholics—it frames AI as the defining challenge of the era, deliberately echoing Leo XIII's 1891 Rerum Novarum on the Industrial Revolution, signed exactly 135 years earlier.",
+        link: "https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html",
+        eventType: "major",
+        addedDate: "2026-05-31"
+    },
+    {
+        date: "May 26, 2026",
+        title: "Google Switches Core Search to Gemini 3.5 Flash",
+        company: "Google",
+        description: "Google flipped the switch to power its core global search engine with Gemini 3.5 Flash, making a conversational interface the default and retiring the traditional search-box experience. Users can ask complex queries and input conversational follow-ups directly on the main results page rather than toggling into a separate AI Mode.",
+        impact: "This represents one of the most significant changes to how billions of people interact with search, embedding a frontier-class AI model into Google's most-used product by default.",
+        link: "https://www.neuralbuddies.com/p/ai-news-recap-may-29-2026",
+        addedDate: "2026-05-31"
+    },
+    {
+        date: "May 26, 2026",
+        title: "DeepSeek Makes 75% V4-Pro Price Cut Permanent",
+        company: "DeepSeek",
+        description: "DeepSeek made permanent a 75% price cut on its V4-Pro model, setting rates at roughly $0.435 input and $0.87 output per 1M tokens—about 8x cheaper on input and 10x cheaper on output than Claude Opus 4.7, while remaining competitive on coding benchmarks.",
+        impact: "The move escalates the inference price war among frontier labs and intensifies pressure on Western providers' pricing models, strengthening the case for low-cost open and Chinese models in high-volume use.",
+        link: "https://aiweekly.co/",
+        addedDate: "2026-05-31"
+    },
+    {
+        date: "May 26, 2026",
+        title: "Anthropic and Gates Foundation Pledge $200M for AI in Global Development",
+        company: "Anthropic",
+        description: "Anthropic and the Gates Foundation announced a $200 million, four-year partnership to develop AI tools using Claude for healthcare, education, agriculture, and economic development in underserved regions.",
+        impact: "The initiative reflects a broader shift toward deploying frontier AI as strategic infrastructure for public services and global development, beyond purely commercial applications.",
+        link: "https://aiweekly.co/",
+        addedDate: "2026-05-31"
+    },
+    {
         date: "May 28, 2026",
         title: "Claude Opus 4.8 Released",
         company: "Anthropic",
