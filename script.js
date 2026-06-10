@@ -1,6 +1,70 @@
 // Timeline Events Data
 const timelineEvents = [
     {
+        date: "June 9, 2026",
+        title: "Claude Fable 5 (Mythos-Class) Launched",
+        company: "Anthropic",
+        description: "Anthropic released Claude Fable 5, the first publicly accessible Mythos-class model, sharing the same underlying weights as the restricted Claude Mythos 5. It scored 80.3% on SWE-Bench Pro and became the first model to exceed 90% on Hex's analytical benchmark. High-risk queries (cyber, bio, chem) fall back to Opus 4.8 rather than refusing outright. Priced at $10/$50 per million input/output tokens.",
+        impact: "Sets a new public capability ceiling and introduces a 'graceful fallback' safety architecture instead of hard refusals — a significant alignment design choice that balances raw capability with responsible deployment.",
+        link: "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+        eventType: "major",
+        addedDate: "2026-06-10"
+    },
+    {
+        date: "June 2, 2026",
+        title: "White House AI Innovation & Security Executive Order",
+        company: "US Government",
+        description: "President Trump signed an executive order titled 'Promoting Advanced Artificial Intelligence Innovation and Security,' directing a voluntary AI cybersecurity clearinghouse and a secure early-access framework for frontier models reviewed by federal agencies. The order explicitly prohibits mandatory licensing or pre-clearance requirements for AI model releases.",
+        impact: "Sets US federal AI policy for 2026 — pro-innovation, anti-mandatory-regulation — in direct contrast to the EU AI Act's compliance-heavy approach, shaping the global regulatory landscape for frontier AI development.",
+        link: "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+        eventType: "major",
+        addedDate: "2026-06-10"
+    },
+    {
+        date: "June 1, 2026",
+        title: "NVIDIA RTX Spark AI Agent PC Superchip",
+        company: "NVIDIA",
+        description: "NVIDIA unveiled the RTX Spark, an Arm-based superchip purpose-built for personal AI agents on Windows PCs, announced alongside Microsoft at NVIDIA GTC Taipei. First laptops arrive fall 2026 from ASUS, Dell, HP, Lenovo, Microsoft Surface, and MSI.",
+        impact: "NVIDIA's first move into the ~$200B PC CPU market challenges Intel, AMD, and Apple Silicon while creating a new on-device AI agent hardware category, bringing persistent local AI agents to consumer devices.",
+        link: "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Microsoft-Reinvent-Windows-PCs-for-the-Age-of-Personal-AI/default.aspx",
+        eventType: "major",
+        addedDate: "2026-06-10"
+    },
+    {
+        date: "May 28, 2026",
+        title: "Mistral Launches Vibe Agentic Platform",
+        company: "Mistral AI",
+        description: "Mistral rebranded its Le Chat product as 'Vibe' and shipped a full agentic platform with Work Mode (long-running background tasks), Code Mode (remote pull-request-level coding), a VS Code extension, and CLI. Powered by the new Mistral Medium 3.5 running persistent cloud-side coding agents.",
+        impact: "Mistral pivots from model vendor to agentic product company, directly competing with Cursor, Devin, and GitHub Copilot Workspace — signaling the broader shift from AI assistants to AI agents in developer tooling.",
+        link: "https://mistral.ai/news/vibe-agent/",
+        addedDate: "2026-06-10"
+    },
+    {
+        date: "May 12, 2026",
+        title: "OpenAI Launches $4B Deployment Company, Acquires Tomoro",
+        company: "OpenAI",
+        description: "OpenAI launched the OpenAI Deployment Company — a $4B+ joint venture with 19 investment firms led by TPG, Advent, Bain Capital, and Brookfield — and simultaneously acquired Tomoro, a London-based AI consulting firm with ~150 engineers embedded at enterprises including Fidelity, Tesco, and Virgin Atlantic.",
+        impact: "OpenAI moves beyond model provision into high-margin enterprise deployment services, creating a new competitive front against Accenture, McKinsey, and consulting firms in the AI integration market.",
+        link: "https://openai.com/index/openai-launches-the-deployment-company/",
+        addedDate: "2026-06-10"
+    },
+    {
+        date: "May 19, 2026",
+        title: "Mistral Acquires Emmi AI (Industrial Physics Simulation)",
+        company: "Mistral AI",
+        description: "Mistral acquired Emmi AI, an Austrian startup building AI simulation models for industrial engineering, adding digital twin and physics-AI capabilities to its enterprise platform across manufacturing, aerospace, energy, and semiconductor sectors.",
+        impact: "Signals Mistral's push into scientific and industrial AI — a domain less occupied by US hyperscalers — differentiating its enterprise offering beyond language tasks toward real-world physical simulation.",
+        addedDate: "2026-06-10"
+    },
+    {
+        date: "May 5, 2026",
+        title: "US Commerce Dept Signs AI Pre-Deployment Testing Deals",
+        company: "US Government",
+        description: "The Center for Artificial Intelligence Standards and Innovation (CAISI) struck voluntary deals with Google DeepMind, Microsoft, and xAI to conduct pre-deployment security testing of their AI models in classified government environments — the first formal pre-deployment government security evaluation of frontier models in the US.",
+        impact: "Establishes a precedent for industry-government model review that stops short of mandatory approval, laying groundwork for a US voluntary safety framework as an alternative to the EU's regulatory approach.",
+        addedDate: "2026-06-10"
+    },
+    {
         date: "May 28, 2026",
         title: "Claude Opus 4.8 Released",
         company: "Anthropic",
@@ -1359,7 +1423,9 @@ const logoMap = {
     'Samsung': 'https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg',
     'NVIDIA': 'https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg',
     'GitHub': 'https://github.githubassets.com/favicons/favicon.svg',
-    'xAI': 'https://x.ai/favicon.ico'
+    'xAI': 'https://x.ai/favicon.ico',
+    'Mistral AI': 'https://mistral.ai/favicon.ico',
+    'US Government': 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Seal_of_the_United_States_Department_of_Commerce.svg'
 };
 
 // Product-specific logos (for tools that might need custom logos)
