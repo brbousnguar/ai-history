@@ -93,11 +93,11 @@ const timelineEvents = [
         eventType: "major"
     },
     {
-        date: "Q2 2027 (Planned)",
+        date: "Q4 2026 (Planned)",
         title: "GPT-6 Expected",
         company: "OpenAI",
-        description: "OpenAI is expected to release GPT-6, potentially featuring human-level AGI capabilities, multi-step reasoning, and advanced agentic behavior across multiple domains.",
-        impact: "GPT-6 could mark a significant milestone toward artificial general intelligence, with capabilities approaching or matching human expertise across diverse tasks.",
+        description: "OpenAI is expected to release GPT-6 in Q4 2026 or early 2027. OpenAI finished pre-training a model codenamed 'Spud' in March 2026, but it shipped as GPT-5.5 rather than GPT-6. GPT-6 proper has no confirmed architecture or launch date, though market consensus (Polymarket: ~82% by end of 2026) points to Q4 2026.",
+        impact: "GPT-6 could mark a step-change in reasoning and agentic capability, potentially the most significant OpenAI release since GPT-4 — though the roadmap has already shifted once with GPT-5.5.",
         link: "https://openai.com/",
         eventType: "planned"
     },
@@ -120,40 +120,24 @@ const timelineEvents = [
         eventType: "planned"
     },
     {
-        date: "Q3 2026 (Planned)",
-        title: "Claude Opus 5 Expected",
-        company: "Anthropic",
-        description: "Anthropic is expected to release Claude Opus 5, featuring enhanced constitutional AI principles, longer context windows (up to 1M tokens), and improved safety mechanisms.",
-        impact: "Claude Opus 5 could set new standards for AI safety and alignment while maintaining state-of-the-art performance across reasoning and creative tasks.",
-        link: "https://www.anthropic.com/",
-        eventType: "planned"
-    },
-    {
-        date: "Q2 2026 (Planned)",
-        title: "Sora Full Public Release",
-        company: "OpenAI",
-        description: "OpenAI plans to release Sora to the general public with extended video generation capabilities (up to 60 seconds), better motion consistency, and creative controls.",
-        impact: "Sora's public release could transform video content creation, enabling creators to produce high-quality video content from text descriptions at scale.",
-        link: "https://openai.com/sora",
-        eventType: "planned"
-    },
-    {
-        date: "June 8, 2026 (Planned)",
-        title: "WWDC26 Opens with Apple Platform Reveals",
+        date: "June 8, 2026",
+        title: "WWDC26: Apple Rebuilds Siri with Gemini",
         company: "Apple",
-        description: "Apple's Worldwide Developers Conference runs June 8-12, 2026, with Apple promising the reveal of its latest tools, frameworks, and platform features. Apple Developer materials list Apple Intelligence and Machine Learning & AI among the WWDC26 technology tracks.",
-        impact: "WWDC26 is Apple's next major stage for platform-level AI, developer tools, and operating system capabilities across its ecosystem.",
-        link: "https://developer.apple.com/news/?id=yi8qj25k",
-        eventType: "planned"
+        description: "At WWDC26, Apple announced a fully rebuilt Siri powered by Google Gemini under the hood, now a standalone app with cross-app context awareness and genuine conversational capability. Apple also unveiled Apple Foundation Models v2 (AFM v2) — including 'AFM Cloud Pro', a collaboration with Google running on Nvidia GPUs that matches Gemini Frontier quality. iOS 27, macOS 27 'Golden Gate', and iPadOS 27 were announced alongside deeper Apple Intelligence features including tab management, one-tap password updating, and cross-app context.",
+        impact: "Apple's decision to partner with Google rather than build its own frontier model signals a pragmatic pivot — prioritizing user experience over AI independence — and marks one of the most significant platform-level AI integrations in consumer tech history.",
+        link: "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/",
+        eventType: "major",
+        addedDate: "2026-06-10"
     },
     {
-        date: "June 2, 2026 (Planned)",
-        title: "Microsoft Build 2026",
+        date: "June 2, 2026",
+        title: "Microsoft Build 2026: MAI Models & Scout Agents",
         company: "Microsoft",
-        description: "Microsoft Build 2026 is scheduled for June 2-3 at Fort Mason Center in San Francisco and online, focused on hands-on sessions with the Microsoft and GitHub teams building the latest AI tools, platforms, and workflows.",
-        impact: "Build is Microsoft's main developer venue for AI platform updates, agent tooling, Azure, Copilot, and GitHub workflow announcements.",
-        link: "https://build.microsoft.com/",
-        eventType: "planned"
+        description: "Microsoft Build 2026 (June 2-3, San Francisco) delivered a major AI platform push: seven new MAI models for coding, reasoning, image, and voice — led by MAI-Thinking-1 (35B parameters, 256K context, private preview); Microsoft IQ, a new intelligence layer across Copilot and Foundry with Work IQ and Web IQ APIs; the GitHub Copilot App (native desktop with agentic workflows); Microsoft Scout ('Autopilot' always-on agents acting on a user's behalf); and Project Solara, an agent-first platform making agents the primary interaction model.",
+        impact: "Microsoft repositioned its entire product stack around autonomous agents — moving beyond Copilot as a chat assistant toward agents that act independently, signaling an industry-wide shift in how enterprise AI is deployed.",
+        link: "https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/",
+        eventType: "major",
+        addedDate: "2026-06-10"
     },
     {
         date: "June 2026 (Planned)",
@@ -957,6 +941,15 @@ const timelineEvents = [
         link: "https://openai.com/devday"
     },
     {
+        date: "September 30, 2025",
+        title: "Sora 2 Launched",
+        company: "OpenAI",
+        description: "OpenAI launched Sora 2 for ChatGPT Plus and Pro subscribers, with a simultaneous iOS app release (Android followed two months later). Sora 2 added synchronized audio generation, videos up to 25 seconds, character cameos for consistent subjects across scenes, and significantly improved physics simulation over the original Sora.",
+        impact: "Sora 2 represented OpenAI's first major step beyond proof-of-concept video AI into a consumer-grade product — making AI video generation accessible on mobile for the first time.",
+        link: "https://openai.com/index/sora-2/",
+        addedDate: "2026-06-10"
+    },
+    {
         date: "October 2025",
         title: "gpt-oss Released",
         company: "OpenAI",
@@ -1274,6 +1267,15 @@ const timelineEvents = [
         impact: "Meta's pivot to a proprietary model strategy represented a major strategic shift, signaling that even the strongest open-source AI champion now sees value in closed frontier models.",
         link: "https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html",
         eventType: "major"
+    },
+    {
+        date: "April 26, 2026",
+        title: "OpenAI Discontinues Sora",
+        company: "OpenAI",
+        description: "OpenAI shut down Sora, its text-to-video product, less than 7 months after the Sora 2 launch. The app was fully discontinued on April 26, 2026, with the API planned for shutdown on September 24, 2026. Reasons cited included computation shortages, cost pressures, and a strategic shift toward core enterprise and agentic products.",
+        impact: "Sora's discontinuation marked a rare product retreat for OpenAI and signaled that consumer video AI was not financially sustainable at the current state of compute economics — redirecting resources toward higher-margin agent and enterprise offerings.",
+        link: "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation",
+        addedDate: "2026-06-10"
     },
     {
         date: "April 2026",
