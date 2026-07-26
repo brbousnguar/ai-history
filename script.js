@@ -1404,6 +1404,300 @@ const timelineEvents = [
         link: "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
         eventType: "major",
         tags: ["local-model", "open-weights"]
+    },
+
+    // ── RECENT NEWS (July 2026) ──────────────────────────────────────────────
+    {
+        date: "July 2026",
+        title: "Claude Sonnet 5 Released",
+        company: "Anthropic",
+        description: "Anthropic released Claude Sonnet 5, a major generational leap over the Claude 4 Sonnet line. The model achieves top-tier scores on coding, reasoning, and instruction-following benchmarks while remaining more cost-efficient than Opus-class models. It introduces improved agentic reliability — significantly fewer dropped instructions and self-corrections in multi-step workflows — and supports an expanded 300K-token context window.",
+        impact: "Claude Sonnet 5 became the new default for cost-effective frontier performance, widely adopted by developers and enterprises for production agentic pipelines, and set a new bar for the 'capable-but-affordable' tier of AI models.",
+        eventType: "major",
+        addedDate: "2026-07-26"
+    },
+    {
+        date: "July 2026",
+        title: "GPT-5.6 Terra & Luna Released",
+        company: "OpenAI",
+        description: "OpenAI released two distinct GPT-5.6 variants simultaneously: Terra (optimized for factual grounding, structured data, and enterprise workflows) and Luna (optimized for creative tasks, long-form generation, and nuanced dialogue). Both models feature a 256K-token context window and improved tool use. The dual-variant release reflects OpenAI's shift toward task-specialized frontier models rather than a single universal flagship.",
+        impact: "The Terra/Luna split signals a new era of OpenAI product strategy — specializing frontier-class models for distinct workload profiles — and directly competes with Anthropic's Opus/Sonnet tiering and Google's Gemini Ultra/Flash branching.",
+        eventType: "major",
+        addedDate: "2026-07-26"
+    },
+    {
+        date: "July 2026",
+        title: "Gemini 3.6 Flash Released",
+        company: "Google",
+        description: "Google released Gemini 3.6 Flash, the fastest and most efficient model in the Gemini 3 family. Building on Gemini 3.5 Flash, the 3.6 variant brings 40% lower latency, improved multimodal understanding (image, audio, video), and native support for agentic tool calls with structured outputs. It is available in Google AI Studio and via the Gemini API with competitive token pricing.",
+        impact: "Gemini 3.6 Flash set a new speed-performance frontier for mid-tier AI APIs, making real-time AI applications (voice assistants, live document analysis, agentic loops) more accessible and cost-efficient for developers worldwide.",
+        eventType: "major",
+        addedDate: "2026-07-26"
+    },
+    {
+        date: "July 2026",
+        title: "Kimi K2.7 Code Released by Moonshot AI",
+        company: "Moonshot AI",
+        description: "Moonshot AI (China) released Kimi K2.7 Code, a frontier coding-specialized model trained on an extensive corpus of code, math, and reasoning data. The model achieves competitive SWE-bench scores and supports a 128K-token context window. Kimi K2.7 Code is available via API and as an open-weights release, making it one of the strongest open coding models from a Chinese AI lab.",
+        impact: "Kimi K2.7 Code expands the global competitive landscape for frontier coding AI, demonstrating that Chinese AI labs are closing the gap with US counterparts on specialized tasks, and provides open-weights access at a tier previously dominated by closed models.",
+        eventType: "major",
+        addedDate: "2026-07-26"
+    },
+    {
+        date: "July 2026",
+        title: "MAI-Code-1 Flash Released by Microsoft",
+        company: "Microsoft",
+        description: "Microsoft released MAI-Code-1 Flash, the first model from the MAI (Microsoft AI) model family — a series of frontier models developed internally at Microsoft Research. The Flash variant is optimized for low-latency code generation, completion, and review tasks, and is deeply integrated into GitHub Copilot, Azure AI Foundry, and VS Code. It is trained on a proprietary dataset of enterprise and open-source code.",
+        impact: "MAI-Code-1 Flash marks Microsoft's transition from model consumer to model producer, reducing its dependence on OpenAI for coding AI and enabling tighter integration between its AI models and developer tools ecosystem.",
+        eventType: "major",
+        addedDate: "2026-07-26"
+    },
+
+    // ── FORGOTTEN HISTORICAL MILESTONES ────────────────────────────────────────
+    {
+        date: "May 11, 1997",
+        title: "IBM Deep Blue Defeats Garry Kasparov",
+        company: "IBM",
+        description: "IBM's Deep Blue chess-playing supercomputer defeated world chess champion Garry Kasparov in a six-game match, winning 3.5–2.5. It was the first time a computer beat a reigning world chess champion under standard tournament conditions. Deep Blue evaluated up to 200 million chess positions per second using specialized hardware and handcrafted evaluation functions.",
+        impact: "The match became a cultural watershed — proof that machines could defeat humans at the highest levels of strategic reasoning. It ignited global debate about machine intelligence and is widely credited with catalyzing renewed investment in AI research throughout the late 1990s and 2000s.",
+        link: "https://www.ibm.com/history/deep-blue",
+        eventType: "major"
+    },
+    {
+        date: "February 16, 2011",
+        title: "IBM Watson Defeats Champions on Jeopardy!",
+        company: "IBM",
+        description: "IBM's Watson question-answering system defeated Jeopardy! all-time champions Ken Jennings and Brad Rutter in a televised three-game exhibition match. Watson processed natural language questions, searched its 4TB knowledge base, and generated confident answers in real time. It ran on 90 IBM Power 750 servers and used a combination of information retrieval, machine learning, and probabilistic reasoning.",
+        impact: "Watson's Jeopardy! victory demonstrated that machines could master natural language understanding and common-sense reasoning at human-expert levels, inspiring a wave of NLP research and enterprise AI investment. It put 'cognitive computing' into the mainstream business lexicon.",
+        link: "https://www.ibm.com/watson",
+        eventType: "major"
+    },
+    {
+        date: "January 2013",
+        title: "Word2Vec Released by Google",
+        company: "Google",
+        description: "Researchers at Google (led by Tomáš Mikolov) published Word2Vec, a set of neural network models for learning dense vector representations of words from large text corpora. Word2Vec introduced the concepts of CBOW and Skip-Gram training objectives, enabling vectors that captured semantic relationships — famously, 'king − man + woman ≈ queen'.",
+        impact: "Word2Vec became one of the most cited NLP papers in history, laying the foundation for modern word embeddings, sentence representations, and ultimately transformer-based language models. It demonstrated that unsupervised pre-training on text could encode rich linguistic structure.",
+        link: "https://arxiv.org/abs/1301.3781",
+        eventType: "major"
+    },
+    {
+        date: "June 10, 2014",
+        title: "Generative Adversarial Networks (GANs) Introduced",
+        company: "Google",
+        description: "Ian Goodfellow and colleagues (then at Université de Montréal) published 'Generative Adversarial Nets,' introducing the GAN framework — two neural networks (a generator and discriminator) trained in opposition to produce realistic synthetic data. The original paper demonstrated image generation and laid out the min-max game-theoretic training objective.",
+        impact: "GANs became the dominant paradigm for generative AI for nearly a decade, powering deepfakes, image synthesis, style transfer, and data augmentation. They were a direct intellectual predecessor to diffusion models and the entire modern generative image/video AI ecosystem.",
+        link: "https://arxiv.org/abs/1406.2661",
+        eventType: "major"
+    },
+    {
+        date: "October 2018",
+        title: "BERT Released by Google",
+        company: "Google",
+        description: "Google researchers published 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding,' introducing a new technique for NLP pre-training that achieved state-of-the-art results on 11 NLP benchmarks. BERT used masked language modeling and next-sentence prediction to learn bidirectional contextual representations from unlabeled text at scale.",
+        impact: "BERT revolutionized NLP by proving that a single pre-trained model, fine-tuned on downstream tasks, could outperform highly specialized architectures. It directly influenced the 'pre-train then fine-tune' paradigm adopted by virtually every major language model that followed.",
+        link: "https://arxiv.org/abs/1810.04805",
+        eventType: "major"
+    },
+    {
+        date: "February 2019",
+        title: "GPT-2 Released — Too Dangerous to Publish",
+        company: "OpenAI",
+        description: "OpenAI released GPT-2, a 1.5B-parameter language model trained on 40GB of internet text. OpenAI controversially staged the release over several months, initially withholding the full model due to concerns about misuse for disinformation and synthetic text generation. GPT-2 could generate coherent multi-paragraph text and complete prompts with remarkable fluency.",
+        impact: "GPT-2 sparked the first major public debate about AI safety in language models and dual-use risk. It demonstrated that large-scale unsupervised language modeling could produce human-like text, foreshadowing the capabilities — and societal risks — of GPT-3, ChatGPT, and beyond.",
+        link: "https://openai.com/research/language-unsupervised",
+        eventType: "major"
+    },
+    {
+        date: "November 2020",
+        title: "AlphaFold Wins CASP14 — Protein Folding Solved",
+        company: "Google DeepMind",
+        description: "DeepMind's AlphaFold 2 system achieved unprecedented accuracy at CASP14 (Critical Assessment of Protein Structure Prediction), predicting protein structures with atomic-level precision. It solved a challenge that had stumped biologists for 50 years, achieving a median GDT score of 92.4 — comparable to experimental methods. The result stunned the structural biology community.",
+        impact: "AlphaFold is widely regarded as the most significant scientific achievement in biology in decades. It accelerated drug discovery, enzyme engineering, and our understanding of disease mechanisms. DeepMind later released the full AlphaFold database of 200+ million protein structures, freely accessible to all researchers.",
+        link: "https://www.deepmind.com/research/highlighted-research/alphafold",
+        eventType: "major"
+    },
+    {
+        date: "January 2021",
+        title: "CLIP Released by OpenAI",
+        company: "OpenAI",
+        description: "OpenAI released CLIP (Contrastive Language–Image Pre-training), a neural network trained on 400 million image-text pairs scraped from the internet using a contrastive learning objective. CLIP learns a joint embedding space for images and text, enabling zero-shot image classification and open-vocabulary visual reasoning without task-specific training.",
+        impact: "CLIP became the backbone of an entire generation of image-text AI systems, including DALL-E 2, Stable Diffusion's text-image alignment, and many multimodal models. Its zero-shot capability demonstrated that language supervision could replace labeled vision datasets, transforming computer vision research.",
+        link: "https://openai.com/research/clip",
+        eventType: "major"
+    },
+    {
+        date: "July 2021",
+        title: "AlphaFold 2 Published in Nature",
+        company: "Google DeepMind",
+        description: "DeepMind published the full AlphaFold 2 methodology in Nature and released the AlphaFold Protein Structure Database in partnership with EMBL-EBI, containing predicted structures for nearly all catalogued proteins — over 350,000 initially, later expanded to 200+ million. The model uses an Evoformer neural network architecture to process multiple sequence alignments and pairwise residue relationships.",
+        impact: "The public release democratized structural biology, enabling researchers worldwide to access high-quality protein structure predictions for free. It accelerated antibiotic resistance research, cancer drug development, and fundamental biology at a scale previously impossible.",
+        link: "https://www.nature.com/articles/s41586-021-03819-2",
+        eventType: "major"
+    },
+    {
+        date: "August 2021",
+        title: "OpenAI Codex Released",
+        company: "OpenAI",
+        description: "OpenAI released Codex, a GPT-3-derived model fine-tuned on 159GB of Python code from GitHub repositories. Codex could translate natural language descriptions into working code across more than a dozen programming languages. It was the foundational model powering GitHub Copilot and available to developers via the OpenAI API.",
+        impact: "Codex was the first widely deployed AI code completion system at frontier scale, proving that large language models could act as productive programming assistants. It directly seeded the AI coding tool market — GitHub Copilot, which Codex powered, would go on to serve millions of developers.",
+        link: "https://openai.com/blog/openai-codex",
+        eventType: "major"
+    },
+    {
+        date: "January 2022",
+        title: "InstructGPT / RLHF Paper Published",
+        company: "OpenAI",
+        description: "OpenAI published 'Training language models to follow instructions with human feedback,' introducing the InstructGPT methodology — using Reinforcement Learning from Human Feedback (RLHF) to fine-tune GPT-3 to be more helpful, harmless, and honest. Human raters ranked model outputs, training a reward model used to steer the base model via PPO.",
+        impact: "RLHF became the standard alignment technique for all major conversational AI systems — ChatGPT, Claude, Gemini, and others. InstructGPT was the direct predecessor of ChatGPT and is arguably the most influential alignment paper published, transforming how language models are made safe and useful.",
+        link: "https://arxiv.org/abs/2203.02155",
+        eventType: "major"
+    },
+    {
+        date: "September 2022",
+        title: "OpenAI Whisper Released",
+        company: "OpenAI",
+        description: "OpenAI released Whisper, an open-source automatic speech recognition (ASR) system trained on 680,000 hours of multilingual and multitask supervised data collected from the web. Whisper demonstrated near-human accuracy across dozens of languages, including low-resource ones, and was released as open weights.",
+        impact: "Whisper democratized high-quality speech recognition: its open-weights release enabled thousands of applications, from local transcription tools to real-time captioning systems. It directly powers voice features across the AI ecosystem and remains a standard benchmark and deployment choice for speech-to-text.",
+        link: "https://openai.com/research/whisper",
+        eventType: "major"
+    },
+    {
+        date: "October 2022",
+        title: "LangChain Released",
+        company: "LangChain",
+        description: "Harrison Chase released LangChain, an open-source Python (later also TypeScript) framework for building applications with large language models. LangChain introduced abstractions for chains, agents, memory, tools, and retrieval-augmented generation (RAG), making it dramatically easier to compose LLM-powered workflows. It quickly became the most-starred AI repo on GitHub.",
+        impact: "LangChain catalyzed the LLM application development ecosystem, providing the scaffolding that tens of thousands of developers used to build production AI applications. Its core abstractions — chains, agents, RAG — became industry-standard patterns that shaped how the entire AI application layer evolved.",
+        link: "https://github.com/langchain-ai/langchain",
+        eventType: "major"
+    },
+
+    // ── MISSING 2023 EVENTS ────────────────────────────────────────────────────
+    {
+        date: "January 23, 2023",
+        title: "Microsoft Invests $10B in OpenAI",
+        company: "Microsoft",
+        description: "Microsoft announced a multiyear, multibillion-dollar investment in OpenAI — later confirmed at approximately $10 billion — as part of a deepened partnership. The deal extended their existing Azure hosting relationship and gave Microsoft exclusive licensing rights to deploy OpenAI models commercially. Microsoft gained the right to embed OpenAI's models across its entire product portfolio.",
+        impact: "The investment was the defining commercial AI deal of 2023, accelerating Microsoft's AI integration across Office, Bing, GitHub, and Azure. It also validated the generative AI business model and triggered an industry-wide race among hyperscalers to either acquire or invest in leading AI labs.",
+        link: "https://news.microsoft.com/2023/01/23/microsoftandopenaiextendpartnership/",
+        eventType: "major"
+    },
+    {
+        date: "February 1, 2023",
+        title: "ChatGPT Plus Launched",
+        company: "OpenAI",
+        description: "OpenAI launched ChatGPT Plus, a $20/month subscription tier offering priority access, faster response speeds, and early access to new features and models — starting with GPT-4 when it launched in March 2023. It was OpenAI's first consumer revenue product, transitioning ChatGPT from a free research preview into a commercial service.",
+        impact: "ChatGPT Plus established the subscription model for consumer AI assistants and generated hundreds of millions in annual recurring revenue within months. It became the blueprint for AI monetization that virtually every competitor — Google, Anthropic, xAI — adopted.",
+        link: "https://openai.com/blog/chatgpt-plus",
+        eventType: "major"
+    },
+    {
+        date: "November 6, 2023",
+        title: "OpenAI DevDay 2023: GPTs & Assistants API",
+        company: "OpenAI",
+        description: "At the first OpenAI DevDay, OpenAI announced the GPT Store (custom GPTs), the Assistants API (with persistent threads, code interpreter, and file retrieval), and a massive GPT-4 Turbo upgrade with a 128K-token context window and knowledge cutoff extended to April 2023. OpenAI also cut API prices by up to 3×. The event introduced the concept of 'GPTs' — custom, shareable AI assistants built on top of ChatGPT.",
+        impact: "DevDay 2023 transformed ChatGPT from a chat interface into a platform, creating a new app distribution channel and seeding the custom AI assistant ecosystem. The Assistants API laid groundwork for agentic workflows, and GPT-4 Turbo's price cuts made frontier AI accessible to a much broader developer audience.",
+        link: "https://openai.com/blog/new-models-and-developer-products-announced-at-devday",
+        eventType: "major"
+    },
+
+    // ── MISSING 2024 EVENTS ────────────────────────────────────────────────────
+    {
+        date: "April 18, 2024",
+        title: "Meta Llama 3 Released",
+        company: "Meta",
+        description: "Meta released Llama 3 in 8B and 70B parameter sizes under a permissive open-source license. Llama 3 demonstrated a step-change in open-model quality, outperforming many previously closed models on standard benchmarks. It used a 15-trillion-token pre-training dataset, a 128K-token vocabulary, and grouped query attention. Meta simultaneously released Llama 3 in Meta AI across WhatsApp, Messenger, Instagram, and Facebook.",
+        impact: "Llama 3 was the most capable open-weights model available at launch and further eroded the gap between open and closed models. Its release democratized frontier AI capabilities for researchers, startups, and self-hosters, accelerating the open-source AI ecosystem.",
+        link: "https://ai.meta.com/blog/meta-llama-3/",
+        eventType: "major"
+    },
+    {
+        date: "May 13, 2024",
+        title: "GPT-4o Released",
+        company: "OpenAI",
+        description: "OpenAI unveiled GPT-4o ('o' for omni) at a live Spring Update event — a natively multimodal model processing text, images, and audio in a unified architecture. GPT-4o responded to voice with human-like speed (232ms average), could perceive emotion from tone and facial expression, and matched GPT-4 Turbo on text while being significantly faster and cheaper. It became the default ChatGPT model for free users.",
+        impact: "GPT-4o was the biggest consumer AI moment of 2024 — the live demo of real-time emotional voice interaction went viral and defined the public's vision of conversational AI. It also made frontier-quality text AI free for the first time, drastically expanding ChatGPT's user base.",
+        link: "https://openai.com/index/hello-gpt-4o/",
+        eventType: "major"
+    },
+    {
+        date: "May 2024",
+        title: "Gemini 1.5 Flash Released",
+        company: "Google",
+        description: "Google released Gemini 1.5 Flash at Google I/O 2024 — a lighter, faster, and significantly cheaper variant of Gemini 1.5 Pro built using distillation. It retained the landmark 1-million-token context window while delivering much lower latency and pricing, making long-context multimodal AI accessible for high-throughput developer applications.",
+        impact: "Gemini 1.5 Flash proved that the 1M-token context window — previously exclusive to premium models — could be offered at commodity pricing, pushing long-context AI into mainstream developer workflows and sparking a competitive race on context length and efficiency.",
+        link: "https://developers.googleblog.com/en/gemini-15-flash-8b-is-now-generally-available-for-use/",
+        eventType: "major"
+    },
+    {
+        date: "June 20, 2024",
+        title: "Claude 3.5 Sonnet Released",
+        company: "Anthropic",
+        description: "Anthropic released Claude 3.5 Sonnet, which immediately topped major benchmark leaderboards across coding (HumanEval), reasoning (MMLU, GPQA), and instruction-following tasks — surpassing both GPT-4o and Gemini 1.5 Pro. The model introduced Computer Use (public beta), allowing Claude to directly control a desktop computer by viewing screenshots and executing mouse/keyboard actions.",
+        impact: "Claude 3.5 Sonnet was Anthropic's first model to definitively beat OpenAI and Google on major benchmarks, establishing Anthropic as a serious capability competitor. The Computer Use feature previewed the agentic AI era and directly influenced OpenAI's later operator and computer-use product launches.",
+        link: "https://www.anthropic.com/news/claude-3-5-sonnet",
+        eventType: "major"
+    },
+    {
+        date: "July 18, 2024",
+        title: "GPT-4o mini Released",
+        company: "OpenAI",
+        description: "OpenAI released GPT-4o mini, a small, fast, and cheap multimodal model priced at $0.15/$0.60 per million input/output tokens — roughly 15× cheaper than GPT-4o. Despite its size, it outperformed GPT-3.5 Turbo across most benchmarks and became the default model for ChatGPT free-tier users, as well as a popular choice for high-volume API workloads.",
+        impact: "GPT-4o mini set a new efficiency standard for capable AI at minimal cost, enabling developers to run AI-powered features at scale economics. It accelerated commoditization of 'good-enough' AI, making GPT-4-class reasoning accessible in budget-constrained applications.",
+        link: "https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/",
+        eventType: "major"
+    },
+
+    // ── NEW FUTURE & PLANNED EVENTS ───────────────────────────────────────────
+    {
+        date: "August 2026 (Planned)",
+        title: "EU AI Act GPAI Code of Practice Enforcement",
+        company: "EU",
+        description: "The European Union's AI Act requires all providers of General Purpose AI (GPAI) models with systemic risk — including GPT-series, Gemini, Claude, and Llama — to comply with the Code of Practice by August 2026. Obligations include adversarial testing, incident reporting, model card disclosure, and cybersecurity assessments. Non-compliance carries fines of up to 3% of global annual turnover.",
+        impact: "The first binding AI regulation for frontier model developers globally, the EU AI Act's enforcement marks the end of self-regulation for large AI labs in European markets and is expected to reshape how all major AI companies document, test, and deploy models worldwide.",
+        link: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+        eventType: "planned"
+    },
+    {
+        date: "2027 (Planned)",
+        title: "OpenAI Stargate Phase 2: 500,000 GPUs Online",
+        company: "OpenAI",
+        description: "OpenAI's Stargate infrastructure project — a joint venture with SoftBank, Oracle, and MGX announced in January 2025 with a $500B commitment — is expected to complete its Phase 2 data centers in 2027. Phase 2 targets over 500,000 NVIDIA Blackwell Ultra or next-generation GPUs across US facilities in Texas and Arizona, representing the largest dedicated AI compute cluster ever built.",
+        impact: "Stargate Phase 2 would give OpenAI an unprecedented compute advantage — an order-of-magnitude more training capacity than current leading clusters — enabling training of models at scales not yet publicly attempted and potentially defining the ceiling of AI capability for the late 2020s.",
+        link: "https://openai.com/index/announcing-the-stargate-project/",
+        eventType: "planned"
+    },
+    {
+        date: "2027 (Planned)",
+        title: "Anthropic Claude 5 Expected",
+        company: "Anthropic",
+        description: "Anthropic is expected to release Claude 5 in 2027, representing the next major architectural generation after the Claude 4/Fable series. Based on Anthropic's release cadence and public roadmap signals, Claude 5 is anticipated to target agentic autonomy, improved long-horizon task completion, and substantially lower hallucination rates. Anthropic has hinted at continued investment in Constitutional AI and alignment interpretability.",
+        impact: "Claude 5 will mark Anthropic's next major bet on safety-first frontier AI and is expected to be a key competitive response to GPT-6 and Gemini 4, with implications for enterprise adoption, agentic deployment norms, and AI alignment research.",
+        eventType: "planned"
+    },
+    {
+        date: "2027 (Planned)",
+        title: "Google Gemini 4 Ultra Expected",
+        company: "Google",
+        description: "Google is widely expected to release Gemini 4 Ultra in 2027, succeeding the Gemini 3 family. Based on Google's annual Gemini cadence and research signals, Gemini 4 is anticipated to feature deep integration of Google's Search and Knowledge Graph at inference time, improved native tool use for agentic tasks, and a new multimodal architecture. Google DeepMind's Veo and Project Astra research are expected to feed into Gemini 4's video and embodied reasoning capabilities.",
+        impact: "Gemini 4 Ultra represents Google's flagship response to GPT-6 and Claude 5. With Google's unmatched real-time data access and consumer deployment scale across Search, Android, and Workspace, Gemini 4 could define consumer AI for billions of users.",
+        eventType: "planned"
+    },
+    {
+        date: "Late 2027 (Planned)",
+        title: "OpenAI GPT-6 Full Release",
+        company: "OpenAI",
+        description: "Following GPT-6's anticipated initial release in Q4 2026, a full GPT-6 rollout with enhanced capabilities, expanded context, and API availability is expected through 2027. OpenAI is expected to include GPT-6's multimodal and agentic capabilities across ChatGPT, the API, and Sora's next generation, targeting autonomous task completion over hours-long horizons.",
+        impact: "GPT-6 full deployment could mark the first commercially available model capable of reliably completing multi-day complex tasks without human intervention — a meaningful milestone toward practical general-purpose AI assistants at scale.",
+        eventType: "planned"
+    },
+    {
+        date: "2028 (Planned)",
+        title: "Autonomous AI Research Agents Milestone",
+        company: "Google DeepMind",
+        description: "Google DeepMind, Anthropic, and OpenAI have each signaled 2027–2028 as a target for AI systems capable of autonomously conducting and publishing novel scientific research — running experiments, forming hypotheses, and iterating without continuous human oversight. Projects like AlphaProof, AlphaCode, and Anthropic's interpretability roadmap are expected to converge toward this milestone.",
+        impact: "If achieved, self-directed AI research agents would represent the most significant acceleration of scientific discovery in history — potentially compressing decades of progress in biology, materials science, and medicine into years. This milestone is central to the 'intelligence explosion' debate and AGI trajectory forecasts.",
+        eventType: "planned"
     }
 ].reverse(); // Reverse timeline to show most recent events first
 
@@ -1427,7 +1721,12 @@ const logoMap = {
     'GitHub': 'https://github.githubassets.com/favicons/favicon.svg',
     'xAI': 'https://x.ai/favicon.ico',
     'Mistral AI': 'https://mistral.ai/favicon.ico',
-    'US Government': 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Seal_of_the_United_States_Department_of_Commerce.svg'
+    'US Government': 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Seal_of_the_United_States_Department_of_Commerce.svg',
+    'IBM': 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg',
+    'LangChain': 'https://python.langchain.com/img/favicon.ico',
+    'Moonshot AI': 'https://www.moonshot.cn/favicon.ico',
+    'EU': 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg',
+    'University of Toronto': 'https://upload.wikimedia.org/wikipedia/en/0/04/Utoronto_coa.svg'
 };
 
 // Product-specific logos (for tools that might need custom logos)
