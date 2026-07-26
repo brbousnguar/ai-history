@@ -96,8 +96,8 @@ const timelineEvents = [
         date: "Q4 2026 (Planned)",
         title: "GPT-6 Expected",
         company: "OpenAI",
-        description: "OpenAI is expected to release GPT-6 in Q4 2026 or early 2027. OpenAI finished pre-training a model codenamed 'Spud' in March 2026, but it shipped as GPT-5.5 rather than GPT-6. GPT-6 proper has no confirmed architecture or launch date, though market consensus (Polymarket: ~82% by end of 2026) points to Q4 2026.",
-        impact: "GPT-6 could mark a step-change in reasoning and agentic capability, potentially the most significant OpenAI release since GPT-4 — though the roadmap has already shifted once with GPT-5.5.",
+        description: "OpenAI has not officially announced GPT-6 as of July 2026. The GPT-5 family continued to iterate, with GPT-5.5 shipping in April 2026 (codenamed 'Spud') and GPT-5.6 released in July 2026. Prediction markets (Polymarket: ~82%) point to a Q4 2026 release. OpenAI DevDay on September 29, 2026 is widely expected to be the reveal venue. The internal codename 'Goblin' has been rumored but is unconfirmed.",
+        impact: "GPT-6 could mark a step-change in reasoning and agentic capability, potentially the most significant OpenAI release since GPT-4 — though the roadmap has already shifted twice with GPT-5.5 and GPT-5.6.",
         link: "https://openai.com/",
         eventType: "planned"
     },
@@ -140,11 +140,11 @@ const timelineEvents = [
         addedDate: "2026-06-10"
     },
     {
-        date: "June 2026 (Planned)",
-        title: "Gemini 3.5 Pro Planned Rollout",
+        date: "Late July / August 2026 (Planned)",
+        title: "Gemini 3.5 Pro Rollout",
         company: "Google",
-        description: "At Google I/O 2026, Google said Gemini 3.5 Pro is already being used internally and that the company expects to roll it out the following month after launching Gemini 3.5 Flash.",
-        impact: "Gemini 3.5 Pro is positioned as Google's next flagship step after Gemini 3.5 Flash, extending the agentic Gemini model family to harder tasks.",
+        description: "At Google I/O 2026, Google said Gemini 3.5 Pro is already being used internally and expected to roll out in June 2026. The release was then delayed to July 17 after a full architectural rebuild, but as of July 22, 2026 the model remains in limited enterprise preview — having missed both its June and July 17 targets. Leaked specs include a 2-million-token context window and a new Deep Think reasoning layer.",
+        impact: "Gemini 3.5 Pro is positioned as Google's next flagship step after Gemini 3.5 Flash, extending the agentic Gemini model family to harder tasks. The repeated delays suggest Google is prioritising benchmark parity with GPT-5.6 before broad release.",
         link: "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
         eventType: "planned"
     },
@@ -152,37 +152,35 @@ const timelineEvents = [
         date: "September 29, 2026 (Planned)",
         title: "OpenAI DevDay 2026",
         company: "OpenAI",
-        description: "OpenAI announced DevDay 2026 for September 29 in San Francisco, calling it the company's biggest event of the year.",
-        impact: "DevDay is likely to be OpenAI's major developer venue for model, API, agent, and platform announcements in late 2026.",
+        description: "OpenAI DevDay 2026 is confirmed for September 29 at Fort Mason Center in San Francisco — the company's biggest developer event of the year. The keynote will be livestreamed for free. OpenAI is also launching 'DevDay Exchanges' — first-ever satellite events in eight global cities: Bengaluru, Tokyo, Seoul, Paris, Berlin, London, São Paulo, and Mexico City. GPT-6 (rumoured codename 'Goblin') is widely expected to be revealed at the event, though unconfirmed by OpenAI.",
+        impact: "DevDay is OpenAI's primary venue for model, API, agent, and platform announcements. The global expansion via DevDay Exchanges signals OpenAI's ambition to deepen developer relationships worldwide ahead of what could be a pivotal GPT-6 launch.",
         link: "https://openai.com/index/devday-2026/",
         eventType: "planned"
     },
     {
-        date: "November 18, 2026 (Planned)",
-        title: "Microsoft Copilot 3.0",
+        date: "March 9, 2026",
+        title: "Microsoft 365 Copilot Wave 3 Launched",
         company: "Microsoft",
-        description: "Microsoft plans to launch Copilot 3.0 with autonomous agent capabilities, advanced workflow automation, and deeper integration across Microsoft 365 and Azure services.",
-        impact: "Copilot 3.0 could transform enterprise productivity by enabling AI agents to handle complex multi-step tasks autonomously.",
-        link: "https://www.microsoft.com/copilot",
-        eventType: "planned"
+        description: "Microsoft launched Wave 3 of Microsoft 365 Copilot — effectively Copilot 3.0 — on March 9, 2026. The release introduced Copilot Cowork (agents that autonomously orchestrate cross-app workflows such as preparing meetings and creating documents), Agent 365 (an enterprise AI agent management platform that reached general availability in May 2026), and multi-model AI integration supporting both OpenAI GPT and Anthropic Claude models.",
+        impact: "Wave 3 transformed Copilot from a chat assistant into a fully autonomous agent layer across Microsoft 365 — an inflection point for enterprise AI adoption that pushed agentic workflows into millions of business users.",
+        link: "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/",
+        eventType: "major"
     },
     {
-        date: "Late 2026 (Planned)",
-        title: "Midjourney v8 with Real-Time Generation",
+        date: "March 2026",
+        title: "Midjourney V8 Released",
         company: "Midjourney",
-        description: "Midjourney is expected to release v8 with real-time image generation, 3D model creation, and advanced style consistency features for professional workflows.",
-        impact: "Midjourney v8 could bridge the gap between AI-generated and professional-grade content, enabling real-time creative collaboration.",
-        link: "https://www.midjourney.com/",
-        eventType: "planned"
+        description: "Midjourney released V8 in March 2026 (alpha), followed by V8.1 in April 2026 and V8.2 on July 24, 2026. The V8 line introduced native HD 2K image generation (2048×2048), 4–5× speed improvements over V7, significantly better prompt adherence and text rendering, and a Raw mode for unstyled output. V8 also marked Midjourney's largest internal architecture rebuild, unifying the underlying system to support faster feature development.",
+        impact: "Midjourney V8 delivered a step-change in image quality and speed, making professional-grade AI-generated images faster and cheaper — and firmly establishing Midjourney as the quality benchmark for commercial creative workflows.",
+        link: "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
     },
     {
-        date: "Q3 2026 (Planned)",
-        title: "Stability AI 4.0 with Video",
+        date: "April 28, 2026",
+        title: "Stable Diffusion 4.0 Ultra Released",
         company: "Stability AI",
-        description: "Stability AI plans to release Stable Diffusion 4.0 with integrated video generation, 3D asset creation, and improved photorealism for both images and animations.",
-        impact: "Stable Diffusion 4.0 could maintain open-source leadership in generative AI while expanding into video and 3D content creation.",
+        description: "Stability AI released Stable Diffusion 4.0 Ultra on April 28, 2026, its most significant architectural leap since the original release. SD4 Ultra switches from the traditional UNet backbone to a Diffusion Transformer (DiT) architecture, delivering state-of-the-art photorealism, accurate hand and anatomy rendering, and dramatically improved text-within-image fidelity. The model ships with open weights under a community license.",
+        impact: "Stable Diffusion 4.0 Ultra positioned open-source generative AI on par with — or ahead of — closed commercial models like Midjourney V7 and DALL-E 4 in photorealism benchmarks, continuing the open-weights tradition that underpins a global ecosystem of custom models and creative tools.",
         link: "https://stability.ai/",
-        eventType: "planned"
     },
     {
         date: "May 20, 2026",
@@ -1669,10 +1667,10 @@ const timelineEvents = [
     },
     {
         date: "2027 (Planned)",
-        title: "Anthropic Claude 5 Expected",
+        title: "Anthropic Next Frontier Generation Expected",
         company: "Anthropic",
-        description: "Anthropic is expected to release Claude 5 in 2027, representing the next major architectural generation after the Claude 4/Fable series. Based on Anthropic's release cadence and public roadmap signals, Claude 5 is anticipated to target agentic autonomy, improved long-horizon task completion, and substantially lower hallucination rates. Anthropic has hinted at continued investment in Constitutional AI and alignment interpretability.",
-        impact: "Claude 5 will mark Anthropic's next major bet on safety-first frontier AI and is expected to be a key competitive response to GPT-6 and Gemini 4, with implications for enterprise adoption, agentic deployment norms, and AI alignment research.",
+        description: "Anthropic's model family accelerated rapidly in 2026, releasing Claude Fable 5, Sonnet 5, and Opus 5 (July 24, 2026) — all within a single Mythos-class generation. The 'Claude 5' label has already been used for the 2026 Opus/Fable/Sonnet series. Anthropic is expected to continue its rapid release cadence in 2027 with the next architectural generation, likely targeting further improvements in agentic autonomy, long-horizon task completion, and interpretability from its Constitutional AI research.",
+        impact: "Anthropic's next major architectural generation will be a key competitive response to GPT-6 and Gemini 4, with implications for enterprise adoption, agentic deployment norms, and AI alignment research.",
         eventType: "planned"
     },
     {
